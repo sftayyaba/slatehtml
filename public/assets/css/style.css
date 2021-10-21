@@ -1,0 +1,116 @@
+body {
+  margin:0;
+}
+/*Grid*/
+.d-flex {
+  display: flex!important;
+}
+.d-block {
+  display: block!important;
+}
+.flex-column {
+  flex-direction: column!important;
+}
+.flex-shrink-0 {
+  flex-shrink: 0!important;
+}
+/*Colors*/
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(242,243,247,var(--bs-bg-opacity))!important;
+}
+.border-bottom {
+  border-bottom: 1px solid #dee2e6!important;
+}
+.visually-hidden, .visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute!important;
+  width: 1px!important;
+  height: 1px!important;
+  padding: 0!important;
+  margin: -1px!important;
+  overflow: hidden!important;
+  clip: rect(0,0,0,0)!important;
+  white-space: nowrap!important;
+  border: 0!important;
+}
+/*Alignment*/
+.text-center{
+  text-align: center;
+}
+.text-decoration-none {
+  text-decoration: none!important;
+}
+.p-3 {
+  padding: 1rem!important;
+}
+.p-10 {
+  padding:10px
+}
+.py-3 {
+  padding-top: 1rem!important;
+  padding-bottom: 1rem!important;
+}
+.ml-auto, .mx-auto {
+  margin-left: auto!important;
+}
+.mr-auto, .mx-auto {
+  margin-right: auto!important;
+}
+.mb-auto {
+  margin-bottom: auto!important;
+}
+.my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+.bi {
+  vertical-align: -.125em;
+  pointer-events: none;
+}
+/*NAV*/
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav-link {
+  display: block;
+  padding: .5rem 1rem;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.block-level {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 20px auto;
+  position: relative;
+  color: #fff;
+  padding: 12px;
+  text-shadow: 0 -1px 1px rgb(0 0 0 / 50%);
+}
+.active, .block-level:hover {
+  box-shadow: 
+    inset 4px 2px 8px 1px rgb(0 0 0 / 20%), 
+    inset 15px 15px 11px 4px rgb(242 243 247);
+}
+.active path {
+  fill:#5943C1;
+}
+.menu_icons,
+.cls-2 {
+  fill: #C0C1C6;
+}
+.menu_icons {
+  fill-rule: evenodd;
+}
+.emboss_logo {
+    border-radius: 4px;
+    box-shadow: inset 2px 2px 2px 1px rgb(255 255 255 /70%), inset -2px -2px 2px 1px rgb(230 230 230), 2px 2px 4px 2px rgb(111 111 111 / 10%);
+}
+.block-level:hover path {
+  fill: #5943C1;
+}
