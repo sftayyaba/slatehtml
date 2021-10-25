@@ -312,6 +312,10 @@ body {
   display:inline-block;
   transition: opacity 5s;
   opacity:1;
+  
+}
+.nav-link.active .menuLabel{
+  font-weight: bold;
 }
 #sidebar.show a.nav-link{
   width:150px;
