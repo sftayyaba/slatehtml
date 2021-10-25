@@ -5,6 +5,7 @@ body {
 #sidebar {
   width: 102px;
   height: 100vh;
+  transition: all .3s linear 0s;
 }
 .d-flex {
   display: flex!important;
@@ -72,6 +73,9 @@ body {
 }
 .grid .g-col-12{
   grid-column:auto/span 12
+}
+.grid .g-start-2 {
+  grid-column-start: 2;
 }
 /*Colors*/
 .bg-light {
@@ -145,7 +149,7 @@ body {
 }
 .nav-link {
   display: block;
-  padding: .5rem 1rem;
+  /*padding: .5rem 1rem;*/
   color: #0d6efd;
   text-decoration: none;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
@@ -154,11 +158,12 @@ body {
   border-radius: 50%;
   width: 24px;
   height: 24px;
-  margin: 20px auto;
+  margin: 10px auto;
   position: relative;
   color: #fff;
   padding: 12px;
   text-shadow: 0 -1px 1px rgb(0 0 0 / 50%);
+  display: inline-block;
 }
 .active, .block-level:hover {
   box-shadow: 
@@ -256,4 +261,62 @@ body {
   color: #fff;
   background-color: #6c757d;
   border-color: #6c757d;
+}
+
+
+#toggleSidebar {
+  position: absolute;
+  top: 25px;
+  left: 105px;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  background: #1b1b1b;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+  background-color: rgb(242,243,247);
+  border: 1px solid #ced4da;
+}
+
+#toggleSidebar.click {
+  left: 260px
+}
+
+#toggleSidebar svg {
+ fill: #ced4da;
+}
+
+#toggleSidebar .closeIcon {
+  display:none;
+}
+
+#toggleSidebar.click .hamburguerIcon {
+  display:none;
+}
+#toggleSidebar.click .closeIcon {
+  display:block;
+}
+#sidebar.show{
+  width:250px;
+}
+
+.menuLabel{
+  display:none;
+  opacity:0;
+  vertical-align: super;
+  transition: left 0.4s ease;
+}
+.menuLabel.show{
+  display:inline-block;
+  transition: opacity 5s;
+  opacity:1;
+}
+#sidebar.show a.nav-link{
+  width:150px;
+  text-align:left;
+  color:#6c757d;
+}
+#sidebar.show .nav-item{
+  margin-left:60px
 }
