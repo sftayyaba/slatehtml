@@ -1,5 +1,6 @@
 body {
   margin:0;
+  font-family: 'Poppins', sans-serif;
 }
 /*Grid*/
 #sidebar {
@@ -314,7 +315,6 @@ body {
   transition: left 0.4s ease;
   /*transition: opacity .3s ease-out;*/
   /*transition: height 0ms 400ms, opacity 400ms 0ms;*/
-  font-family: 'Poppins', sans-serif;
   /*overflow: hidden;*/
   animation: fade_out_show 0.5s
 }
@@ -391,4 +391,10 @@ body {
 .gradient3 {
   background: rgb(242,243,247);
   background: linear-gradient(180deg, rgba(242,243,247,1) 0%, rgba(242,243,247,1) 65%, rgba(16,92,107,1) 100%);
+}
+.gradient4{
+  background: linear-gradient(#F17153, #F58D63, #f1ab53);
+}
+.gradient5{
+  background: linear-gradient(to bottom, #F27121, #E94057, #8A2387);
 }
