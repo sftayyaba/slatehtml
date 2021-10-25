@@ -314,7 +314,7 @@ body {
   opacity:1;
   
 }
-.nav-link.active .menuLabel{
+.nav-link.menuActive .menuLabel{
   font-weight: bold;
 }
 #sidebar.show a.nav-link{
