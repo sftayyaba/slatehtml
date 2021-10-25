@@ -161,6 +161,12 @@
 								<option value="1" selected>Style 2</option>
 								<option value="2">Style 3</option>
 							</select>
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="enableGradient">
+								<label class="form-check-label" for="enableGradient">
+									Enable Gradient
+								</label>
+							</div>
 							<!--<button type="button" class="btn btn-secondary">New Project</button>-->
 						</div>
 					</div>
@@ -210,6 +216,9 @@
 			} else {
 				window.location.href = 'index.html';
 			}
+		});
+		document.querySelector('#enableGradient').addEventListener('click', event => {
+			sidebar.classList.toggle("gradient");
 		});
 	</script>
 </body>
