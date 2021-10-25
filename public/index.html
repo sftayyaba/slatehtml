@@ -171,6 +171,8 @@
                 <option value="1">Gradient 1</option>
                 <option value="2">Gradient 2</option>
                 <option value="3">Gradient 3</option>
+                <option value="4">Gradient 4</option>
+                <option value="5">Gradient 5</option>
               </select>
               <!--<button type="button" class="btn btn-secondary">New Project</button>-->
             </div>
@@ -240,16 +242,22 @@
     document.querySelector('#changeGradient').addEventListener('change', event => {
       var selection = event.target.value;
       if (selection == 1) {
-        sidebar.classList.remove("gradient2", "gradient3");
+        sidebar.classList.remove("gradient2", "gradient3", "gradient4", "gradient5");
         sidebar.classList.add("gradient1");
       } else if (selection == 2) {
-        sidebar.classList.remove("gradient1", "gradient3");
+        sidebar.classList.remove("gradient1", "gradient3", "gradient4", "gradient5");
         sidebar.classList.add("gradient2");
       } else if (selection == 3) {
-        sidebar.classList.remove("gradient1", "gradient2");
+        sidebar.classList.remove("gradient1", "gradient2", "gradient4", "gradient5");
         sidebar.classList.add("gradient3");
+      } else if (selection == 4) {
+        sidebar.classList.remove("gradient1", "gradient2", "gradient3", "gradient5");
+        sidebar.classList.add("gradient4");
+      } else if (selection == 5) {
+        sidebar.classList.remove("gradient1", "gradient2", "gradient3", "gradient4");
+        sidebar.classList.add("gradient5");
       } else {
-        sidebar.classList.remove("gradient1", "gradient2", "gradient3");
+        sidebar.classList.remove("gradient1", "gradient2", "gradient3", "gradient4", "gradient5");
       }
     });
   </script>
