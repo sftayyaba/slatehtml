@@ -161,17 +161,17 @@
               <!--<input type="text" class="form-control">-->
             </div>
             <div class="g-col-4">
-              <select id="changeStyle" class="form-select" aria-label="Project Name">
+              <select id="changeStyle" class="form-select" aria-label="Sidebar Style">
                 <option value="0" selected>Style 1</option>
                 <option value="1">Style 2</option>
                 <option value="2">Style 3</option>
               </select>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="enableGradient">
-                <label class="form-check-label" for="enableGradient">
-                  Enable Gradient
-                </label>
-              </div>
+              <select id="changeGradient" class="form-select" aria-label="Gradient">
+                <option value="0" selected>No Gradient</option>
+                <option value="1">Gradient 1</option>
+                <option value="2">Gradient 2</option>
+                <option value="3">Gradient 3</option>
+              </select>
               <!--<button type="button" class="btn btn-secondary">New Project</button>-->
             </div>
           </div>
@@ -237,8 +237,20 @@
       }
     });
 
-    document.querySelector('#enableGradient').addEventListener('click', event => {
-      sidebar.classList.toggle("gradient");
+    document.querySelector('#changeGradient').addEventListener('change', event => {
+      var selection = event.target.value;
+      if (selection == 1) {
+        sidebar.classList.remove("gradient2", "gradient3");
+        sidebar.classList.add("gradient1");
+      } else if (selection == 2) {
+        sidebar.classList.remove("gradient1", "gradient3");
+        sidebar.classList.add("gradient2");
+      } else if (selection == 3) {
+        sidebar.classList.remove("gradient1", "gradient2");
+        sidebar.classList.add("gradient3");
+      } else {
+        sidebar.classList.remove("gradient1", "gradient2", "gradient3");
+      }
     });
   </script>
 </body>
