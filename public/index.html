@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div class="d-flex bg-light">
+  <div class="d-flex">
     <div id="toggleSidebar" class="btn">
       <svg class="hamburguerIcon" viewBox="0 0 100 80">
         <rect width="100" height="20"></rect>
@@ -29,8 +29,7 @@
       </svg>
     </div>
     <div id="sidebar" class="bg-light flex-column flex-shrink-0 ">
-      <a href="/" class="d-block p-3 text-decoration-none text-center" title="" data-bs-toggle="tooltip"
-        data-bs-placement="right" data-bs-original-title="Icon-only">
+      <a href="/" class="d-block p-3 text-decoration-none text-center" title="" data-bs-original-title="Icon-only">
         <div class="emboss_logo p-10">
           <svg class="bi" width="40" height="32">
             <use xlink:href="#slate_logo"></use>
@@ -40,8 +39,7 @@
       </a>
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
         <li class="nav-item">
-          <a href="#" class="nav-link  " aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="Portfolio">
+          <a href="#" class="nav-link  " aria-current="page" title="">
             <div class="block-level active">
               <svg class="bi " width="24" height="24" role="img" aria-label="Portfolio" viewBox="0 0 16.5 18.5">
                 <defs>
@@ -69,8 +67,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="Overview">
+          <a href="#" class="nav-link" title="">
             <div class="block-level">
               <svg class="bi" width="24" height="24" role="img" aria-label="Overview" viewBox="0 0 15.5 20.22">
                 <path class="menu_icons"
@@ -86,8 +83,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="Documents">
+          <a href="#" class="nav-link" title="">
             <div class="block-level">
               <svg class="bi" width="24" height="24" role="img" aria-label="Documents" viewBox="3 2 20 20">
                 <path class="menu_icons"
@@ -98,8 +94,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="Schedule">
+          <a href="#" class="nav-link" title="">
             <div class="block-level">
               <svg class="bi" width="24" height="24" role="img" aria-label="Schedule" viewBox="0 0 17.92 17.27">
                 <path class="menu_icons"
@@ -111,8 +106,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="BIM">
+          <a href="#" class="nav-link" title="">
             <div class="block-level">
               <svg class="bi" width="24" height="24" role="img" aria-label="BIM" viewBox="0 0 17.5 17.5">
                 <path class="menu_icons"
@@ -124,8 +118,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="Vision AI">
+          <a href="#" class="nav-link" title="">
             <div class="block-level">
               <svg class="bi" width="24" height="24" role="img" aria-label="Vision AI" viewBox="0 0 18.7 18.7">
                 <path class="menu_icons" fill-rule="evenodd" clip-rule="evenodd"
@@ -140,8 +133,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-original-title="Workflow">
+          <a href="#" class="nav-link" title="">
             <div class="block-level">
               <svg class="bi" width="24" height="24" role="img" aria-label="Workflow" viewBox="0 0 18.7 18.7">
                 <path class="menu_icons"
@@ -232,12 +224,10 @@
 
     }
     toggleSidebarBTN.addEventListener("click", toggleSidebar, false);
-   /*
-                                 $('.btn').click(function () {
-                                   $(this).toggleClass("click");
-                                   $('.sidebar').toggleClass("show");
-                                 });
-                                 */
+
+    document.querySelector('.nav-link').addEventListener('click', event => {
+      this.classList.add("mystyle");
+    });
   </script>
 </body>
 
