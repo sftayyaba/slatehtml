@@ -306,6 +306,7 @@ body {
   opacity:0;
   vertical-align: super;
   transition: left 0.4s ease;
+  font-family: 'Poppins', sans-serif;
 }
 .menuLabel.show{
   display:inline-block;
