@@ -28,7 +28,7 @@
         c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
       </svg>
     </div>
-    <div id="sidebar" class="bg-light flex-column flex-shrink-0 ">
+    <div id="sidebar" class="sidebar1 bg-light flex-column flex-shrink-0 ">
       <a href="/" class="d-block p-3 text-decoration-none text-center" title="" data-bs-original-title="Icon-only">
         <div class="emboss_logo p-10">
           <svg class="bi" width="40" height="32">
@@ -214,13 +214,11 @@
   <script>
     var toggleSidebarBTN = document.getElementById("toggleSidebar");
     var sidebar = document.getElementById("sidebar");
+
     function toggleSidebar() {
       toggleSidebarBTN.classList.toggle("click");
       sidebar.classList.toggle("show");
-
-
       const menuLabels = [...document.getElementsByClassName('menuLabel')];
-      console.log(menuLabels);
       menuLabels.forEach(menuLabel => {
         menuLabel.classList.toggle('show');
       });
