@@ -341,3 +341,8 @@ body {
 #sidebar.sidebar3 .nav-link:hover > .menuLabel{
   visibility: visible;
 }
+
+.gradient {
+  background: rgb(242,243,247);
+  background: linear-gradient(180deg, rgba(242,243,247,1) 0%, rgba(242,243,247,1) 65%, rgba(108,108,108,1) 100%);
+}
