@@ -379,7 +379,16 @@ body {
   visibility: visible;
 }
 
-.gradient {
+.gradient1 {
   background: rgb(242,243,247);
   background: linear-gradient(180deg, rgba(242,243,247,1) 0%, rgba(242,243,247,1) 65%, rgba(108,108,108,1) 100%);
+}
+
+.gradient2 {
+  background: rgb(242,243,247);
+  background: linear-gradient(180deg, rgba(242,243,247,1) 0%, rgba(242,243,247,1) 65%, rgba(89,67,193,1) 100%);
+}
+.gradient3 {
+  background: rgb(242,243,247);
+  background: linear-gradient(180deg, rgba(242,243,247,1) 0%, rgba(242,243,247,1) 65%, rgba(16,92,107,1) 100%);
 }
