@@ -52,8 +52,20 @@ document.querySelector('#lightHeader').addEventListener('change', event => {
 	var checked = event.target.checked;
 	if (checked) {
 		header.classList.add("lightHeader");
+		header.classList.remove("whiteHeader");
+		document.getElementById("whiteHeader").checked = false;
 	} else {
 		header.classList.remove("lightHeader");
+	}
+});
+document.querySelector('#whiteHeader').addEventListener('change', event => {
+	var checked = event.target.checked;
+	if (checked) {
+		header.classList.add("whiteHeader");
+		header.classList.remove("lightHeader");
+		document.getElementById("lightHeader").checked = false;
+	} else {
+		header.classList.remove("whiteHeader");
 	}
 });
 
