@@ -15,7 +15,7 @@
 </head>
 
 <body id="style1">
-	<div class="d-flex">
+	<div id="page_container" class="d-flex">
 		<div id="sidebar" class="sidebar4 bg-light d-flex flex-column flex-shrink-0 gradient9">
 			<a href="/" class="d-block p-2 text-decoration-none text-center" title=""
 				data-bs-original-title="Icon-only">
@@ -232,40 +232,42 @@
 		</div>
 		<div class="container-fluid">
 			<div id="page_header" class="row">
-				<div class="col-3 row align-items-center">
-					<div class="col-auto">
-						<label for="inputPassword6" class="col-form-label">Portfolio</label>
+				<div class="col-3">
+					<div class="form-group row">
+						<label for="changeStyle" class="col-sm-4 col-form-label">Portfolio</label>
+						<div class="col-sm-8">
+							<select id="changeStyle" class="form-select" aria-label="Sidebar Style">
+								<option value="1">Style 1</option>
+								<option value="2">Style 2</option>
+								<option value="3">Style 3</option>
+								<option value="4" selected>Style 4</option>
+							</select>
+						</div>
 					</div>
-					<div class="col-auto">
-						<select id="changeStyle" class="form-select" aria-label="Sidebar Style">
-							<option value="1">Style 1</option>
-							<option value="2">Style 2</option>
-							<option value="3">Style 3</option>
-							<option value="4" selected>Style 4</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-3 row align-items-center">
-					<div class="col-auto">
-						<label for="inputPassword6" class="col-form-label">Project</label>
-					</div>
-					<div class="col-auto">
-						<select id="changeGradient" class="form-select" aria-label="Gradient">
-							<option value="0" selected>No Gradient</option>
-							<option value="1">Gradient 1</option>
-							<option value="2">Gradient 2</option>
-							<option value="3">Gradient 3</option>
-							<option value="6">Gradient 6</option>
-							<option value="7">Gradient 7</option>
-							<option value="8">Gradient 8</option>
-							<option value="9">Gradient 9</option>
-						</select>
-					</div>
-				</div>
-				<div class="col-3 text-right my-auto">
-					Welcome John Doe
 				</div>
 				<div class="col-3">
+					<div class="form-group row">
+						<label for="changeGradient" class="col-sm-4 col-form-label">Project</label>
+						<div class="col-sm-8">
+							<select id="changeGradient" class="form-select" aria-label="Gradient">
+								<option value="0" selected>No Gradient</option>
+								<option value="1">Gradient 1</option>
+								<option value="2">Gradient 2</option>
+								<option value="3">Gradient 3</option>
+								<option value="6">Gradient 6</option>
+								<option value="7">Gradient 7</option>
+								<option value="8">Gradient 8</option>
+								<option value="9">Gradient 9</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 text-right align-content-center d-none d-lg-block"
+					style="padding-top: calc(0.375rem + 1px);">
+					Welcome John Doe
+				</div>
+				<div class="col-3 align-content-center">
+					<!--
 					<ul class=" nav col-12 col-lg-auto my-2 justify-content-end my-md-0 text-small">
 						<li class="me-4">
 							<a href="#" id="topAIBTN" class="nav-link">
@@ -313,12 +315,318 @@
 							</a>
 						</li>
 					</ul>
+					-->
+					<button type="button" id="topAIBTN" class="btn btn-alt-secondary" id="page-header-ai"
+						data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<svg class="bi" viewBox="0 0 62.55 45" width="40">
+							<path class="cls-1-logo"
+								d="M44.2,43.29a1.33,1.33,0,0,1-1.31,1.34H6.26A1.33,1.33,0,0,1,5,43.29V5.65a1.3,1.3,0,0,1,1.3-1.33H42.89A1.33,1.33,0,0,1,44.2,5.65v6.07h2.23v-6A3.63,3.63,0,0,0,42.85,2H6.22A3.6,3.6,0,0,0,2.68,5.7V43.34A3.64,3.64,0,0,0,6.26,47H42.89a3.64,3.64,0,0,0,3.58-3.68V38.57H44.2Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M46.94,30.73V22.07h3.59V19.94H46.94V15.88H44.71v4.06H42.18v2.13h2.53v8.66a3.64,3.64,0,0,0,3.58,3.68H51v-2.3H48.29A1.38,1.38,0,0,1,46.94,30.73Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M65.19,27.51c0-.46,0-.8,0-1a8,8,0,0,0-.89-3.64A5.91,5.91,0,0,0,62,20.48a7,7,0,0,0-3.42-.84,6.49,6.49,0,0,0-3.46.92,6.27,6.27,0,0,0-2.36,2.6,8.39,8.39,0,0,0-.86,3.89,8.32,8.32,0,0,0,.86,3.84,6,6,0,0,0,2.44,2.6,7.52,7.52,0,0,0,3.66.92,6,6,0,0,0,6.11-5H62.71a3.76,3.76,0,0,1-1.43,2.17,4,4,0,0,1-2.56.8,4.21,4.21,0,0,1-3.17-1.26,4.8,4.8,0,0,1-1.27-3.38v-.21H65.19Zm-9.36-4.73a4.17,4.17,0,0,1,2.81-1.09,4.42,4.42,0,0,1,3,1A4.16,4.16,0,0,1,63,25.54H54.49A3.89,3.89,0,0,1,55.83,22.78Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M41.6,34.2V24.83A5,5,0,0,0,40.14,21,6,6,0,0,0,36,19.64a6.74,6.74,0,0,0-4.11,1.17A4.65,4.65,0,0,0,30,24.12h2.24a2.64,2.64,0,0,1,1.18-1.76,4,4,0,0,1,2.4-.67,3.7,3.7,0,0,1,2.57.8,2.77,2.77,0,0,1,.93,2.21v1H35.21A6.44,6.44,0,0,0,31,26.84a4,4,0,0,0-1.47,3.34A3.8,3.8,0,0,0,31,33.28a5.83,5.83,0,0,0,3.74,1.13A5.39,5.39,0,0,0,39.44,32v2.22H41.6Zm-2.28-5.86a4,4,0,0,1-1.18,3,4.49,4.49,0,0,1-3.25,1.13,3.42,3.42,0,0,1-2.24-.67,2,2,0,0,1-.82-1.71c0-1.59,1.06-2.39,3.14-2.39h4.35Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo" d="M28.7,14.62H26.46V34.41H28.7Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M21.2,31.81a4.17,4.17,0,0,1-2.4.63,4.26,4.26,0,0,1-2.73-.84A2.74,2.74,0,0,1,15,29.47H12.74a4.34,4.34,0,0,0,1.71,3.64,6.93,6.93,0,0,0,4.43,1.3,6.81,6.81,0,0,0,2.81-.55,4.74,4.74,0,0,0,2-1.54,3.84,3.84,0,0,0,.73-2.3,3.67,3.67,0,0,0-.73-2.39,4.1,4.1,0,0,0-1.92-1.25,19.9,19.9,0,0,0-3.05-.63c-.9-.13-1.55-.21-1.95-.29a2.39,2.39,0,0,1-1.06-.55,1.39,1.39,0,0,1-.41-1.13,1.78,1.78,0,0,1,.9-1.59,4.3,4.3,0,0,1,2.32-.62,3.55,3.55,0,0,1,2.32.75,2.75,2.75,0,0,1,1.05,1.88h2.24a4.57,4.57,0,0,0-1.71-3.39,6.37,6.37,0,0,0-4-1.17,6.3,6.3,0,0,0-2.72.55,4.49,4.49,0,0,0-1.92,1.54A4.07,4.07,0,0,0,13.06,24a3.15,3.15,0,0,0,.74,2.22,4.08,4.08,0,0,0,1.87,1.17,14.76,14.76,0,0,0,3,.59,17.25,17.25,0,0,1,2,.33,2.49,2.49,0,0,1,1.14.63,1.8,1.8,0,0,1,.45,1.29A2.07,2.07,0,0,1,21.2,31.81Z"
+								transform="translate(-2.68 -2.02)" />
+						</svg>
+					</button>
+					<button type="button" class="btn btn-alt-secondary" id="page-header-weather"
+						data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<svg width="40" height="40" viewbox="0 0 64 64">
+							<defs>
+								<filter id="blur" width="200%" height="200%">
+									<feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+									<feOffset dx="0" dy="4" result="offsetblur" />
+									<feComponentTransfer>
+										<feFuncA type="linear" slope="0.05" />
+									</feComponentTransfer>
+									<feMerge>
+										<feMergeNode />
+										<feMergeNode in="SourceGraphic" />
+									</feMerge>
+								</filter>
+								<style type="text/css">
+									<![CDATA[
+									/* CLOUDS */
+									@keyframes am-weather-cloud-2 {
+										0% {
+											-webkit-transform: translate(0px, 0px);
+											-moz-transform: translate(0px, 0px);
+											-ms-transform: translate(0px, 0px);
+											transform: translate(0px, 0px);
+										}
+
+										50% {
+											-webkit-transform: translate(2px, 0px);
+											-moz-transform: translate(2px, 0px);
+											-ms-transform: translate(2px, 0px);
+											transform: translate(2px, 0px);
+										}
+
+										100% {
+											-webkit-transform: translate(0px, 0px);
+											-moz-transform: translate(0px, 0px);
+											-ms-transform: translate(0px, 0px);
+											transform: translate(0px, 0px);
+										}
+									}
+
+									.am-weather-cloud-2 {
+										-webkit-animation-name: am-weather-cloud-2;
+										-moz-animation-name: am-weather-cloud-2;
+										animation-name: am-weather-cloud-2;
+										-webkit-animation-duration: 3s;
+										-moz-animation-duration: 3s;
+										animation-duration: 3s;
+										-webkit-animation-timing-function: linear;
+										-moz-animation-timing-function: linear;
+										animation-timing-function: linear;
+										-webkit-animation-iteration-count: infinite;
+										-moz-animation-iteration-count: infinite;
+										animation-iteration-count: infinite;
+									}
+
+									/* ** SUN */
+									@keyframes am-weather-sun {
+										0% {
+											-webkit-transform: rotate(0deg);
+											-moz-transform: rotate(0deg);
+											-ms-transform: rotate(0deg);
+											transform: rotate(0deg);
+										}
+
+										100% {
+											-webkit-transform: rotate(360deg);
+											-moz-transform: rotate(360deg);
+											-ms-transform: rotate(360deg);
+											transform: rotate(360deg);
+										}
+									}
+
+									.am-weather-sun {
+										-webkit-animation-name: am-weather-sun;
+										-moz-animation-name: am-weather-sun;
+										-ms-animation-name: am-weather-sun;
+										animation-name: am-weather-sun;
+										-webkit-animation-duration: 9s;
+										-moz-animation-duration: 9s;
+										-ms-animation-duration: 9s;
+										animation-duration: 9s;
+										-webkit-animation-timing-function: linear;
+										-moz-animation-timing-function: linear;
+										-ms-animation-timing-function: linear;
+										animation-timing-function: linear;
+										-webkit-animation-iteration-count: infinite;
+										-moz-animation-iteration-count: infinite;
+										-ms-animation-iteration-count: infinite;
+										animation-iteration-count: infinite;
+									}
+
+									@keyframes am-weather-sun-shiny {
+										0% {
+											stroke-dasharray: 3px 10px;
+											stroke-dashoffset: 0px;
+										}
+
+										50% {
+											stroke-dasharray: 0.1px 10px;
+											stroke-dashoffset: -1px;
+										}
+
+										100% {
+											stroke-dasharray: 3px 10px;
+											stroke-dashoffset: 0px;
+										}
+									}
+
+									.am-weather-sun-shiny line {
+										-webkit-animation-name: am-weather-sun-shiny;
+										-moz-animation-name: am-weather-sun-shiny;
+										-ms-animation-name: am-weather-sun-shiny;
+										animation-name: am-weather-sun-shiny;
+										-webkit-animation-duration: 2s;
+										-moz-animation-duration: 2s;
+										-ms-animation-duration: 2s;
+										animation-duration: 2s;
+										-webkit-animation-timing-function: linear;
+										-moz-animation-timing-function: linear;
+										-ms-animation-timing-function: linear;
+										animation-timing-function: linear;
+										-webkit-animation-iteration-count: infinite;
+										-moz-animation-iteration-count: infinite;
+										-ms-animation-iteration-count: infinite;
+										animation-iteration-count: infinite;
+									}
+									]]>
+								</style>
+							</defs>
+							<g filter="url(#blur)" id="cloudy-day-3">
+								<g transform="translate(20,10)">
+									<g transform="translate(0,16)">
+										<g class="am-weather-sun">
+											<g>
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(45)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(90)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(135)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(180)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(225)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(270)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+											<g transform="rotate(315)">
+												<line fill="none" stroke="orange" stroke-linecap="round"
+													stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+													y2="3" />
+											</g>
+										</g>
+										<circle cx="0" cy="0" fill="orange" r="5" stroke="orange" stroke-width="2" />
+									</g>
+									<g class="am-weather-cloud-2">
+										<path
+											d="M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z"
+											fill="#FFFFFF" stroke="white" stroke-linejoin="round" stroke-width="1.2"
+											transform="translate(-20,-11)" />
+									</g>
+								</g>
+							</g>
+						</svg>
+					</button>
+					<button type="button" class="btn btn-alt-secondary" id="page-header-notifications">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+							<path
+								d="M15.137 3.945c-.644-.374-1.042-1.07-1.041-1.82v-.003c.001-1.172-.938-2.122-2.096-2.122s-2.097.95-2.097 2.122v.003c.001.751-.396 1.446-1.041 1.82-4.667 2.712-1.985 11.715-6.862 13.306v1.749h20v-1.749c-4.877-1.591-2.195-10.594-6.863-13.306zm-3.137-2.945c.552 0 1 .449 1 1 0 .552-.448 1-1 1s-1-.448-1-1c0-.551.448-1 1-1zm3 20c0 1.598-1.392 3-2.971 3s-3.029-1.402-3.029-3h6z" />
+						</svg>
+					</button>
+					<div class="dropdown d-inline-block">
+						<button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown"
+							data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img class="img-avatar img-avatar32 img-avatar-thumb" src="https://github.com/mdo.png"
+								alt="" width="32" height="32">
+							<i class="fa fa-fw fa-angle-down ms-1 text-white"></i>
+						</button>
+						<div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0"
+							aria-labelledby="page-header-user-dropdown">
+							<div class="rounded-top fw-semibold text-center p-3 border-bottom bg-body-light">
+								<div class="mb-2">
+									<img class="img-avatar img-avatar48 img-avatar-thumb"
+										src="https://github.com/mdo.png" alt="">
+								</div>
+								<a class="fw-semibold" href="javascript:void(0)">John Doe</a>
+								<div class="fs-sm">john.doe@example.com</div>
+							</div>
+							<div class="p-2">
+								<a class="dropdown-item" href="javascript:void(0)">
+									<i class="fa fa-fw fa-cog text-gray me-1"></i> Portfolios
+								</a>
+								<a class="dropdown-item mb-0" href="javascript:void(0)">
+									<i class="fa fa-fw fa-envelope-open text-gray me-1"></i> Support
+								</a>
+							</div>
+							<div class="p-2">
+								<a class="dropdown-item mb-0" href="#">
+									<i class="fa fa-fw fa-arrow-alt-circle-left text-gray me-1"></i> Logout
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-
-
 			</div>
 			<div class="row">
-				<div class="col">
+				<div class="col-4">
+					<div class="block block-rounded portfolio-card shadow">
+						<div class="block-content text-center" style="box-sizing: border-box;">
+							<h4 class="h6 mb-1 mt-1">Operating Unit-2</h4>
+							<div class="row">
+								<div class="col-6">
+									<h5 class="h2 fw-light push">
+										Inception: 20th Sep 2021
+									</h5>
+								</div>
+								<div class="col-6">
+									<h5 class="h2 fw-light push">
+										Active Projects: 2
+									</h5>
+								</div>
+							</div>
+
+						</div>
+						<div class="block-content p-0 overflow-hidden">
+							<div class="row">
+								<div class="col-4 p-0">
+									<img src="assets/images/slide1.jpg">
+								</div>
+								<div class="col-4 p-0">
+									<img src="assets/images/slide2.jpg">
+								</div>
+								<div class="col-4 p-0">
+									<img src="assets/images/slide3.jpg">
+								</div>
+							</div>
+						</div>
+						<div class="block-content p-0">
+							<div class="row text-center m-0 bg-body-light">
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<i class="far fa-thumbs-up text-muted me-1"></i><br> On Time:
+										<strong>20</strong>
+									</p>
+								</div>
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<img src="assets/images/clock.svg"
+											class="img-avatar img-avatar16 text-muted me-1 border-radius-none"><br>
+										Ahead: <strong>2</strong>
+									</p>
+								</div>
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<img src="assets/images/late.svg"
+											class="img-avatar img-avatar16 text-muted me-1 border-radius-none"><br>
+										Behind: <strong>2</strong>
+									</p>
+								</div>
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<i class="fas fa-address-card text-muted me-1"></i><br> RFI: <strong>2</strong>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col">
 					<div class="form-check">
@@ -342,6 +650,246 @@
 				</div>
 			</div>
 		</div>
+		<!-- Side Overlay-->
+		<aside id="side-overlay">
+			<!-- Side Header -->
+			<div class="bg-image" style="background-color: #518B97;">
+				<div class="bg-primary-op">
+					<div class="content-header">
+						<!-- User Avatar -->
+						<a class="img-link me-1" href="#">
+							<img class="img-avatar img-avatar48" src="https://github.com/mdo.png" alt="">
+						</a>
+						<!-- END User Avatar -->
+
+						<!-- User Info -->
+						<div class="ms-2">
+							<a class="text-white fw-semibold" href="#">John Doe</a>
+							<div class="text-white-75 fs-sm">Marketing</div>
+						</div>
+						<!-- END User Info -->
+
+						<!-- Close Side Overlay -->
+						<!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+						<a class="ms-auto text-white" href="javascript:void(0)" data-toggle="layout"
+							data-action="side_overlay_close">
+							<i class="fa fa-times-circle"></i>
+						</a>
+						<!-- END Close Side Overlay -->
+					</div>
+				</div>
+			</div>
+			<!-- END Side Header -->
+
+			<!-- Side Content -->
+			<div class="content-side">
+				<!-- Side Overlay Tabs -->
+				<div class="block block-transparent pull-x pull-t mb-0">
+					<ul class="nav nav-tabs nav-tabs-block nav-justified" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="so-settings-tab" data-bs-toggle="tab"
+								data-bs-target="#so-settings" role="tab" aria-controls="so-settings"
+								aria-selected="true">
+								<i class="fa fa-fw fa-cog"></i>
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="so-people-tab" data-bs-toggle="tab" data-bs-target="#so-people"
+								role="tab" aria-controls="so-people" aria-selected="false">
+								<i class="far fa-fw fa-user-circle"></i>
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="so-profile-tab" data-bs-toggle="tab"
+								data-bs-target="#so-profile" role="tab" aria-controls="so-profile"
+								aria-selected="false">
+								<i class="far fa-fw fa-edit"></i>
+							</button>
+						</li>
+					</ul>
+					<div class="block-content tab-content overflow-hidden" style="box-sizing: border-box;">
+						<!-- Settings Tab -->
+						<div class="tab-pane pull-x fade fade-up show active" id="so-settings" role="tabpanel"
+							aria-labelledby="so-settings-tab">
+							<div class="block mb-0">
+								<!-- Sidebar -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Sidebar</span>
+								</div>
+								<div class="block-content block-content-full">
+									<div class="row g-sm text-center">
+										<div class="col-6 mb-1">
+											<a id="darkGradientBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Dark</a>
+										</div>
+										<div class="col-6 mb-1">
+											<a id="lightGradientBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Light</a>
+										</div>
+									</div>
+								</div>
+								<!-- END Sidebar -->
+
+								<!-- Header -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Header</span>
+								</div>
+								<div class="block-content block-content-full">
+									<div class="row g-sm text-center mb-2">
+										<div class="col-6 mb-1">
+											<a id="darkHeaderBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Dark</a>
+										</div>
+										<div class="col-6 mb-1">
+											<a id="lightHeaderBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Light</a>
+										</div>
+										<div class="col-6 mb-1">
+											<a id="whiteHeaderBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">White</a>
+										</div>
+									</div>
+								</div>
+								<!-- END Header -->
+							</div>
+						</div>
+						<!-- END Settings Tab -->
+
+						<!-- People -->
+						<div class="tab-pane pull-x fade fade-up" id="so-people" role="tabpanel"
+							aria-labelledby="so-people-tab">
+							<div class="block mb-0">
+								<!-- Online -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Online</span>
+								</div>
+								<div class="block-content">
+									<ul class="nav-items">
+										<li>
+											<a class="d-flex py-2" href="#">
+												<div class="flex-shrink-0 mx-3 overlay-container">
+													<img class="img-avatar img-avatar48" src="assets/images/avatar.jpg"
+														alt="">
+													<span
+														class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
+												</div>
+												<div class="flex-grow-1">
+													<div class="fw-semibold">Marie Duncan</div>
+													<div class="fs-sm text-muted">Photographer</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a class="d-flex py-2" href="#">
+												<div class="flex-shrink-0 mx-3 overlay-container">
+													<img class="img-avatar img-avatar48" src="assets/images/avatar.jpg"
+														alt="">
+													<span
+														class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
+												</div>
+												<div class="flex-grow-1">
+													<div class="fw-semibold">Jose Mills</div>
+													<div class="fw-normal fs-sm text-muted">Web Designer</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a class="d-flex py-2" href="#">
+												<div class="flex-shrink-0 mx-3 overlay-container">
+													<img class="img-avatar img-avatar48" src="assets/images/avatar.jpg"
+														alt="">
+													<span
+														class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
+												</div>
+												<div class="flex-grow-1">
+													<div class="fw-semibold">Amanda Powell</div>
+													<div class="fw-normal fs-sm text-muted">Web Developer</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- Online -->
+							</div>
+						</div>
+						<!-- END People -->
+
+						<!-- Profile -->
+						<div class="tab-pane pull-x fade fade-up" id="so-profile" role="tabpanel"
+							aria-labelledby="so-profile-tab">
+							<form action="#" method="POST" onsubmit="return false;">
+								<div class="block mb-0">
+									<!-- Personal -->
+									<div class="block-content block-content-sm block-content-full bg-body">
+										<span class="text-uppercase fs-sm fw-bold">Personal</span>
+									</div>
+									<div class="block-content block-content-full">
+										<div class="mb-4">
+											<label class="form-label">Username</label>
+											<input type="text" readonly class="form-control"
+												id="so-profile-username-static" value="Admin">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-name">Name</label>
+											<input type="text" class="form-control" id="so-profile-name"
+												name="so-profile-name" value="John Doe">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-email">Email</label>
+											<input type="email" class="form-control" id="so-profile-email"
+												name="so-profile-email" value="john.doe@example.com">
+										</div>
+									</div>
+									<!-- END Personal -->
+
+									<!-- Password Update -->
+									<div class="block-content block-content-sm block-content-full bg-body">
+										<span class="text-uppercase fs-sm fw-bold">Password Update</span>
+									</div>
+									<div class="block-content block-content-full">
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-password">Current Password</label>
+											<input type="password" class="form-control" id="so-profile-password"
+												name="so-profile-password">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-new-password">New Password</label>
+											<input type="password" class="form-control" id="so-profile-new-password"
+												name="so-profile-new-password">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-new-password-confirm">Confirm New
+												Password</label>
+											<input type="password" class="form-control"
+												id="so-profile-new-password-confirm"
+												name="so-profile-new-password-confirm">
+										</div>
+									</div>
+									<!-- END Password Update -->
+
+									<!-- Submit -->
+									<div class="block-content block-content-full border-top">
+										<button type="submit" class="btn w-100 btn-alt-primary">
+											<i class="fa fa-fw fa-save me-1 opacity-50"></i> Save
+										</button>
+									</div>
+									<!-- END Submit -->
+								</div>
+							</form>
+						</div>
+						<!-- END Profile -->
+					</div>
+				</div>
+				<!-- END Side Overlay Tabs -->
+			</div>
+			<!-- END Side Content -->
+		</aside>
+		<!-- END Side Overlay -->
 	</div>
 	<div id="bottomRightAI" class="fixed-action-btn direction-top">
 		<a id="bottomRightAIBTN" class="btn-floating btn-large">
@@ -436,8 +984,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<div id="topAI">
 		<div id="slide2" class="splide">
 			<div class="splide__track">
@@ -510,7 +1056,6 @@
 		</div>
 	</div>
 
-
 	<script src="assets/scripts/splide.min.js"></script>
 	<script>
 		var toggleSidebarBTN = document.getElementById("toggleSidebar");
@@ -529,6 +1074,66 @@
 		var decisionCenterBTN = document.getElementById("decision_center_button");
 		var decisionCenter = document.getElementById("decision_center");
 
+		var sideOverlay = document.getElementById("page-header-notifications");
+		var page_container = document.getElementById("page_container");
+
+		var lightGradientBTN = document.getElementById("lightGradientBTN");
+		var darkGradientBTN = document.getElementById("darkGradientBTN");
+
+		var darkHeaderBTN = document.getElementById("darkHeaderBTN");
+		var lightHeaderBTN = document.getElementById("lightHeaderBTN");
+		var whiteHeaderBTN = document.getElementById("whiteHeaderBTN");
+
+		const layoutButtons = document.querySelectorAll('[data-toggle="layout"]');
+
+		function closeSideOverlay() {
+			page_container.classList.remove('side-overlay-o');
+		}
+
+		layoutButtons.forEach(layoutButton => {
+			layoutButton.addEventListener("click", function (event) {
+				var action = this.getAttribute("data-action");
+				if (action == "side_overlay_close") {
+					closeSideOverlay();
+				}
+			}, false);
+		});
+
+		darkHeaderBTN.addEventListener('click', function (event) {
+			header.classList.remove("lightHeader");
+			header.classList.remove("whiteHeader");
+		});
+		lightHeaderBTN.addEventListener('click', function (event) {
+			header.classList.add("lightHeader");
+			header.classList.remove("whiteHeader");
+		});
+		whiteHeaderBTN.addEventListener('click', function (event) {
+			header.classList.add("whiteHeader");
+			header.classList.remove("lightHeader");
+		});
+
+		lightGradientBTN.addEventListener('click', function (event) {
+			sidebar.classList.add("lightGradient");
+		});
+		darkGradientBTN.addEventListener('click', function (event) {
+			sidebar.classList.remove("lightGradient");
+		});
+
+
+		sideOverlay.addEventListener('click', function (event) {
+			if (page_container.classList.contains('side-overlay-o')) {
+				//page_container.classList.remove('side-overlay-o');
+				closeSideOverlay()
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						page_container.classList.remove('side-overlay-o');
+					}
+				});
+
+				page_container.classList.add('side-overlay-o');
+			}
+		});
 
 		function toggleSidebar() {
 			toggleSidebarBTN.classList.toggle("click");
@@ -565,14 +1170,42 @@
 		}
 		toggleBottomMenuBTN.addEventListener("click", toggleBottomMenu, false);
 
+		const tabButtons = document.querySelectorAll('[data-bs-toggle="tab"]');
+		const tabs = [...document.getElementsByClassName('tab-pane')];
+
+		tabButtons.forEach(tabButton => {
+			tabButton.addEventListener("click", function (event) {
+				var tabID = this.getAttribute("data-bs-target");
+				tabID = tabID.replace("#", "");
+				tabButtons.forEach(tabButtonn => {
+					tabButtonn.classList.remove('active');
+				});
+				tabs.forEach(tab => {
+					tab.classList.remove('active');
+					tab.classList.remove('show');
+				});
+				document.getElementById(tabID).classList.add('active', 'show');
+				this.classList.add('active');
+			}, false);
+		});
+
 		const menuDropDowns = document.querySelectorAll('[data-bs-toggle="dropdown"]');
 		const dropdownMenus = [...document.getElementsByClassName('dropdown-menu')];
 
 		menuDropDowns.forEach(menuDropDown => {
 			menuDropDown.addEventListener("click", function (event) {
-				var dropdownID = event.target.id;
+				if (menuDropDown !== event.target) {
+					var dropdownID = event.target.parentElement.id;
+				} else {
+					var dropdownID = event.target.id;
+				}
 				var dropdown = document.querySelector('[aria-labelledby="' + dropdownID + '"]');
-				dropdown.classList.toggle("d-block");
+				if (dropdown.style.display === "block") {
+					dropdown.style.display = "none";
+				} else {
+					dropdown.style.display = "block";
+				}
+				/*dropdown.classList.toggle("d-block");*/
 			}, false);
 		});
 
