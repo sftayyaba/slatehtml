@@ -4,9 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="generator" content="GitLab Pages">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<title>Slate Project</title>
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/grid.css">
+	<link rel="stylesheet" href="assets/css/modal.css">
 	<link rel="stylesheet" href="assets/css/splide.min.css">
 	<link rel="stylesheet" href="assets/css/fontawesome/all.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -545,14 +547,14 @@
 									<img class="img-avatar img-avatar48 img-avatar-thumb"
 										src="https://github.com/mdo.png" alt="">
 								</div>
-								<a class="fw-semibold" href="javascript:void(0)">John Doe</a>
-								<div class="fs-sm">john.doe@example.com</div>
+								<a class="fw-semibold text-dark" href="javascript:void(0)">John Doe</a>
+								<div class="fs-sm text-dark">john.doe@example.com</div>
 							</div>
 							<div class="p-2">
-								<a class="dropdown-item" href="javascript:void(0)">
-									<i class="fa fa-fw fa-cog text-gray me-1"></i> Portfolios
+								<a class="dropdown-item" href="javascript:void(0)" id="page-header-profile">
+									<i class="fa fa-fw fa-cog text-gray me-1"></i> Profile
 								</a>
-								<a class="dropdown-item mb-0" href="javascript:void(0)">
+								<a class="dropdown-item mb-0" href="javascript:void(0)" id="page-header-support">
 									<i class="fa fa-fw fa-envelope-open text-gray me-1"></i> Support
 								</a>
 							</div>
@@ -650,6 +652,261 @@
 				</div>
 			</div>
 		</div>
+		<!-- Password Panel-->
+		<div id="passwordPanel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title mt-1">Change Password</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+							onclick="closePassword()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-3 text-center">
+								<p class="my-1 fs-sm">Password</p>
+							</div>
+							<div class="col-9">
+								<form>
+									<div class="form-group">
+										<label for="current_password" class="fs-xs text-muted">Current Password</label>
+										<div class="input-group">
+											<input type="password" class="form-control" id="current_password">
+											<span class="input-group-text"><i class="fas fa-eye"></i></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="new_password" class="fs-xs text-muted">New Password</label>
+										<div class="input-group">
+											<input type="password" class="form-control" id="new_password">
+											<span class="input-group-text"><i class="fas fa-eye"></i></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="confirm_password" class="fs-xs text-muted">New Password</label>
+										<div class="input-group">
+											<input type="password" class="form-control" id="confirm_password">
+											<span class="input-group-text"><i class="fas fa-eye"></i></span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary fs-sm" data-dismiss="modal"
+							onclick="closePassword()">Close</button>
+						<button type="button" class="btn btn-primary bg-dark-75 text-white fs-sm"
+							onclick="closePassword()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Password Panel-->
+		<!-- Profile Panel-->
+		<div id="profilePanel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title mt-1">Profile Information</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+							onclick="closeProfile()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-3 text-center">
+								<div class="mb-0">
+									<img class="img-avatar img-avatar48 img-avatar-thumb"
+										src="https://github.com/mdo.png" alt="">
+								</div>
+								<p class="my-0"><a class="fw-semibold text-dark fs-xs" href="javascript:void(0)">Upload
+										Picture</a>
+								</p>
+								<p class="my-0"><a class="fw-semibold text-dark fs-xs" href="javascript:void(0)"
+										id="btnChangepassword">Change
+										Password</a>
+								</p>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<div class="col-4">
+										<p class="fs-xs mb-1 text-muted">First Name</p>
+										<p class="fs-sm mt-0">Senthill</p>
+									</div>
+									<div class="col-4">
+										<p class="fs-xs mb-1 text-muted">Last Name</p>
+										<p class="fs-sm mt-0">Kumar</p>
+									</div>
+									<div class="col-4">
+										<p class="fs-xs mb-1 text-muted">Job Title</p>
+										<p class="fs-sm mt-0">CTO</p>
+									</div>
+								</div>
+								<form>
+									<div class="form-group">
+										<label for="phone_number" class="fs-xs text-muted">Phone Number</label>
+										<input type="text" class="form-control" id="phone_number">
+									</div>
+									<div>
+										<p class="fs-xs text-muted mb-1">Primary Email</p>
+										<p class="text-muted my-1 fs-sm">senthil.kumar@slate.ai</p>
+										<p class="fs-xs fw-semibold mt-1"><a class="text-dark">Add secondary email</a>
+										</p>
+									</div>
+									<div class="form-group">
+										<label for="address" class="fs-xs text-muted">Address</label>
+										<input type="text" class="form-control" id="address">
+									</div>
+									<div class="form-group">
+										<label for="postcode" class="fs-xs text-muted">Postcode</label>
+										<input type="text" class="form-control" id="postcode">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary fs-sm" data-dismiss="modal"
+							onclick="closeProfile()">Close</button>
+						<button type="button" class="btn btn-primary bg-dark-75 text-white fs-sm"
+							onclick="closeProfile()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Profile Panel-->
+		<!-- Notifications Panel-->
+		<div id="notificationsPanel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title mt-1">Notifications</h4>
+						<span class="fs-sm text-muted">Mark all as read</span>
+					</div>
+					<div class="modal-body">
+						<p class="mt-1 mb-1 text-muted">New</p>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONS Homes Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Submittals</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										M42 Highways
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">RFI</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONX Homes - Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Added to Project</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										M42 Highways
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Removed from project</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONX Homes - Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">New task</button>
+								</div>
+							</div>
+						</div>
+						<p class="mt-1 mb-1 text-muted">Read</p>
+						<div class="block block-bordered mb-lg-2 block-rounded">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONS Homes Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Submittals</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										M42 Highways
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Submittals</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Notifications Panel-->
 		<!-- Side Overlay-->
 		<aside id="side-overlay">
 			<!-- Side Header -->
@@ -1074,7 +1331,7 @@
 		var decisionCenterBTN = document.getElementById("decision_center_button");
 		var decisionCenter = document.getElementById("decision_center");
 
-		var sideOverlay = document.getElementById("page-header-notifications");
+		var sideOverlay = document.getElementById("page-header-support");
 		var page_container = document.getElementById("page_container");
 
 		var lightGradientBTN = document.getElementById("lightGradientBTN");
@@ -1084,10 +1341,27 @@
 		var lightHeaderBTN = document.getElementById("lightHeaderBTN");
 		var whiteHeaderBTN = document.getElementById("whiteHeaderBTN");
 
+		var btnNotifications = document.getElementById("page-header-notifications");
+		var btnProfile = document.getElementById("page-header-profile");
+		var btnChangepassword = document.getElementById("btnChangepassword");
+
 		const layoutButtons = document.querySelectorAll('[data-toggle="layout"]');
 
 		function closeSideOverlay() {
 			page_container.classList.remove('side-overlay-o');
+		}
+
+		function closeNotifications() {
+			page_container.classList.remove('notifications_panel_open');
+		}
+
+		function closeProfile() {
+			page_container.classList.remove('profile_panel_open');
+		}
+
+		function closePassword() {
+			page_container.classList.add('profile_panel_open');
+			page_container.classList.remove('password_panel_open');
 		}
 
 		layoutButtons.forEach(layoutButton => {
@@ -1119,15 +1393,55 @@
 			sidebar.classList.remove("lightGradient");
 		});
 
+		btnChangepassword.addEventListener('click', function (event) {
+			if (page_container.classList.contains('password_panel_open')) {
+				closePassword();
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closePassword();
+					}
+				});
+				closeProfile();
+				page_container.classList.add('password_panel_open');
+			}
+		});
+
+		btnProfile.addEventListener('click', function (event) {
+			if (page_container.classList.contains('profile_panel_open')) {
+				closeProfile()
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closeProfile();
+					}
+				});
+
+				page_container.classList.add('profile_panel_open');
+			}
+		});
+
+		btnNotifications.addEventListener('click', function (event) {
+			if (page_container.classList.contains('notifications_panel_open')) {
+				closeNotifications()
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closeNotifications();
+					}
+				});
+
+				page_container.classList.add('notifications_panel_open');
+			}
+		});
 
 		sideOverlay.addEventListener('click', function (event) {
 			if (page_container.classList.contains('side-overlay-o')) {
-				//page_container.classList.remove('side-overlay-o');
 				closeSideOverlay()
 			} else {
 				document.addEventListener('keydown', e => {
 					if (e.key === 'Esc' || e.key === 'Escape') {
-						page_container.classList.remove('side-overlay-o');
+						closeSideOverlay();
 					}
 				});
 
