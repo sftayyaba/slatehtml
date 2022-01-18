@@ -58,7 +58,7 @@
 			<a href="schedules.php" class="nav-link" title="">
 				<div class="block-level">
 					<svg class="bi" width="24" height="24" role="img" aria-label="Schedule" viewBox="0 0 24 24">
-						<path class="menu_icons" d="M7 19h-6v-11h6v11zm8-18h-6v18h6v-18zm8 11h-6v7h6v-7zm1" />
+						<path class="menu_icons" d="M7,19H1V8h6V19z M15,1H9v18h6V1z M23,12h-6v7h6V12z" />
 					</svg>
 				</div>
 				<span class="menuLabel">Schedule</span>
