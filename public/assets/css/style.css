@@ -77,7 +77,7 @@ svg {
 }
 #sidebar {
   width: 102px;
-  height: 100vh;
+  min-height: 100vh;
   transition: all 0.5s linear 0s;
 }
 .divAiHeader {
@@ -753,25 +753,16 @@ button.closeAI {
 #sidebar.sidebar4 .block-level {
   margin: 0 20px;
 }
-#sidebar.sidebar4 .nav-link {
-  /*padding-left: 20px;*/
-}
 #sidebar.sidebar4.show {
   width: 200px;
 }
 #sidebar.sidebar4 .menuLabel {
-  /*display: block;*/
-  /*opacity: 1;*/
   color: #ffffff;
   font-size: 12px;
   min-width: 30px;
 }
 #sidebar.sidebar4.show .block-level {
   margin: 0 10px;
-}
-#sidebar.sidebar4.show .menuLabel {
-  /*display:inline-block;*/
-  /*padding-left:5px;*/
 }
 .sidebar4 .nav-link.menuActive .menuLabel {
   font-weight: bold;
@@ -2214,9 +2205,6 @@ a.text-dark:hover {
   /*margin: 40px;*/
   /*font-size: 12px;*/
 }
-.portfolio-card h4 {
-  /*font-size: 28px;*/
-}
 .portfolio-card h5 {
   /*font-size: 20px;*/
   margin-block-start: 0.5em !important;
@@ -2340,27 +2328,26 @@ a.text-dark:hover {
   font-weight: bold;
 }
 .table_buttons .btn:last-child {
-  margin-left:20px;
+  margin-left: 20px;
 }
 .btn-primary {
   background-color: #1d3a40;
   color: #fff;
 }
 .btn-warning {
-  background-color: #E4B9A2;
-  color: #C36464;
+  background-color: #e4b9a2;
+  color: #c36464;
 }
 .btn-outline-primary {
   border-color: #1d3a40;
 }
 .btn-outline-info {
-  border: 1px dashed #B7C0C6;
-  background-color:#F8F8F8;
+  border: 1px dashed #b7c0c6;
+  background-color: #f8f8f8;
 }
-.block-wrap{
-  margin:20px;
+.block-wrap {
+  margin: 20px;
 }
-
 
 .offcanvas {
   position: fixed;
@@ -2373,7 +2360,7 @@ a.text-dark:hover {
   background-color: #fff;
   background-clip: padding-box;
   outline: 0;
-  transition: transform .3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .offcanvas {
@@ -2406,7 +2393,7 @@ a.text-dark:hover {
   margin-bottom: 0;
   line-height: 1.5;
 }
-.offcanvasTitle{
+.offcanvasTitle {
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
@@ -2416,7 +2403,7 @@ a.text-dark:hover {
   padding: 1rem 1rem;
   overflow-y: auto;
 }
-.offcanvas-body p{
+.offcanvas-body p {
   margin-block-start: 0;
   margin-block-end: 0;
   margin-inline-start: 0;
@@ -2433,7 +2420,7 @@ a.text-dark:hover {
   top: 0;
   right: 0;
   width: 33%;
-  border-left: 1px solid rgba(0,0,0,.2);
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
   transform: translateX(100%);
 }
 
@@ -2458,47 +2445,48 @@ a.text-dark:hover {
 .offcanvas.show {
   transform: none;
 }
-.offcanvasSteps{
+.offcanvasSteps {
   list-style: none;
 }
 .offcanvasSteps li {
   display: inline-block;
 }
-.offcanvasStepsPage.is-active{
+.offcanvasStepsPage.is-active {
   background-color: #1d3a40;
 }
 .offcanvasStepsPage {
-  background: #C4C4C4;
+  background: #c4c4c4;
   border: 0;
   border-radius: 50%;
   display: inline-block;
   height: 8px;
   margin: 3px;
   padding: 0;
-  transition: transform .2s linear;
+  transition: transform 0.2s linear;
   width: 8px;
 }
-#addProject .form-control, #editProjects .form-control, #editProjects .form-select {
+#addProject .form-control,
+#editProjects .form-control,
+#editProjects .form-select {
   line-height: 1;
   width: 70%;
 }
-#addProject .input-group, #editProjects .input-group {
+#addProject .input-group,
+#editProjects .input-group {
   line-height: 1;
   width: 76%;
 }
-.text-sm{
-  font-size:12px;
+.text-sm {
+  font-size: 12px;
 }
-
 
 #addProject .input-group .form-control {
-   border-right: none; 
+  border-right: none;
 }
 
-.btn-bordered{
+.btn-bordered {
   border: 1px solid #1d3a40;
 }
-
 
 .addProjectSteps {
   min-height: 200px;
@@ -2507,44 +2495,45 @@ a.text-dark:hover {
   -webkit-overflow-scrolling: touch;
 }
 .addProjectStep {
-  width: 100%;  /*  added, full width - margin  */
-  flex-shrink: 0;             /*  added, so it won't shrink  */
-  /*margin: 20px 50px;*/  /*  added, instead of padding on parent  */
-  display: flex;  /*  added  */
-  /*align-items: center;*/  /*  added  */
-  /*justify-content: center;*/  /*  added  */
+  width: 100%; /*  added, full width - margin  */
+  flex-shrink: 0; /*  added, so it won't shrink  */
+  /*margin: 20px 50px;*/ /*  added, instead of padding on parent  */
+  display: flex; /*  added  */
+  /*align-items: center;*/ /*  added  */
+  /*justify-content: center;*/ /*  added  */
   transition: transform 1s;
   transform: translateX(0);
 }
 
 .addProjectSteps.step2 .addProjectStep {
-  transform: translateX( calc(-100%));
+  transform: translateX(calc(-100%));
 }
 
 #gantt_task_panel {
-  height:23vh!important;
+  height: 23vh !important;
 }
 
-#gantt_task_panel .form-control{
+#gantt_task_panel .form-control {
   /*width:80%;*/
   padding: 0.175rem 0.75rem;
 }
-#gantt_task_panel .form-label{
-  font-size:12px;
+#gantt_task_panel .form-label {
+  font-size: 12px;
 }
 
-#gantt_task_panel .col-form-label, #gantt_task_panel .form-label {
+#gantt_task_panel .col-form-label,
+#gantt_task_panel .form-label {
   font-size: 12px;
   font-weight: bold;
-  color:#68736F;
+  color: #68736f;
 }
 
 #gantt_task_panel p {
   font-size: 12px;
-  color:#899399;
+  color: #899399;
 }
 #gantt_task_panel .form-select {
-  color:#899399;
+  color: #899399;
   font-size: 12px;
   padding: 0.175rem 2.25rem 0.175rem 0.75rem;
 }
@@ -2552,20 +2541,19 @@ a.text-dark:hover {
   font-size: 14px;
 }
 
-#gantt_task_panel input[type="text"]
-{
-    font-size:12px;
-    color:#899399;
+#gantt_task_panel input[type="text"] {
+  font-size: 12px;
+  color: #899399;
 }
 #gantt_task_panel textarea.form-control {
   color: #899399;
   font-size: 12px;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
   box-sizing: border-box;
 }
-
 
 .border {
   border: 1px solid #dee2e6 !important;
@@ -2663,8 +2651,12 @@ input[type="text"], textarea {
   border-width: 5px !important;
 }
 
-
 .col-15 {
   flex: 0 0 auto;
-  width: 12%!important;
+  width: 12% !important;
+}
+
+.btn-clean {
+  background: transparent;
+  border: none;
 }

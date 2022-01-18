@@ -58,97 +58,78 @@ require_once('template/head_start.php');
 
 @media screen and (max-width: 600px) {
   .chart-wrapper .chart-bars li {
-    padding: 10px;
+	padding: 10px;
   }
 }
 
-
-.zoom-range {
-	width: 200px
+/* ---------- TimeFrame Slider ------- */
+#slider-timeframe {
+	height: 18px;
 }
-
-.slider {
-	display: inline-block;
-	position: relative;
-	height: 36px;
-	width: 100%;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select:none;
-	-o-user-select:none;
-	user-select:none;
+#slider-timeframe .noUi-connect {
+	background: #c0392b;
 }
-.slider .slider-touch-left, .slider-touch-right {
-	box-sizing: border-box;
-	display: block;
-	position: absolute;
-	height: 28px;
-	width: 28px;
-	padding: 6px;
-	z-index: 2;
-}	
-.slider .slider-touch-left .slider-handle, .slider-touch-right .slider-handle {
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: #F0F0F0;
-	border: 1px solid #A4A4A4;
-	border-radius: 50%;
+#slider-timeframe .noUi-handle {
+	height: 21px;
+	width: 21px;
+	top: -1px;
+	right: -9px;
+	border-radius: 10px;
 }
-
-.slider .slider-touch-left .slider-handle-tooltip, .slider .slider-touch-right .slider-handle-tooltip {
-	color: #68736F;
-    width: auto;
-    min-width: 60px;
-    background: #fff;
-    position: absolute;
-    transform: translate(-50%,-60px);
-    left: 13px;
-    text-align: center;
-    font-size: 12px;
-    padding: 6px 10px 0;
+#slider-timeframe .noUi-connects {
+	background: #D5D5D5
 }
-
-
-.slider .slider-line {
-	box-sizing: border-box;
-	position: absolute;
-	width: calc(100% - 36px);
-	left: 18px;
-	top: 8px;
-	height: 10px;
-	border-radius: 4px;
-	background: #D5D5D5;
-	z-index: 0;
-	overflow: hidden;
-}
-.slider .slider-line span {
-	display: block;
-	height: 100%;
-	width: 0%;
+#slider-timeframe .noUi-connect {
 	background: #7BB5BD;
 }
-
-.zoom-range .slider .slider-line  {
-	height: 6px;
+#slider-timeframe .noUi-handle {
+	background: #105C6B;
+	box-shadow: none;
 }
-
-.zoom-range .slider .slider-touch-left, .zoom-range .slider .slider-touch-right {
-	height: 24px;
-    width: 24px;
+#slider-timeframe .noUi-handle:before, #slider-timeframe .noUi-handle:after {
+	content: none;
 }
-.zoom-range .slider .slider-line span {
-	background: #D5D5D5;
+#slider-timeframe.noUi-target {
+	border: none;
+}
+#slider-timeframe .noUi-tooltip {
+	border: 0;
+	font-size: 12px;
+}
+/* ---------- Zoom Slider ------- */
+#slider-zoom {
+	height: 8px;
+}
+#slider-zoom .noUi-connect {
+	background: #C4C4C4;
+}
+#slider-zoom .noUi-connects {
+	background: #C4C4C4
+}
+#slider-zoom .noUi-handle {
+	border: 2px solid #C4C4C4;
+	height: 16px;
+	width: 16px;
+	top: -3px;
+	right: -8px; /* half the width */
+	border-radius: 8px;
+}
+#slider-zoom .noUi-handle:before, #slider-zoom .noUi-handle:after {
+	content: none;
+}
+#slider-zoom.noUi-target {
+	border: none;
 }
 </style>
+<link href="assets/css/nouislider.css" rel="stylesheet">
 <?php
 require_once('template/page_start.php');
 require_once('template/sidebar.php');
 ?>
 		<div id="content_box" class="container-fluid">
 			<?php
-            require_once('template/page_header.php');
-            ?>
+			require_once('template/page_header.php');
+			?>
 			<div class="block-wrap">
 				<h2>Schedules</h2>
 				<div class="chart-wrapper">
@@ -173,55 +154,48 @@ require_once('template/sidebar.php');
 						<li class="gantt_task" data-duration="fri-sat" data-color="#4464a1">Task 9</li>
 					</ul>
 				</div>
-				<div class="">
-					<div id="range-slider" se-min="0" se-step="1" se-min-value="0" se-max-value="100" se-max="100" class="slider">
-						<span style="position: absolute;top: 4px;left:-8px;">
-							<svg width="10" height="20" viewBox="0 0 10 20" fill="none" class="d-flex align-items-center" xmlns="http://www.w3.org/2000/svg">
+				<div style="margin-top: 20px">
+					<div style="display:inline-block; width:22px;margin-right:5px">
+						<button id="timeframeDown" class="btn-clean d-flex align-items-center" style="visibility:hidden;cursor:pointer;padding-right: 0;">
+							<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M10 -1.76033e-05L10 3.57141L3.57143 9.99998L10 16.4286L10 20L5.71428 15.7143L1.42857 11.4286L-2.78223e-07 9.99998L5.71428 4.2857L10 -1.76033e-05Z" fill="#C4C4C4"/>
 							</svg>
-						</span>
-						<div class="slider-touch-left">
-							<span class="slider-handle"></span>
-							<span class="slider-handle-tooltip">Jan 2021</span>
-
-						</div>
-						<div class="slider-touch-right">
-							<span class="slider-handle"></span>
-							<span class="slider-handle-tooltip">Mar 2022</span>
-						</div>
-						<div class="slider-line">
-							<span></span>
-						</div>
-						<span style="position: absolute;top: 4px;right: -8px;">
-							<svg width="10" height="20" viewBox="0 0 10 20" fill="none" class="d-flex align-items-center" xmlns="http://www.w3.org/2000/svg">
+						</button>
+					</div>
+					<div style="display:inline-block;width:calc(100% - 70px);">
+						<div id="slider-timeframe" class="slider-styled"></div>
+					</div>
+					<div style="display:inline-block; width:22px;margin-left:5px">
+						<button id="timeframeUp" class="btn-clean d-flex align-items-center" style="visibility:hidden;cursor:pointer;padding-left: 0;">
+							<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M1.03312e-06 20L1.18923e-06 16.4286L6.42857 10L1.75124e-06 3.57145L1.90735e-06 1.72059e-05L4.28572 4.28573L8.57143 8.57145L10 10L4.28571 15.7143L1.03312e-06 20Z" fill="#C4C4C4"/>
 							</svg>
-						</span>
+						</button>
 					</div>
 				</div>
-				<div class="zoom-range d-flex flex-row">
-					<div id="zoom-slider" se-min="-100" se-step="1" se-min-value="0" se-max-value="100" se-max="100" class="slider d-flex" style="flex: 2">
-						<span style="position: absolute;top: 3px;left: -10px;">
-							<svg width="15" height="20" xmlns="http://www.w3.org/2000/svg" class="d-flex align-items-center" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
-							</svg>
-						</span>
-						<div class="slider-touch-left">
-							<span class="slider-handle"></span>
+				<div style="margin-top:10px">
+					<div style="width: 250px;display:inline-block;">
+						<div style="display:inline-block;width:22px;justify-content: flex-end;margin-right:5px">
+							<button id="zoomIn" class="btn-clean d-flex align-items-center" style="cursor:pointer">
+								<svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22" stroke="#68736F">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
+								</svg>
+							</button>
 						</div>
-						<div class="slider-touch-right" style="visibility:hidden">
-							<span class="slider-handle"></span>
+						<div style="display:inline-block;width:calc(100% - 70px);vertical-align: super;">
+							<div id="slider-zoom" class="slider-styled"></div>
 						</div>
-						<div class="slider-line">
-							<span></span>
+						<div style="display:inline-block;width:22px;margin-left:5px">
+							<button id="zoomOut" class="btn-clean d-flex align-items-center;" style="cursor:pointer;padding-left: 0;">
+								<svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22" stroke="#68736F">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+								</svg>
+							</button>
 						</div>
-						<span style="position: absolute;top: 3px;right: -10px;">
-							<svg width="15" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" class="d-flex align-items-center" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-							</svg>
-						</span>
 					</div>
-					<div class="d-flex zoom-slider-timeframe" style="flex: 1; margin-left: 20px;font-size: 14px;">2 Month</div>
+					<div style="display:inline-block;margin-left:20px;color:#68736F;">
+						<p id="zoomSliderIndicator" style="margin-block-start:0;margin-block-end:0">1 Year, 8 Months</p>
+					</div>
 				</div>
 			</div>
 			<?php
@@ -229,11 +203,11 @@ require_once('template/sidebar.php');
 			?>
 		</div>
 		<?php
-        require_once('template/password_panel.php');
-        require_once('template/profile_panel.php');
-        require_once('template/notifications_panel.php');
+		require_once('template/password_panel.php');
+		require_once('template/profile_panel.php');
+		require_once('template/notifications_panel.php');
 		
-        ?>
+		?>
 		<!-- Side Overlay-->
 		<aside id="side-overlay">
 			<!-- Side Header -->
@@ -888,7 +862,7 @@ require_once('template/sidebar.php');
 			});
 			slide1.mount();
 			slide1.on('mounted', function () {
-				console.log(this);
+				//console.log(this);
 			});
 			splideDiv = document.getElementById('slide1');
 			splideDiv.classList.remove('is-initialized');
@@ -899,7 +873,7 @@ require_once('template/sidebar.php');
 			});
 			slide2.mount();
 			slide2.on('mounted', function () {
-				console.log(this);
+				//console.log(this);
 			});
 			splide2Div = document.getElementById('slide2');
 			splide2Div.classList.remove('is-initialized');
@@ -934,7 +908,7 @@ require_once('template/sidebar.php');
 					width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left;
 				}
 
-    			// apply css
+				// apply css
 				el.style.left = `${left}px`;
 				el.style.width = `${width}px`;
 				if (e.type == "load") {
@@ -990,7 +964,291 @@ require_once('template/sidebar.php');
 		
 	</script>
 	<script src="assets/scripts/scripts.js"></script>
-	<script src="assets/scripts/slider.js"></script>
+	<script src="assets/scripts/nouislider.js"></script>
+	<script src="assets/scripts/wNumb.js"></script>
+	<script>
+
+		var minDate = originalMinDate = timestamp('January 2010');
+		var maxDate = originalMaxDate = timestamp('December 2016');
+
+		var minDay = '';
+		var maxDay = '';
+
+		function getDaysArray(start, end, type) {
+			if (type == 'month') {
+				for (var arr=[], dt=new Date(start); dt<=end; dt.setMonth(dt.getMonth()+1)) {
+					arr.push(new Date(dt).getTime());
+				}
+				return arr;
+			} else {
+				for (var arr=[], dt=new Date(start); dt<=end; dt.setDate(dt.getDate()+1)) {
+					arr.push(new Date(dt).getTime());
+				}
+				return arr;
+			}
+			
+		};
+
+		var datesArray = getDaysArray(minDate, maxDate, 'month');
+		var totalMonths = originalTotalMonths = datesArray.length;
+		var firstMonth = 0;
+		var lastMonth = originalLastMonth = totalMonths-1;
+		var zoomPosition = newZoomPosition = lastMonth;
+
+		/*if (lastMonth % 2) {
+			lastMonth = originalLastMonth =lastMonth + 1;
+		}*/
+		//console.log(lastMonth);
+
+		function timestamp(str) {
+			return new Date(str).getTime();
+		}
+		function formatDate ( date ) {
+			return date.toLocaleString('en-us', { month: 'short' }) + " " +	date.getFullYear();
+		}
+		function toFormat ( v ) {
+			console.log(newZoomPosition);
+			if (newZoomPosition > 2) {
+				return formatDate(new Date(datesArray[Math.floor(v)]));
+			} else {
+				var dd = new Date(new Date(daysArray[Math.floor(v)]));
+				var aa = dd.toLocaleString('en-us', { day: 'numeric', month: 'short', year: 'numeric' });
+				//console.log(aa);
+				return aa;
+			}
+			
+		}
+
+		var sliderTimeFrame = document.getElementById('slider-timeframe');
+		
+		noUiSlider.create(sliderTimeFrame, {
+			start: [firstMonth, lastMonth],
+			connect: true,
+			step: 1,
+			tooltips: [true, true],
+			range: {
+				min: firstMonth,
+	   			max: lastMonth
+			},
+			format: { 
+				to: toFormat, 
+				from: Number 
+			}
+		});
+
+		sliderTimeFrame.noUiSlider.on('update', function (values, handle) {
+			//console.log('aa');
+		});
+
+		function showArrows() {
+			document.getElementById('timeframeDown').style.visibility = 'visible';
+			document.getElementById('timeframeUp').style.visibility = 'visible';
+		}
+		function hideArrows() {
+			document.getElementById('timeframeDown').style.visibility = 'hidden';
+			document.getElementById('timeframeUp').style.visibility = 'hidden';
+		}
+
+		var sliderZoom = document.getElementById('slider-zoom');
+		
+
+		noUiSlider.create(sliderZoom, {
+			start: 127,
+			connect: [true, false],
+			direction: 'rtl',
+			step: 2,
+			range: {
+				'min': 2,
+				'max': lastMonth > 2 ?lastMonth:2
+			}
+		});
+
+		sliderZoom.noUiSlider.on('update', function (values, handle) {
+			newZoomPosition = Number(values);
+			//console.log(zoomPosition, newZoomPosition);
+			var years = Math.floor(newZoomPosition/12);
+			var months = newZoomPosition % 12;
+			var result = '';
+			
+			if (years > 0) {
+				result = result + years + ' Year' + (years>1?'s ':' ');
+			}
+			if (months > 0) {
+				result = result + Math.ceil(months) + ' Month' + (months>1?'s ':' ')
+			}
+			document.getElementById('zoomSliderIndicator').innerHTML = result;
+
+			if (newZoomPosition >= originalLastMonth) {
+				hideArrows();
+			}
+			if (newZoomPosition < originalLastMonth) {
+				showArrows();
+			}
+
+			if (newZoomPosition == 2) {
+				zoomPosition = newZoomPosition;
+				daysArray = getDaysArray(datesArray[firstMonth], datesArray[lastMonth], 'days');
+				daysArray.forEach( function(valor, indice, array) {
+					var dd = new Date(valor);
+					var aa = dd.toLocaleString('en-us', { day: 'numeric', month: 'short', year: 'numeric' });
+				});
+				var totalDays = daysArray.length;
+				var firstDay = 0;
+				var lastDay = totalDays-1;
+
+				sliderTimeFrame.noUiSlider.updateOptions(
+					{
+						start: [0, lastDay],
+						step: 1,
+						margin: 7,
+						range: {
+							min: firstDay,
+							max: lastDay
+						},
+					},
+					true // Boolean 'fireSetEvent'
+				);
+				sliderTimeFrame.noUiSlider.set([firstDay, lastDay]);
+			} else {
+				if (zoomPosition == 2 && newZoomPosition > 2) {
+					sliderTimeFrame.noUiSlider.updateOptions(
+						{
+							start: [firstMonth, lastMonth],
+							step: 2,
+							range: {
+								min: firstMonth,
+								max: lastMonth
+							},
+						},
+						true // Boolean 'fireSetEvent'
+					);
+					sliderTimeFrame.noUiSlider.set([firstMonth, lastMonth]);
+				}
+				changed = false;
+				
+				if (zoomPosition < newZoomPosition) {//zoom out
+				//	console.warn('Zoom out', zoomPosition, newZoomPosition);
+					var difference = newZoomPosition - zoomPosition;
+					if (difference < 2) {
+						difference = 2;
+					}
+					if (firstMonth > 0) {
+						firstMonth = firstMonth - (difference/2);
+					}
+					
+					lastMonth = lastMonth + (difference/2);
+					changed = true;
+				}
+
+				if (zoomPosition > newZoomPosition) {//zoom in
+				//	console.warn('Zoom in', zoomPosition, newZoomPosition);
+					var difference = zoomPosition - newZoomPosition;
+					if (difference < 2) {
+						difference = 2;
+					}
+					firstMonth = firstMonth + (difference/2);
+					if (lastMonth <= originalLastMonth) {
+						lastMonth = lastMonth - (difference/2);
+					}
+					
+					changed = true;
+				}
+				
+				if (newZoomPosition > originalLastMonth) {
+					newZoomPosition = originalLastMonth;
+				}
+
+				if (changed) {
+					sliderTimeFrame.noUiSlider.updateOptions({
+						range: {
+							min: firstMonth,
+							max: lastMonth
+						},
+					});
+					if (lastMonth > originalLastMonth) {
+						lastMonth = originalLastMonth;
+					}
+					sliderTimeFrame.noUiSlider.set([0, lastMonth]);
+				}
+				
+				zoomPosition = newZoomPosition;
+			}
+		});
+
+		function zoomStep (direction) {
+			var currentPosition = Number(sliderZoom.noUiSlider.get(true));
+			if (direction === 'f') {
+				currentPosition = currentPosition+2;
+			}
+			if (direction === 'b') {
+				currentPosition = currentPosition-2;
+			}
+			sliderZoom.noUiSlider.set(currentPosition);
+		}
+
+		document.getElementById('zoomIn').onclick = function() {
+			zoomStep("f")
+		};
+		document.getElementById('zoomOut').onclick = function() {
+			zoomStep("b")
+		};
+
+
+		function timeframeStep (direction) {
+			var currentZoomPosition = Number(sliderZoom.noUiSlider.get(true));
+
+			if (direction === 'f') {
+				var difference=0;
+				if (firstMonth > currentZoomPosition) {
+					lastMonth = lastMonth - currentZoomPosition;
+					firstMonth = firstMonth - currentZoomPosition;
+				} else {
+					difference = firstMonth;
+
+					firstMonth = firstMonth - difference;
+					lastMonth = lastMonth - difference;
+				}
+				changed = true;
+			}
+			if (direction === 'b') {
+				var difference=0;
+				if (lastMonth > originalLastMonth - currentZoomPosition) {
+					difference = originalLastMonth - lastMonth;
+					lastMonth = lastMonth + difference;
+					firstMonth = firstMonth + difference;
+				} else {
+					lastMonth = lastMonth + currentZoomPosition;
+					firstMonth = firstMonth + currentZoomPosition;
+				}
+				changed = true;
+			}
+
+			if (changed) {
+				if (firstMonth == 0) {
+					document.getElementById('timeframeDown').style.visibility = 'hidden';
+				}
+				if (lastMonth == originalLastMonth) {
+					document.getElementById('timeframeUp').style.visibility = 'hidden';
+				}
+				/*sliderTimeFrame.noUiSlider.updateOptions({
+					range: {
+						min: firstMonth,
+						max: lastMonth
+					},
+				});*/
+				sliderTimeFrame.noUiSlider.set([0, lastMonth]);
+			}
+		}
+
+
+		document.getElementById('timeframeDown').onclick = function() {
+			timeframeStep("f")
+		};
+		document.getElementById('timeframeUp').onclick = function() {
+			timeframeStep("b")
+		};
+
+	</script>
 </body>
 
 </html>
