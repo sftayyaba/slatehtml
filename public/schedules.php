@@ -156,7 +156,7 @@ require_once('template/sidebar.php');
 				</div>
 				<div style="margin-top: 20px">
 					<div style="display:inline-block; width:22px;margin-right:5px">
-						<button id="timeframeDown" class="btn-clean d-flex align-items-center" style="visibility:hidden;cursor:pointer;padding-right: 0;">
+						<button id="timeframeBack" class="btn-clean d-flex align-items-center" style="visibility:hidden;cursor:pointer;padding-right: 0;">
 							<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M10 -1.76033e-05L10 3.57141L3.57143 9.99998L10 16.4286L10 20L5.71428 15.7143L1.42857 11.4286L-2.78223e-07 9.99998L5.71428 4.2857L10 -1.76033e-05Z" fill="#C4C4C4"/>
 							</svg>
@@ -166,7 +166,7 @@ require_once('template/sidebar.php');
 						<div id="slider-timeframe" class="slider-styled"></div>
 					</div>
 					<div style="display:inline-block; width:22px;margin-left:5px">
-						<button id="timeframeUp" class="btn-clean d-flex align-items-center" style="visibility:hidden;cursor:pointer;padding-left: 0;">
+						<button id="timeframeForward" class="btn-clean d-flex align-items-center" style="visibility:hidden;cursor:pointer;padding-left: 0;">
 							<svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M1.03312e-06 20L1.18923e-06 16.4286L6.42857 10L1.75124e-06 3.57145L1.90735e-06 1.72059e-05L4.28572 4.28573L8.57143 8.57145L10 10L4.28571 15.7143L1.03312e-06 20Z" fill="#C4C4C4"/>
 							</svg>
@@ -967,12 +967,21 @@ require_once('template/sidebar.php');
 	<script src="assets/scripts/nouislider.js"></script>
 	<script src="assets/scripts/wNumb.js"></script>
 	<script>
+		var minDate       = originalMinDate = timestamp('January 1, 2010');
+		var maxDate       = originalMaxDate = timestamp('December 31, 2016');
+		
+		var datesArray    = getDaysArray(minDate, maxDate, 'month');
+		var totalMonths   = originalTotalMonths = datesArray.length;
+		var firstMonth    = 0;
+		var lastMonth     = originalLastMonth = totalMonths-1;
+		var zoomPosition  = newZoomPosition = lastMonth;
 
-		var minDate = originalMinDate = timestamp('January 2010');
-		var maxDate = originalMaxDate = timestamp('December 2016');
+		var totalDays     = 0;
+		var firstDay      = 0;
+		var lastDay       = 0;
 
-		var minDay = '';
-		var maxDay = '';
+		var handle0       = firstMonth;
+		var handle1       = originalLastMonth;
 
 		function getDaysArray(start, end, type) {
 			if (type == 'month') {
@@ -981,223 +990,43 @@ require_once('template/sidebar.php');
 				}
 				return arr;
 			} else {
-				for (var arr=[], dt=new Date(start); dt<=end; dt.setDate(dt.getDate()+1)) {
+				dd=new Date(end);
+				var lastDayOfMonth = new Date(dd.getFullYear(), dd.getMonth()+1, 0);
+				for (var arr=[], dt=new Date(start); dt<=lastDayOfMonth; dt.setDate(dt.getDate()+1)) {
 					arr.push(new Date(dt).getTime());
 				}
 				return arr;
 			}
 			
 		};
-
-		var datesArray = getDaysArray(minDate, maxDate, 'month');
-		var totalMonths = originalTotalMonths = datesArray.length;
-		var firstMonth = 0;
-		var lastMonth = originalLastMonth = totalMonths-1;
-		var zoomPosition = newZoomPosition = lastMonth;
-
-		/*if (lastMonth % 2) {
-			lastMonth = originalLastMonth =lastMonth + 1;
-		}*/
-		//console.log(lastMonth);
-
 		function timestamp(str) {
 			return new Date(str).getTime();
 		}
-		function formatDate ( date ) {
+		function formatDate(date) {
 			return date.toLocaleString('en-us', { month: 'short' }) + " " +	date.getFullYear();
 		}
-		function toFormat ( v ) {
-			console.log(newZoomPosition);
+		function toFormat(v) {
 			if (newZoomPosition > 2) {
 				return formatDate(new Date(datesArray[Math.floor(v)]));
 			} else {
 				var dd = new Date(new Date(daysArray[Math.floor(v)]));
-				var aa = dd.toLocaleString('en-us', { day: 'numeric', month: 'short', year: 'numeric' });
-				//console.log(aa);
-				return aa;
+				return dd.toLocaleString('en-us', { day: 'numeric', month: 'short', year: 'numeric' });
 			}
-			
 		}
-
-		var sliderTimeFrame = document.getElementById('slider-timeframe');
-		
-		noUiSlider.create(sliderTimeFrame, {
-			start: [firstMonth, lastMonth],
-			connect: true,
-			step: 1,
-			tooltips: [true, true],
-			range: {
-				min: firstMonth,
-	   			max: lastMonth
-			},
-			format: { 
-				to: toFormat, 
-				from: Number 
-			}
-		});
-
-		sliderTimeFrame.noUiSlider.on('update', function (values, handle) {
-			//console.log('aa');
-		});
-
 		function showArrows() {
-			document.getElementById('timeframeDown').style.visibility = 'visible';
-			document.getElementById('timeframeUp').style.visibility = 'visible';
+			document.getElementById('timeframeBack').style.visibility = 'visible';
+			document.getElementById('timeframeForward').style.visibility = 'visible';
 		}
 		function hideArrows() {
-			document.getElementById('timeframeDown').style.visibility = 'hidden';
-			document.getElementById('timeframeUp').style.visibility = 'hidden';
+			document.getElementById('timeframeBack').style.visibility = 'hidden';
+			document.getElementById('timeframeForward').style.visibility = 'hidden';
 		}
-
-		var sliderZoom = document.getElementById('slider-zoom');
-		
-
-		noUiSlider.create(sliderZoom, {
-			start: 127,
-			connect: [true, false],
-			direction: 'rtl',
-			step: 2,
-			range: {
-				'min': 2,
-				'max': lastMonth > 2 ?lastMonth:2
-			}
-		});
-
-		sliderZoom.noUiSlider.on('update', function (values, handle) {
-			newZoomPosition = Number(values);
-			//console.log(zoomPosition, newZoomPosition);
-			var years = Math.floor(newZoomPosition/12);
-			var months = newZoomPosition % 12;
-			var result = '';
-			
-			if (years > 0) {
-				result = result + years + ' Year' + (years>1?'s ':' ');
-			}
-			if (months > 0) {
-				result = result + Math.ceil(months) + ' Month' + (months>1?'s ':' ')
-			}
-			document.getElementById('zoomSliderIndicator').innerHTML = result;
-
-			if (newZoomPosition >= originalLastMonth) {
-				hideArrows();
-			}
-			if (newZoomPosition < originalLastMonth) {
-				showArrows();
-			}
-
-			if (newZoomPosition == 2) {
-				zoomPosition = newZoomPosition;
-				daysArray = getDaysArray(datesArray[firstMonth], datesArray[lastMonth], 'days');
-				daysArray.forEach( function(valor, indice, array) {
-					var dd = new Date(valor);
-					var aa = dd.toLocaleString('en-us', { day: 'numeric', month: 'short', year: 'numeric' });
-				});
-				var totalDays = daysArray.length;
-				var firstDay = 0;
-				var lastDay = totalDays-1;
-
-				sliderTimeFrame.noUiSlider.updateOptions(
-					{
-						start: [0, lastDay],
-						step: 1,
-						margin: 7,
-						range: {
-							min: firstDay,
-							max: lastDay
-						},
-					},
-					true // Boolean 'fireSetEvent'
-				);
-				sliderTimeFrame.noUiSlider.set([firstDay, lastDay]);
-			} else {
-				if (zoomPosition == 2 && newZoomPosition > 2) {
-					sliderTimeFrame.noUiSlider.updateOptions(
-						{
-							start: [firstMonth, lastMonth],
-							step: 2,
-							range: {
-								min: firstMonth,
-								max: lastMonth
-							},
-						},
-						true // Boolean 'fireSetEvent'
-					);
-					sliderTimeFrame.noUiSlider.set([firstMonth, lastMonth]);
-				}
-				changed = false;
-				
-				if (zoomPosition < newZoomPosition) {//zoom out
-				//	console.warn('Zoom out', zoomPosition, newZoomPosition);
-					var difference = newZoomPosition - zoomPosition;
-					if (difference < 2) {
-						difference = 2;
-					}
-					if (firstMonth > 0) {
-						firstMonth = firstMonth - (difference/2);
-					}
-					
-					lastMonth = lastMonth + (difference/2);
-					changed = true;
-				}
-
-				if (zoomPosition > newZoomPosition) {//zoom in
-				//	console.warn('Zoom in', zoomPosition, newZoomPosition);
-					var difference = zoomPosition - newZoomPosition;
-					if (difference < 2) {
-						difference = 2;
-					}
-					firstMonth = firstMonth + (difference/2);
-					if (lastMonth <= originalLastMonth) {
-						lastMonth = lastMonth - (difference/2);
-					}
-					
-					changed = true;
-				}
-				
-				if (newZoomPosition > originalLastMonth) {
-					newZoomPosition = originalLastMonth;
-				}
-
-				if (changed) {
-					sliderTimeFrame.noUiSlider.updateOptions({
-						range: {
-							min: firstMonth,
-							max: lastMonth
-						},
-					});
-					if (lastMonth > originalLastMonth) {
-						lastMonth = originalLastMonth;
-					}
-					sliderTimeFrame.noUiSlider.set([0, lastMonth]);
-				}
-				
-				zoomPosition = newZoomPosition;
-			}
-		});
-
-		function zoomStep (direction) {
-			var currentPosition = Number(sliderZoom.noUiSlider.get(true));
-			if (direction === 'f') {
-				currentPosition = currentPosition+2;
-			}
-			if (direction === 'b') {
-				currentPosition = currentPosition-2;
-			}
-			sliderZoom.noUiSlider.set(currentPosition);
-		}
-
-		document.getElementById('zoomIn').onclick = function() {
-			zoomStep("f")
-		};
-		document.getElementById('zoomOut').onclick = function() {
-			zoomStep("b")
-		};
-
-
-		function timeframeStep (direction) {
+		function timeframeStep (direction, amount) {
+			var currentTimeframePosition = Number(sliderTimeFrame.noUiSlider.get(true));
 			var currentZoomPosition = Number(sliderZoom.noUiSlider.get(true));
-
-			if (direction === 'f') {
+			
+			var changed = false;
+			if (direction === 'back') {
 				var difference=0;
 				if (firstMonth > currentZoomPosition) {
 					lastMonth = lastMonth - currentZoomPosition;
@@ -1210,8 +1039,9 @@ require_once('template/sidebar.php');
 				}
 				changed = true;
 			}
-			if (direction === 'b') {
+			if (direction === 'forward') {
 				var difference=0;
+
 				if (lastMonth > originalLastMonth - currentZoomPosition) {
 					difference = originalLastMonth - lastMonth;
 					lastMonth = lastMonth + difference;
@@ -1225,29 +1055,271 @@ require_once('template/sidebar.php');
 
 			if (changed) {
 				if (firstMonth == 0) {
-					document.getElementById('timeframeDown').style.visibility = 'hidden';
+					document.getElementById('timeframeBack').style.visibility = 'hidden';
+				} else {
+					document.getElementById('timeframeBack').style.visibility = 'visible';
 				}
 				if (lastMonth == originalLastMonth) {
-					document.getElementById('timeframeUp').style.visibility = 'hidden';
+					document.getElementById('timeframeForward').style.visibility = 'hidden';
+				} else {
+					document.getElementById('timeframeForward').style.visibility = 'visible';
 				}
-				/*sliderTimeFrame.noUiSlider.updateOptions({
+				sliderTimeFrame.noUiSlider.updateOptions({
 					range: {
 						min: firstMonth,
 						max: lastMonth
 					},
-				});*/
-				sliderTimeFrame.noUiSlider.set([0, lastMonth]);
+				});
+				sliderTimeFrame.noUiSlider.set([firstMonth, lastMonth]);
 			}
 		}
+		function zoomStep (direction) {
+			var currentPosition = Math.ceil(sliderZoom.noUiSlider.get(true));
+			if (currentPosition == 2) {
+				return;
+			}
+			if (direction === 'zoomIn') {
+				currentPosition = currentPosition+2;
+			}
+			if (direction === 'zoomOut') {
+				currentPosition = currentPosition-2;
+			}
+			sliderZoom.noUiSlider.set(currentPosition);
+		}
+		function getZoomLabel(zoomPosition) {
+			var years = Math.floor(zoomPosition/12);
+			var months = zoomPosition % 12;
+			var result = '';
+			
+			if (years > 0) {
+				result = result + years + ' Year' + (years>1?'s ':' ');
+			}
+			if (months > 0) {
+				result = result + Math.ceil(months) + ' Month' + (months>1?'s ':' ')
+			}
+			document.getElementById('zoomSliderIndicator').innerHTML = result;
+		}
 
+		var sliderTimeFrame = document.getElementById('slider-timeframe');
 
-		document.getElementById('timeframeDown').onclick = function() {
-			timeframeStep("f")
+		noUiSlider.create(sliderTimeFrame, {
+			start: [firstMonth, lastMonth],
+			connect: true,
+			step: 1,
+			tooltips: [true, true],
+			behaviour: "drag",
+			range: {
+				min: firstMonth,
+				max: lastMonth
+			},
+			format: { 
+				to: toFormat, 
+				from: Number 
+			}
+		});
+
+		sliderTimeFrame.noUiSlider.on('start', function (values, handle, positions) {
+			handle0 = Math.floor(positions[0]);
+			handle1 = Math.floor(positions[1]);
+		});
+
+		sliderTimeFrame.noUiSlider.on('drag', function (values, handle, positions) {
+			var currentPosition = Math.ceil(sliderZoom.noUiSlider.get(true));
+			
+			var [start, end] = positions;
+			if (start < 0) {
+				start = 0;
+			}
+			start = Math.floor(start);
+			end = Math.floor(end);
+
+			if (currentPosition == 2) {// Scroll by days
+				console.log(start, end, ' - ', firstDay, lastDay, ' - ', handle0, handle1);
+				/* Need to update days array for the new timeframe, range always will be 0-60 for 2 months by day */
+				/* Not finished */
+				var changed = false;
+				if (start <= 2 && handle0 > start) {
+					console.error('scroll left');
+					firstDay = firstDay-1;
+					lastDay = lastDay-1;
+
+					if (start == firstDay && firstDay > 0) {
+						firstDay = firstDay -2;
+					}
+					if (firstDay < 0) {
+						firstDay = 0;
+					}
+					changed = true;
+				}
+
+				handle0 = start;
+				handle1 = end;
+				//daysArray       = getDaysArray(datesArray[firstMonth], datesArray[lastMonth], 'days');
+				if (changed) {
+					console.error(start, end, ' - ', firstDay, lastDay);
+					/*sliderTimeFrame.noUiSlider.updateOptions(
+						{
+							start: [start, end],
+							range: {
+								min: firstDay,
+								max: lastDay
+							},
+						},
+						true
+					);*/
+				}
+				
+			} else { // Scroll by months
+				console.log(start, end, ' - ', firstMonth, lastMonth, ' - ', handle0, handle1);
+
+				if (start >= firstMonth && (start-firstMonth <= 2) && firstMonth > 0 && handle0 > start) {
+					console.error('scroll left');
+					start = start -1;
+					end = end -1;
+					firstMonth = firstMonth-1;
+					lastMonth = lastMonth-1;
+
+					if (start == firstMonth && firstMonth > 0) {
+						firstMonth = firstMonth -2;
+					}
+					if (firstMonth < 0) {
+						firstMonth = 0;
+					}
+				}
+				if (lastMonth < originalLastMonth && (lastMonth-end <= 2) && start > handle0) {
+					console.warn('scroll right');
+					start = start + 1;
+					end = end + 1;
+					firstMonth = firstMonth + 1;
+					lastMonth = lastMonth + 1;
+				
+					if (end == lastMonth && lastMonth < originalLastMonth) {
+						lastMonth = lastMonth + 2;
+					}
+					if (lastMonth > originalLastMonth) {
+						lastMonth = originalLastMonth;
+					}
+				}
+				handle0 = start;
+				handle1 = end;
+				console.error(start, end, ' - ', firstMonth, lastMonth);
+				sliderTimeFrame.noUiSlider.updateOptions(
+					{
+						start: [start, end],
+						range: {
+							min: firstMonth,
+							max: lastMonth
+						},
+					},
+					true
+				);
+			}
+		});
+
+		var sliderZoom = document.getElementById('slider-zoom');
+
+		noUiSlider.create(sliderZoom, {
+			start: lastMonth,
+			connect: [true, false],
+			direction: 'rtl',
+			step: 2,
+			range: {
+				'min': 2,
+				'max': lastMonth > 2 ?lastMonth:2
+			}
+		});
+
+		sliderZoom.noUiSlider.on('update', function (values, handle) {
+			newZoomPosition = Number(values);
+			getZoomLabel(newZoomPosition);
+
+			if (newZoomPosition >= originalLastMonth) {
+				hideArrows();
+			}
+			if (newZoomPosition < originalLastMonth) {
+				showArrows();
+			}
+
+			if (newZoomPosition == 2) {//Zoom reaches 2 months view switch to days instead of months
+				zoomPosition    = newZoomPosition;
+				firstMonth      = firstMonth +1;
+				lastMonth       = lastMonth -1;
+				daysArray       = getDaysArray(datesArray[firstMonth], datesArray[lastMonth], 'days');
+				totalDays       = daysArray.length;
+				firstDay        = 0;
+				lastDay         = totalDays-1;
+				sliderTimeFrame.noUiSlider.updateOptions(
+					{
+						start: [0, lastDay],
+						step: 1,
+						margin: 7,
+						range: {
+							min: firstDay,
+							max: lastDay
+						},
+					},
+					true
+				);
+				sliderTimeFrame.noUiSlider.set([firstDay, lastDay]);
+			} else {// zoom by months
+				if (zoomPosition == 2 && newZoomPosition > 2) {
+					sliderTimeFrame.noUiSlider.updateOptions(
+						{
+							start: [firstMonth, lastMonth],
+							step: 2,
+							range: {
+								min: firstMonth,
+								max: lastMonth
+							},
+						},
+						true
+					);
+					sliderTimeFrame.noUiSlider.set([firstMonth, lastMonth]);
+				}
+				var [currentStart, currentEnd] = sliderTimeFrame.noUiSlider.get(true);
+				
+				var halfTimeframe = Math.floor((currentEnd+currentStart)/2);
+		
+				var oddRange = false;
+				var halfRange = 0;
+				if (newZoomPosition % 2) { // odd range
+					halfRange = (newZoomPosition-1) / 2;
+					oddRange = true;
+				} else { // even range
+					halfRange = newZoomPosition / 2;
+				}
+				lastMonth = halfTimeframe + halfRange + (oddRange?1:0);
+				firstMonth = halfTimeframe - halfRange + (!oddRange?1:0);
+
+				if (firstMonth < 0) {//Validate not going below 0
+					firstMonth = 0;
+				}
+				if (lastMonth > originalTotalMonths) {
+					lastMonth = originalTotalMonths;
+				}
+
+				sliderTimeFrame.noUiSlider.updateOptions({
+					range: {
+						min: firstMonth,
+						max: lastMonth
+					},
+				});
+				sliderTimeFrame.noUiSlider.set([firstMonth, lastMonth]);
+			}
+		});
+
+		document.getElementById('zoomIn').onclick = function() {
+			zoomStep("zoomIn")
 		};
-		document.getElementById('timeframeUp').onclick = function() {
-			timeframeStep("b")
+		document.getElementById('zoomOut').onclick = function() {
+			zoomStep("zoomOut")
 		};
-
+		document.getElementById('timeframeBack').onclick = function() {
+			timeframeStep("back");
+		};
+		document.getElementById('timeframeForward').onclick = function() {
+			timeframeStep("forward");
+		};
 	</script>
 </body>
 
