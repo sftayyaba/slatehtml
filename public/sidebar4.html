@@ -454,7 +454,7 @@
 					</button>
 					<span>
 						<button type="button" class="btn btn-alt-secondary" id="page-header-weather"
-							data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position:relative">
 							<svg width="40" height="40" viewbox="0 0 64 64">
 								<defs>
 									<filter id="blur" width="200%" height="200%">
@@ -525,19 +525,349 @@
 									</g>
 								</g>
 							</svg>
+							<span style="position: absolute;top: 60%;left: 50%;height: 18px;color:white;font-size:13px;">55&deg;F</span>
+							
+
 						</button>
-						<ul class="dropdown-menu" aria-labelledby="page-header-weather" style="background: #193439;inset: 20px auto auto;">
-							<li><img src="/assets/images/day.svg"></li>
-							<li><img src="/assets/images/thunder.svg"></li>
-							<li><img src="/assets/images/cloudy.svg"></li>
-							<li><img src="/assets/images/rainy.svg"></li>
-							<li><img src="/assets/images/snowy.svg"></li>
-							<li><img src="/assets/images/rainy-partly.svg"></li>
-							<li><img src="/assets/images/night.svg"></li>
-							<li><img src="/assets/images/cloudy-night.svg"></li>
-							<li><img src="/assets/images/hot-day.svg"></li>
-							<li><img src="/assets/images/windy.svg"></li>
-						  </ul>
+						<div id="divWeather" class="dropdown-menu shadow" aria-labelledby="page-header-weather" style="inset: 20px 0 auto auto;">
+							<div id="divWeatherHeader" class="ps-4 pe-5">
+								<div class="row">
+									<div class="col-md-6 p-1">
+										<h1>WeWork Pavillion</h1>
+									</div>
+									<div class="col-md-6 p-1 text-right">
+										<h2 class="mb-1" style="font-weight: 100;padding-top: 10px;"><i class="fas fa-map-marker-alt"></i> New York City</h2>
+										<p class="my-1">Wednesday, March 2 2022</p>
+										<p class="my-1">11:30AM</p>
+										<div class="mt-3" style="display: flex;justify-content: flex-end;">
+											<span style="margin-top: -10px;">
+												<img style="width:100px;" src="/assets/images/rainy.svg" alt="">
+											</span>
+											<span style="font-size:64px;font-weight: bold;">45</span>
+											<span>&#176;F | &#176;C</span>
+										</div>
+										<div class="row">
+											<div class="col-md-6 text-left">
+												<p class="my-2">
+													<span><img src="/assets/images/arrow_up.svg" alt=""></span>
+													<span>High</span>
+													<span class="fw-semibold">62</span> 
+													<span class="weather_indicator">&#176;F | &#176;C</span>
+												</p>
+												<p class="my-2">
+													<span><img src="/assets/images/humidity.svg" alt=""></span>
+													<span>Humidity</span>
+													<span class="fw-semibold">78</span> 
+													<span class="weather_indicator">%</span></p>
+											</div>
+											<div class="col-md-6">
+												<p class="my-2">
+													<img src="/assets/images/arrow_dn.svg" alt=""> 
+													Low 
+													<span class="fw-semibold">48</span> 
+													<span class="weather_indicator">&#176;F | &#176;C</span>
+												</p>
+												<p class="my-2">
+													<span><img src="/assets/images/wind.svg" alt=""></span>
+													<span>Wind</span>
+													<span class="fw-semibold">4</span>
+													<span class="weather_indicator">MPH</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="divWeatherBody">
+								<div id="divWeatherBodyTabs" class="mx-2">
+									<ul class="nav nav-tabs nav-tabs-block">
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold" id="recommendations-weather-tab" data-bs-toggle="tab" data-bs-target="#recommendations-weather">
+												<img src="/assets/images/bulb.svg" alt=""> Recommendations
+											</button>
+										</li>
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold active" id="details-weather-tab" data-bs-toggle="tab" data-bs-target="#details-weather">
+												Details
+											</button>
+										</li>
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold" id="hourly-weather-tab" data-bs-toggle="tab" data-bs-target="#hourly-weather">
+												Hourly
+											</button>
+										</li>
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold" id="daily-weather-tab" data-bs-toggle="tab" data-bs-target="#daily-weather">Daily</button>
+										</li>
+									</ul>
+								</div>
+								<div class="block-content tab-content overflow-hidden p-0">
+									<div id="recommendations-weather" class="tab-pane pull-x fade fade-up m-3 px-3">
+										<div id="recommendations_slider" class="splide">
+											<div class="splide__track">
+												<ul class="splide__list">
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_sun.svg" style="width:30px;" alt="">
+																<h4 class="text-primary mt-1">Heat Stress Risk</h4>
+																<p style="font-size:12px;">The heat index forecast is high for tomorrow March 3, 2022, would you like to check your tasks scheduled tomorrow to prepare?</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-2 text-white fs-sm">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_wind.svg" style="width:30px;" alt="">
+																<h4 class="text-primary mt-1">High Winds</h4>
+																<p style="font-size:12px;">High winds are forcasted for tomorrow March 3, 2022 check your tasks that might be impacted. Consider stopping lifts and review requirements from crane manufacture</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-2 text-white fs-sm">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_sun.svg" style="width:30px;" alt="">
+																<h4 class="text-primary mt-1">Heat Stress Risk</h4>
+																<p style="font-size:12px;">The heat index forecast is high for tomorrow March 3, 2022, would you like to check your tasks scheduled tomorrow to prepare?</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-2 text-white fs-sm">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_wind.svg" style="width:30px;" alt="">
+																<h4 class="text-primary mt-1">High Winds</h4>
+																<p style="font-size:12px;">High winds are forcasted for tomorrow March 3, 2022 check your tasks that might be impacted. Consider stopping lifts and review requirements from crane manufacture</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-2 text-white fs-sm">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="details-weather" class="tab-pane pull-x fade fade-up m-3 px-3 show active">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 fw-semibold"><img src="/assets/images/sun.svg" style="width:14px;filter: invert(.6);" alt=""> UV INDEX</p>
+													<p class="weather_details_main my-3 fw-semibold text-primary">10</p>
+													<p class="weather_details_note mb-2" style="font-size:12px;">LOW</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1" style="background:linear-gradient(135deg, transparent 50%, #105C6B 0);">
+													<p class="weather_details_title fw-semibold mb-0 mt-2"><img src="/assets/images/sunrise.svg" style="width:12px;filter: invert(.6);" alt=""> SUNRISE</p>
+													<p class="text-left fw-semibold my-1 text-primary" style="font-size:22px;">6:08<span style="font-size:14px;font-weight:100;">AM</span></p>
+													<p class="text-right fw-semibold my-1" style="font-size:22px;color:white;">5:50<span style="font-size:14px;font-weight:100;">PM</span></p>
+													<p class="weather_details_title fw-semibold mt-0 mb-1" style="color:white;"><img src="/assets/images/sunset.svg" style="width:12px;filter: invert(0);" alt=""> SUNSET</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-2 fw-semibold"><img src="/assets/images/wind.svg" style="width:14px;filter: invert(.6);" alt=""> WIND</p>
+													<div id="wind_indicator" class="d-flex flex-column justify-content-center" style="background:url('/assets/images/wind_indicator.svg') no-repeat center;height: 100px;">
+														<p class="text-center m-0 fw-semibold text-primary">10</p>
+														<p class="text-center m-0 text-primary" style="font-size:12px;margin-top: -5px!important;">MPH</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 fw-semibold"><img src="/assets/images/last_24hrs.svg" style="width:10px;filter: invert(.6);" alt=""> LAST 24HRS</p>
+													<p class="weather_details_main my-3 fw-semibold text-primary">2"</p>
+													<p class="weather_details_note mb-2" style="font-size:12px;">Rain</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 fw-semibold"><img src="/assets/images/humidity.svg" style="width:14px;filter: invert(.6);" alt=""> HUMIDITY</p>
+													<p class="weather_details_main my-3 fw-semibold text-primary">78<span style="font-size:14px;font-weight:100;">%</span></p>
+													<p class="weather_details_note mb-2" style="font-size:10px;line-height: 1.1rem;">Dew point is 0&#176; right now.</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 fw-semibold"><img src="/assets/images/visibility.svg" style="width:13px;filter: invert(.6);" alt=""> VISIBILITY</p>
+													<p class="weather_details_main my-3 fw-semibold text-primary">10<span style="font-size:14px;font-weight:100;">MI</span></p>
+													<p class="weather_details_note mb-2" style="font-size:12px;">Clear Skies</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 fw-semibold"><img src="/assets/images/pressure.svg" style="width:9px;filter: invert(.6);" alt=""> PRESSURE</p>
+													<p class="weather_details_main mt-2 mb-0 fw-semibold text-primary">30.12</p>
+													<p class="text-center mb-1 text-primary" style="margin-top:-8px;font-size:1px;"><img src="/assets/images/arrow_dn.svg" style="width:8px;filter: invert(.6);" alt=""></p>
+													<p class="weather_details_note mb-2" style="font-size:12px;">INHG</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1  fw-semibold"><img src="/assets/images/feels_like.svg" style="width:9px;filter: invert(.6);" alt=""> FEELS LIKE</p>
+													<p class="weather_details_main my-3 fw-semibold text-primary">36&#176;<span style="font-size:14px;font-weight:100;">F</span></p>
+													<p class="weather_details_note mb-2" style="font-size:10px;line-height: 1.1rem;">Wind is making it colder.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="hourly-weather" class="tab-pane pull-x fade fade-up m-3 px-3 ">
+										<div class="table-responsive" style="max-height:260px;">
+											<table id="tblHourlyWeather" class="table text-center">
+												<thead>
+													<tr>
+														<th>Time</th>
+														<th>Temperature</th>
+														<th>Conditions</th>
+														<th>Precipitation</th>
+														<th>Wind</th>
+														<th>AQI</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1 pm</td>
+														<td>61&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;height:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 6 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>2 pm</td>
+														<td class="text-primary">99&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;height:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 8 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>3 pm</td>
+														<td class="text-primary">98&#176;F</td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:24px;height:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 9 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>4 pm</td>
+														<td class="text-primary">98&#176;F</td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:24px;height:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" alt=""> 10 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>5 pm</td>
+														<td>86&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;height:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" alt=""> 45 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>6 pm</td>
+														<td>75&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;height:24px;" alt=""></td>
+														<td>9%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" alt=""> 51 mph</td>
+														<td>36</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="text-center">
+											<button id="btnLoadMore" class="btn btn-alt-primary p-1">Load More</button>
+										</div>
+									</div>
+									<div id="daily-weather" class="tab-pane pull-x fade fade-up m-3 px-3 ">
+										<div class="table-responsive">
+											<table class="table text-center">
+												<thead>
+													<tr>
+														<th>Day</th>
+														<th>Date</th>
+														<th>Temp</th>
+														<th>Con</th>
+														<th>Precip</th>
+														<th>Wind</th>
+														<th>AQI</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="text-left">Sunday</td>
+														<td>Mar. 13</td>
+														<td><div class="temp_sliders_wrapper">33&#176;F <div class="temp_sliders" data-min="33" data-max="43"></div> 43&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;" alt=""></td>
+														<td>13%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 6 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Monday</td>
+														<td>Mar. 14</td>
+														<td><div class="temp_sliders_wrapper">42&#176;F <div class="temp_sliders" data-min="42" data-max="51"></div> 51&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;" alt=""></td>
+														<td>33%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 8 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Tuesday</td>
+														<td>Mar. 15</td>
+														<td><div class="temp_sliders_wrapper">82&#176;F <div class="temp_sliders" data-min="82" data-max="98"></div> 98&#176;F</div></td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 9 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Wednesday</td>
+														<td>Mar. 16</td>
+														<td><div class="temp_sliders_wrapper">66&#176;F <div class="temp_sliders" data-min="66" data-max="88"></div> 88&#176;F</div></td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:24px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" alt=""> 10 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Thursday</td>
+														<td>Mar. 17</td>
+														<td><div class="temp_sliders_wrapper">38&#176;F <div class="temp_sliders" data-min="38" data-max="64"></div> 64&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;" alt=""></td>
+														<td>23%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 10 mph</td>
+														<td>45</td>
+													</tr>
+													<tr>
+														<td class="text-left">Friday</td>
+														<td>Mar. 18</td>
+														<td><div class="temp_sliders_wrapper">24&#176;F <div class="temp_sliders" data-min="24" data-max="39"></div> 39&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;" alt=""></td>
+														<td>19%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 10 mph</td>
+														<td>51</td>
+													</tr>
+													<tr>
+														<td class="text-left">Saturday</td>
+														<td>Mar. 19</td>
+														<td><div class="temp_sliders_wrapper">41&#176;F <div class="temp_sliders" data-min="41" data-max="53"></div> 53&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:24px;" alt=""> </td>
+														<td>9%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_north_west" alt=""> 10 mph</td>
+														<td>51</td>
+													</tr>
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
 					</span>
 					<button type="button" class="btn btn-alt-secondary" id="page-header-notifications">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -1025,6 +1355,56 @@
 									</div>
 								</div>
 								<!-- END Header -->
+
+								<!-- Weather -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Weather</span>
+								</div>
+								<div class="block-content block-content-full">
+									<div class="row g-sm text-center mb-2">
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="sunny"
+												href="javascript:void(0)"><img src="/assets/images/day.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="thunder"
+												href="javascript:void(0)"><img src="/assets/images/thunder.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="cloudy"
+												href="javascript:void(0)"><img src="/assets/images/cloudy.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="rainy"
+												href="javascript:void(0)"><img src="/assets/images/rainy.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="snowy"
+												href="javascript:void(0)"><img src="/assets/images/snowy.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="partly_rainy"
+												href="javascript:void(0)"><img src="/assets/images/rainy-partly.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="night"
+												href="javascript:void(0)"><img src="/assets/images/night.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="cloudy_night"
+												href="javascript:void(0)"><img src="/assets/images/cloudy-night.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="hot_sun"
+												href="javascript:void(0)"><img src="/assets/images/hot-day.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="windy"
+												href="javascript:void(0)"><img src="/assets/images/windy.svg"></a>
+										</div>
+									</div>
+								</div>
+								<!-- END Header -->
 							</div>
 						</div>
 						<!-- END Settings Tab -->
@@ -1359,6 +1739,149 @@
 
 		const layoutButtons = document.querySelectorAll('[data-toggle="layout"]');
 
+		var btnLoadMore = document.getElementById("btnLoadMore");
+
+		btnLoadMore.addEventListener('click', function (event) {
+			var tblHourlyWeatherBody = document.getElementById("tblHourlyWeather").getElementsByTagName('tbody')[0];;
+			var hourly_weather_data = {
+				"hours": [
+					{
+						"time": "7pm",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_east',
+						"aqi": '34'
+					},
+					{
+						"time": "8pm",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'west',
+						"aqi": '34'
+					},
+					{
+						"time": "9pm",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south',
+						"aqi": '34'
+					},
+					{
+						"time": "10pm",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_east',
+						"aqi": '34'
+					},
+					{
+						"time": "11pm",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north',
+						"aqi": '34'
+					},
+					{
+						"time": "12am",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south_east',
+						"aqi": '34'
+					},
+					{
+						"time": "1am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_west',
+						"aqi": '34'
+					},
+					{
+						"time": "2am",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south_west',
+						"aqi": '34'
+					},
+					{
+						"time": "3am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south',
+						"aqi": '34'
+					},
+					{
+						"time": "4am",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'east',
+						"aqi": '34'
+					},
+					{
+						"time": "5am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north',
+						"aqi": '34'
+					},
+					{
+						"time": "6am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_east',
+						"aqi": '34'
+					}
+				]
+			};
+
+			hourly_weather_data.hours.forEach(function (item) {
+				var newRowHTML = '<tr>'+
+					'<td>'+item.time+'</td>'+
+					'<td>'+item.temperature+'&#176;F</td>'+
+					'<td><img src="/assets/images/icon_'+item.conditions+'.svg" style="width:24px;"></td>'+
+					'<td>'+item.precipitation+'%</td>'+
+					'<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_'+item.wind_direction+'">'+item.wind+'mph</td>'+
+					'<td>'+item.aqi+'</td>'+
+				'</tr>';
+			var newRow = tblHourlyWeatherBody.insertRow(tblHourlyWeatherBody.rows.length);
+			newRow.innerHTML = newRowHTML;
+			});
+			
+			
+		});
+
+		var weather_elements = document.getElementsByClassName("weather_set");
+		var weatherFunction = function() {
+			var divWeatherHeader = document.getElementById("divWeatherHeader");
+			var attribute = this.getAttribute("data-weather");
+			divWeatherHeader.style.backgroundImage = "url('/assets/images/back_"+attribute+".jpg')";
+		};
+		for (var i = 0; i < weather_elements.length; i++) {
+			weather_elements[i].addEventListener('click', weatherFunction, false);
+		}
+
 		function closeSideOverlay() {
 			page_container.classList.remove('side-overlay-o');
 		}
@@ -1591,9 +2114,71 @@
 			});
 			splide2Div = document.getElementById('slide2');
 			splide2Div.classList.remove('is-initialized');
+
+
+			recommendationsSlide = new Splide('#recommendations_slider', {
+				arrows: true,
+				type: 'loop',
+				perPage: 2,
+				lazyLoad: 'nearby',
+				pagination: false
+			});
+			recommendationsSlide.mount();
+			recommendationsSlide.on('mounted', function () {
+				console.log(this);
+			});
 		});
+
+
+		function rotateWindArrow() {
+			var rotation = 0;
+			setInterval(function() {
+				const element = document.querySelector('#wind_indicator')
+				if (rotation < 360) {
+					rotation = rotation + 30;
+				} else {
+					rotation = 0;
+				}
+				element.style.setProperty('--windRotation', `${rotation}deg`);
+			}, 5000);
+		}
+		rotateWindArrow();
 	</script>
 	<script src="assets/scripts/scripts.js"></script>
-</body>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var temp_sliders = document.getElementsByClassName("temp_sliders");
+			const temp_max = 100;
+			const temp_min = 0;
 
+			for (var i = 0; i < temp_sliders.length; i++) {
+				var min = Number(temp_sliders[i].getAttribute("data-min"));
+				var max = Number(temp_sliders[i].getAttribute("data-max"));
+
+				//var temp_start = ((min - temp_min) * 100) / (temp_max - temp_min);
+				//var temp_end = ((max - temp_min) * 100) / (temp_max - temp_min);
+
+				//var range = temp_max - temp_min;
+				//var temp_start = 100 * (temp_max - min) / (temp_max - temp_min);
+				//var temp_end = 100 * (temp_max - max) / (temp_max - temp_min);
+
+//console.log(min, max, temp_start, temp_end, temp_min, temp_max);
+//var rightrtemp = temp_max - temp_end;
+
+var start_width = temp_min + min;
+var end_width = temp_max - max;
+console.log(min, max, start_width, end_width);
+				var html = 
+				'<div slider id="slider-distance">' +
+					'<div>' +
+						'<div inverse-left style="width:'+start_width+'%;"></div>' +
+    					'<div inverse-right style="width:'+end_width+'%;"></div>' +
+    					'<div range style="left:'+start_width+'%;right:'+end_width+'%;"></div>' +
+  					'</div>' +
+				'</div>';
+				temp_sliders[i].innerHTML = html;
+			}
+		});
+	</script>
+</body>
 </html>
