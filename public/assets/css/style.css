@@ -2666,7 +2666,7 @@ textarea {
 
 #divWeather {
   width: 30rem;
-  height: 30rem;
+  height: 31rem;
   border-radius: 10px;
   padding: 0;
   overflow: hidden;
@@ -2684,7 +2684,7 @@ textarea {
 }
 
 #divWeatherHeader {
-  height: 17rem;
+  height: 14rem;
   background: url("../images/back_rainy.jpg") rgba(29, 58, 64, 0.5);
   background-blend-mode: multiply;
 }
@@ -2695,7 +2695,7 @@ textarea {
 
 #divWeatherBody .nav-link {
   color: #68736f;
-  font-size: 16px;
+  font-size: 12px;
   border: 0;
 }
 #divWeatherBody .nav-link.active {
@@ -2709,7 +2709,10 @@ textarea {
 #divWeatherBodyTabs .nav-link:hover {
   cursor: pointer;
 }
-
+#divWeatherBody .table {
+  font-size: 10px;
+  margin-bottom: 0.5rem !important;
+}
 #divWeatherBody .table > thead {
   text-align: center;
   background: transparent;
@@ -2717,7 +2720,7 @@ textarea {
 }
 #divWeatherBody .table td {
   border-bottom: 0;
-  padding: 0.4rem 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 #divWeatherBody .tab-pane.active {
@@ -2728,26 +2731,29 @@ textarea {
   border-radius: 10px;
 }
 #divWeather p.weather_details_title {
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
 }
 #divWeather p.weather_details_main {
-  font-size: 28px;
+  font-size: 22px;
   text-align: center;
 }
 #divWeather p.weather_details_note {
   text-align: center;
+  font-size: 10px;
 }
-
+#btnLoadMore {
+  font-size: 0.8rem;
+}
 .details_weather_wrapper {
   border: 1px solid #d8e6e1;
   border-radius: 10px;
 }
 
 #details-weather .col-md-3 {
-  padding-right: calc(var(--bs-gutter-x) * 0.3);
-  padding-left: calc(var(--bs-gutter-x) * 0.3);
-  padding-bottom: calc(var(--bs-gutter-x) * 0.6);
+  padding-right: calc(var(--bs-gutter-x) * 0.2);
+  padding-left: calc(var(--bs-gutter-x) * 0.2);
+  padding-bottom: calc(var(--bs-gutter-x) * 0.3);
 }
 #wind_indicator {
   position: relative;
@@ -2766,8 +2772,8 @@ textarea {
 }
 
 .card {
-  width: 18rem;
-  height: 18rem;
+  width: 95%;
+  height: 12rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2787,7 +2793,7 @@ textarea {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2842,33 +2848,11 @@ textarea {
   transform: rotate(315deg);
 }
 
-/*
-.temp_sliders.noUi-horizontal {
-  height: 5px;
-  cursor: default;
-  background: #dfdfdf;
-  box-shadow: none;
-  border: none;
-  border-radius: 2px;
-}
-.temp_sliders.noUi-horizontal .noUi-connect {
-  background: #105c6b;
-}
-.temp_sliders.noUi-horizontal .noUi-handle {
-  height: 18px;
-  width: 18px;
-  top: -5px;
-  right: -9px;
-  border-radius: 9px;
-  display: none;
-}
-*/
-
 .temp_sliders_wrapper {
   display: inline-flex;
 }
 [slider] {
-  width: 100px;
+  width: 80px;
   position: relative;
   height: 5px;
   margin: 7px 0 0 0;
