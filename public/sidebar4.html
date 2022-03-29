@@ -541,7 +541,7 @@
 										<p class="my-1">11:30AM</p>
 										<div class="mt-2" style="display: flex;justify-content: flex-end;">
 											<span style="margin-top: -10px;">
-												<img style="width:60px;" src="/assets/images/rainy.svg" alt="">
+												<img id="imgWeatherHeaderIcon" style="width:60px;" src="/assets/images/rainy.svg" alt="">
 											</span>
 											<span style="font-size:36px;font-weight: bold;">45</span>
 											<span>&#176;F | &#176;C</span>
@@ -1875,8 +1875,11 @@
 		var weather_elements = document.getElementsByClassName("weather_set");
 		var weatherFunction = function() {
 			var divWeatherHeader = document.getElementById("divWeatherHeader");
+			var imgWeatherHeaderIcon = document.getElementById("imgWeatherHeaderIcon");
 			var attribute = this.getAttribute("data-weather");
 			divWeatherHeader.style.backgroundImage = "url('/assets/images/back_"+attribute+".jpg')";
+			var imageHeaderIcon = this.firstChild.getAttribute('src');
+			imgWeatherHeaderIcon.src = imageHeaderIcon;
 		};
 		for (var i = 0; i < weather_elements.length; i++) {
 			weather_elements[i].addEventListener('click', weatherFunction, false);
@@ -2154,20 +2157,8 @@
 			for (var i = 0; i < temp_sliders.length; i++) {
 				var min = Number(temp_sliders[i].getAttribute("data-min"));
 				var max = Number(temp_sliders[i].getAttribute("data-max"));
-
-				//var temp_start = ((min - temp_min) * 100) / (temp_max - temp_min);
-				//var temp_end = ((max - temp_min) * 100) / (temp_max - temp_min);
-
-				//var range = temp_max - temp_min;
-				//var temp_start = 100 * (temp_max - min) / (temp_max - temp_min);
-				//var temp_end = 100 * (temp_max - max) / (temp_max - temp_min);
-
-//console.log(min, max, temp_start, temp_end, temp_min, temp_max);
-//var rightrtemp = temp_max - temp_end;
-
-var start_width = temp_min + min;
-var end_width = temp_max - max;
-console.log(min, max, start_width, end_width);
+				var start_width = temp_min + min;
+				var end_width = temp_max - max;
 				var html = 
 				'<div slider id="slider-distance">' +
 					'<div>' +
