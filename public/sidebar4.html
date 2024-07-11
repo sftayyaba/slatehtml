@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="generator" content="GitLab Pages">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>Slate Project</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/grid.css">
+	<link rel="stylesheet" href="assets/css/modal.css">
+	<link rel="stylesheet" href="assets/css/splide.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<style>
+		/* CLOUDS */
+		@keyframes am-weather-cloud-2 {
+			0% {
+				-webkit-transform: translate(0px, 0px);
+				-moz-transform: translate(0px, 0px);
+				-ms-transform: translate(0px, 0px);
+				transform: translate(0px, 0px);
+			}
+
+			50% {
+				-webkit-transform: translate(2px, 0px);
+				-moz-transform: translate(2px, 0px);
+				-ms-transform: translate(2px, 0px);
+				transform: translate(2px, 0px);
+			}
+
+			100% {
+				-webkit-transform: translate(0px, 0px);
+				-moz-transform: translate(0px, 0px);
+				-ms-transform: translate(0px, 0px);
+				transform: translate(0px, 0px);
+			}
+		}
+
+		.am-weather-cloud-2 {
+			-webkit-animation-name: am-weather-cloud-2;
+			-moz-animation-name: am-weather-cloud-2;
+			animation-name: am-weather-cloud-2;
+			-webkit-animation-duration: 3s;
+			-moz-animation-duration: 3s;
+			animation-duration: 3s;
+			-webkit-animation-timing-function: linear;
+			-moz-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-animation-iteration-count: infinite;
+			-moz-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+
+		/* ** SUN */
+		@keyframes am-weather-sun {
+			0% {
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				transform: rotate(0deg);
+			}
+
+			100% {
+				-webkit-transform: rotate(360deg);
+				-moz-transform: rotate(360deg);
+				-ms-transform: rotate(360deg);
+				transform: rotate(360deg);
+			}
+		}
+
+		.am-weather-sun {
+			-webkit-animation-name: am-weather-sun;
+			-moz-animation-name: am-weather-sun;
+			-ms-animation-name: am-weather-sun;
+			animation-name: am-weather-sun;
+			-webkit-animation-duration: 9s;
+			-moz-animation-duration: 9s;
+			-ms-animation-duration: 9s;
+			animation-duration: 9s;
+			-webkit-animation-timing-function: linear;
+			-moz-animation-timing-function: linear;
+			-ms-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-animation-iteration-count: infinite;
+			-moz-animation-iteration-count: infinite;
+			-ms-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes am-weather-sun-shiny {
+			0% {
+				stroke-dasharray: 3px 10px;
+				stroke-dashoffset: 0px;
+			}
+
+			50% {
+				stroke-dasharray: 0.1px 10px;
+				stroke-dashoffset: -1px;
+			}
+
+			100% {
+				stroke-dasharray: 3px 10px;
+				stroke-dashoffset: 0px;
+			}
+		}
+
+		.am-weather-sun-shiny line {
+			-webkit-animation-name: am-weather-sun-shiny;
+			-moz-animation-name: am-weather-sun-shiny;
+			-ms-animation-name: am-weather-sun-shiny;
+			animation-name: am-weather-sun-shiny;
+			-webkit-animation-duration: 2s;
+			-moz-animation-duration: 2s;
+			-ms-animation-duration: 2s;
+			animation-duration: 2s;
+			-webkit-animation-timing-function: linear;
+			-moz-animation-timing-function: linear;
+			-ms-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-animation-iteration-count: infinite;
+			-moz-animation-iteration-count: infinite;
+			-ms-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+		}
+	</style>
+</head>
+
+<body id="style1">
+	<div id="page_container" class="d-flex">
+		<div id="sidebar" class="sidebar4 bg-light d-flex flex-column flex-shrink-0 gradient9">
+			<a href="/" class="d-block p-2 text-decoration-none text-center" title=""
+				data-bs-original-title="Icon-only">
+				<div class="emboss_logo p-10">
+					<svg class="bi" viewBox="0 0 62.55 45" width="40">
+						<defs>
+							<style>
+								.cls-1-logo {
+									fill: #F4611F;
+								}
+							</style>
+						</defs>
+						<path class="cls-1-logo"
+							d="M44.2,43.29a1.33,1.33,0,0,1-1.31,1.34H6.26A1.33,1.33,0,0,1,5,43.29V5.65a1.3,1.3,0,0,1,1.3-1.33H42.89A1.33,1.33,0,0,1,44.2,5.65v6.07h2.23v-6A3.63,3.63,0,0,0,42.85,2H6.22A3.6,3.6,0,0,0,2.68,5.7V43.34A3.64,3.64,0,0,0,6.26,47H42.89a3.64,3.64,0,0,0,3.58-3.68V38.57H44.2Z"
+							transform="translate(-2.68 -2.02)" />
+						<path class="cls-1-logo"
+							d="M46.94,30.73V22.07h3.59V19.94H46.94V15.88H44.71v4.06H42.18v2.13h2.53v8.66a3.64,3.64,0,0,0,3.58,3.68H51v-2.3H48.29A1.38,1.38,0,0,1,46.94,30.73Z"
+							transform="translate(-2.68 -2.02)" />
+						<path class="cls-1-logo"
+							d="M65.19,27.51c0-.46,0-.8,0-1a8,8,0,0,0-.89-3.64A5.91,5.91,0,0,0,62,20.48a7,7,0,0,0-3.42-.84,6.49,6.49,0,0,0-3.46.92,6.27,6.27,0,0,0-2.36,2.6,8.39,8.39,0,0,0-.86,3.89,8.32,8.32,0,0,0,.86,3.84,6,6,0,0,0,2.44,2.6,7.52,7.52,0,0,0,3.66.92,6,6,0,0,0,6.11-5H62.71a3.76,3.76,0,0,1-1.43,2.17,4,4,0,0,1-2.56.8,4.21,4.21,0,0,1-3.17-1.26,4.8,4.8,0,0,1-1.27-3.38v-.21H65.19Zm-9.36-4.73a4.17,4.17,0,0,1,2.81-1.09,4.42,4.42,0,0,1,3,1A4.16,4.16,0,0,1,63,25.54H54.49A3.89,3.89,0,0,1,55.83,22.78Z"
+							transform="translate(-2.68 -2.02)" />
+						<path class="cls-1-logo"
+							d="M41.6,34.2V24.83A5,5,0,0,0,40.14,21,6,6,0,0,0,36,19.64a6.74,6.74,0,0,0-4.11,1.17A4.65,4.65,0,0,0,30,24.12h2.24a2.64,2.64,0,0,1,1.18-1.76,4,4,0,0,1,2.4-.67,3.7,3.7,0,0,1,2.57.8,2.77,2.77,0,0,1,.93,2.21v1H35.21A6.44,6.44,0,0,0,31,26.84a4,4,0,0,0-1.47,3.34A3.8,3.8,0,0,0,31,33.28a5.83,5.83,0,0,0,3.74,1.13A5.39,5.39,0,0,0,39.44,32v2.22H41.6Zm-2.28-5.86a4,4,0,0,1-1.18,3,4.49,4.49,0,0,1-3.25,1.13,3.42,3.42,0,0,1-2.24-.67,2,2,0,0,1-.82-1.71c0-1.59,1.06-2.39,3.14-2.39h4.35Z"
+							transform="translate(-2.68 -2.02)" />
+						<path class="cls-1-logo" d="M28.7,14.62H26.46V34.41H28.7Z" transform="translate(-2.68 -2.02)" />
+						<path class="cls-1-logo"
+							d="M21.2,31.81a4.17,4.17,0,0,1-2.4.63,4.26,4.26,0,0,1-2.73-.84A2.74,2.74,0,0,1,15,29.47H12.74a4.34,4.34,0,0,0,1.71,3.64,6.93,6.93,0,0,0,4.43,1.3,6.81,6.81,0,0,0,2.81-.55,4.74,4.74,0,0,0,2-1.54,3.84,3.84,0,0,0,.73-2.3,3.67,3.67,0,0,0-.73-2.39,4.1,4.1,0,0,0-1.92-1.25,19.9,19.9,0,0,0-3.05-.63c-.9-.13-1.55-.21-1.95-.29a2.39,2.39,0,0,1-1.06-.55,1.39,1.39,0,0,1-.41-1.13,1.78,1.78,0,0,1,.9-1.59,4.3,4.3,0,0,1,2.32-.62,3.55,3.55,0,0,1,2.32.75,2.75,2.75,0,0,1,1.05,1.88h2.24a4.57,4.57,0,0,0-1.71-3.39,6.37,6.37,0,0,0-4-1.17,6.3,6.3,0,0,0-2.72.55,4.49,4.49,0,0,0-1.92,1.54A4.07,4.07,0,0,0,13.06,24a3.15,3.15,0,0,0,.74,2.22,4.08,4.08,0,0,0,1.87,1.17,14.76,14.76,0,0,0,3,.59,17.25,17.25,0,0,1,2,.33,2.49,2.49,0,0,1,1.14.63,1.8,1.8,0,0,1,.45,1.29A2.07,2.07,0,0,1,21.2,31.81Z"
+							transform="translate(-2.68 -2.02)" />
+					</svg>
+				</div>
+				<span class="visually-hidden">Icon-only</span>
+			</a>
+			<div class="flex-column text-center">
+				<div id="toggleSidebar" class="btn">
+					<svg class="hamburguerIcon" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"
+						fill-rule="evenodd" clip-rule="evenodd">
+						<path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
+					</svg>
+				</div>
+			</div>
+			<div style="clear:both"></div>
+			<ul class="nav nav-pills nav-flush flex-column mt-2 mb-auto text-center">
+				<li class="nav-item">
+					<a href="#" class="nav-link menuActive" aria-current="page" title="">
+						<div class="block-level active">
+							<svg class="bi " width="24" height="24" role="img" aria-label="Portfolio"
+								viewBox="0 0 40.9 43.7">
+								<rect class="menu_icons" x="5.4" y="3.1" width="14" height="22" />
+								<rect class="menu_icons" x="5.4" y="26.8" width="14" height="13" />
+								<rect class="menu_icons" x="22.6" y="17.6" width="14" height="22" />
+								<rect class="menu_icons" x="22.5" y="3.1" width="14" height="13" />
+							</svg>
+						</div>
+						<span class="menuLabel">Nexus</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="schedules.php" class="nav-link" title="">
+						<div class="block-level">
+							<svg class="bi" width="24" height="24" role="img" aria-label="Schedule" viewBox="0 0 24 24">
+								<path class="menu_icons" d="M7 19h-6v-11h6v11zm8-18h-6v18h6v-18zm8 11h-6v7h6v-7zm1" />
+							</svg>
+						</div>
+						<span class="menuLabel">Schedule</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link" title="">
+						<div class="block-level">
+							<svg class="bi" width="24" height="24" role="img" aria-label="Documents"
+								viewBox="0 0 37.4 35.2">
+								<path class="menu_icons" d="M2.4,4h16V7h-16V4z" />
+								<path class="menu_icons" d="M2.4,16.9h19.1v3.1H2.4V16.9z" />
+								<path class="menu_icons" d="M2.4,23h19.1v3H2.4V23z" />
+								<path class="menu_icons" d="M2.4,10.4h31.7v3H2.4V10.4L2.4,10.4z" />
+								<path class="menu_icons" d="M2.4,29.5h31.7v3.1H2.4V29.5L2.4,29.5z" />
+								<path class="menu_icons" d="M2.4,5.9h3.1v25.5H2.4V5.9z" />
+								<path class="menu_icons" d="M8.9,5.9h3v25.5h-3V5.9L8.9,5.9z" />
+								<path class="menu_icons" d="M15.4,5.9h3.1v25.5h-3.1V5.9z" />
+								<path class="menu_icons" d="M30.2,12.3h3.8v19.1h-3.8V12.3L30.2,12.3z" />
+								<path class="menu_icons" d="M24.2,16.9h3v3.1h-3V16.9z" />
+								<path class="menu_icons" d="M24.2,23h3v3h-3V23z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Model</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link" title="">
+						<div class="block-level">
+							<svg class="bi" width="24" height="24" role="img" aria-label="Forms" viewBox="0 0 94.7 98">
+								<path class="menu_icons" d="M28.9,40.8h9.4v-9.4h-9.4V40.8z M10,73.8v14L71.4,88h14.2V26.6V12.4L10,12.6 M19.4,22l56.6-0.1v4.7L76.2,75l0,3.5h-4.8
+		l-51.9,0.1v-4.8 M28.9,69.1h9.4v-9.4h-9.4V69.1z M28.9,54.9h9.4v-9.4h-9.4V54.9z M43,40.8h23.6v-9.4H43V40.8z M43,54.9h23.6v-9.4
+		H43V54.9z M43,69.1h23.6v-9.4H43V69.1z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Forms</span>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a href="#" class="nav-link dropdown-toggle" id="dropdown03" data-bs-toggle="dropdown"
+						aria-expanded="false" title="">
+						<div class="block-level">
+							<svg class="bi" width="24" height="24" role="img" aria-label="BIM" viewBox="5 0 55 55">
+								<path class="menu_icons" d="M54.6,45.6c0,0,0.5,3.4-2.8,3.3c-2.3,0-38.7,0-38.7,0S10,49.4,10,45.4c0-2.6,0-32.7,0-32.7s0-3.6,3.8-3.6h13.6
+									c0,0,1.6-0.3,3,1.8c1.3,2,2.1,3.3,2.1,3.3s0.5,0.6,1.6,0.6c-1,0,17.5,0,17.5,0s3.1-0.3,3.1,3.1C54.6,20.2,54.6,45.6,54.6,45.6
+									L54.6,45.6z M51.8,43.9V20.6c0-1.2-1-2.3-2.3-2.3H15c-1.2,0-2.3,1-2.3,2.3v23.4c0,1.2,1,2.3,2.3,2.3h34.5
+									C50.8,46.2,51.8,45.2,51.8,43.9L51.8,43.9z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Documents</span>
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="dropdown03">
+						<li><a class="dropdown-item" href="#">Option 1</a></li>
+						<li><a class="dropdown-item" href="#">Option 2</a></li>
+						<li><a class="dropdown-item" href="#">Option 3</a></li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link" title="">
+						<div class="block-level">
+							<svg class="bi" width="24" height="24" role="img" aria-label="BIM" viewBox="0 0 40.9 43.7">
+								<path class="menu_icons" d="M28.5,3.4l3.9,0c3,0,4.4,1.4,4.4,4.5l0,7.4v16.6c0,2.4-2.2,4.7-4.7,4.7l-1.2,0v0.3c0,2.4-2.2,4.4-4.7,4.4H8.4
+									c-2.5,0-4.7-2.3-4.7-4.7V12.8c0-2.4,2-4.7,4.5-4.7l1.4,0l0-0.3c0-2.4,2.2-4.4,4.7-4.4C14.3,3.4,28.3,3.4,28.5,3.4z M9.6,31.8V10.5
+									l-1.3,0C7,10.5,6,11.6,6,12.9v23.7c0,1.2,1.1,2.4,2.4,2.4h17.7c1.2,0,2.4-1,2.4-2.2v-0.2l-14.2,0C11.8,36.5,9.6,34.2,9.6,31.8z
+									 M26.1,5.8H14.3c-1.2,0-2.4,1.2-2.4,2.4v23.7c0,1.2,1.1,2.4,2.4,2.4H32c1.2,0,2.4-1.2,2.4-2.4l0-16v-0.6l0.1-7.4
+									c0-1.4-0.2-2.1-2.9-2.1 M24.6,28.2h-7.2c-0.4,0-0.8-0.5-0.8-1.2c0-0.7,0.4-1.2,0.8-1.2h7.2c0.4,0,0.8,0.5,0.8,1.2
+									C25.4,27.7,25.1,28.2,24.6,28.2z M28.5,22.3H17.8c-0.7,0-1.2-0.5-1.2-1.2s0.5-1.2,1.2-1.2h10.6c0.7,0,1.2,0.5,1.2,1.2
+									C29.7,21.8,29.1,22.3,28.5,22.3z M28.5,17.6H17.8c-0.7,0-1.2-0.5-1.2-1.2s0.5-1.2,1.2-1.2h10.6c0.7,0,1.2,0.5,1.2,1.2
+									C29.6,17,29.1,17.6,28.5,17.6z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Layouts</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link" title="">
+						<div class="block-level">
+							<svg class="bi" width="24" height="24" role="img" aria-label="Micro"
+								viewBox="0 0 64.1 59.7">
+								<path class="menu_icons" d="M54.9,43.5c0,0.4,0,8.8,0,8.8c0,0.7-0.3,1.3-0.8,1.8s-1.1,0.8-1.8,0.8H12.6c-0.7,0-1.3-0.3-1.8-0.8
+									C10.3,53.6,10,53,10,52.3v-9h2.5l0-2.2h12.6l3.6,3.7c1,1,2.3,1.5,3.7,1.5c1.4,0,2.6-0.5,3.7-1.5l3.7-3.7h12.6l0,2.4H54.9
+									C54.9,43.5,54.9,43.5,54.9,43.5z M46.1,28.3c0.3,0.7,0.2,1.4-0.4,1.9L33.7,42.3c-0.3,0.3-0.7,0.5-1.2,0.5s-0.9-0.2-1.2-0.5
+									L19.1,30.2c-0.6-0.5-0.7-1.1-0.4-1.9c0.3-0.7,0.8-1.1,1.6-1.1h6.9V15.1c0-0.5,0.2-0.9,0.5-1.2s0.7-0.5,1.2-0.5h6.9
+									c0.5,0,0.9,0.2,1.2,0.5c0.3,0.3,0.5,0.7,0.5,1.2v12.1h6.9C45.3,27.2,45.8,27.6,46.1,28.3L46.1,28.3z M10,12.6v30.7h2.5l0.1-30.6
+									l39.6-0.1l0.2,30.9h2.5v-31c0-1.9-0.9-2.5-2.6-2.5H12.4C11.2,10,10,10.6,10,12.6z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Micro</span>
+					</a>
+				</li>
+			</ul>
+			<div class="d-flex flex-column mt-auto">
+				<div id="toggleBottomMenu" class="btn">
+					<svg class="hamburguerIcon" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"
+						fill-rule="evenodd" clip-rule="evenodd">
+						<path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
+					</svg>
+				</div>
+			</div>
+			<ul id="bottomNav" class="nav nav-pills nav-flush flex-column m-0 text-center">
+				<li class="nav-item">
+					<a href="#" class="nav-link " aria-current="page" title="">
+						<div class="block-level ">
+							<svg class="bi" width="24" height="24" role="img" aria-label="BIM" viewBox="0 0 40.9 43.7">
+								<path class="menu_icons" d="M28.5,3.4l3.9,0c3,0,4.4,1.4,4.4,4.5l0,7.4v16.6c0,2.4-2.2,4.7-4.7,4.7l-1.2,0v0.3c0,2.4-2.2,4.4-4.7,4.4H8.4
+									c-2.5,0-4.7-2.3-4.7-4.7V12.8c0-2.4,2-4.7,4.5-4.7l1.4,0l0-0.3c0-2.4,2.2-4.4,4.7-4.4C14.3,3.4,28.3,3.4,28.5,3.4z M9.6,31.8V10.5
+									l-1.3,0C7,10.5,6,11.6,6,12.9v23.7c0,1.2,1.1,2.4,2.4,2.4h17.7c1.2,0,2.4-1,2.4-2.2v-0.2l-14.2,0C11.8,36.5,9.6,34.2,9.6,31.8z
+									 M26.1,5.8H14.3c-1.2,0-2.4,1.2-2.4,2.4v23.7c0,1.2,1.1,2.4,2.4,2.4H32c1.2,0,2.4-1.2,2.4-2.4l0-16v-0.6l0.1-7.4
+									c0-1.4-0.2-2.1-2.9-2.1 M24.6,28.2h-7.2c-0.4,0-0.8-0.5-0.8-1.2c0-0.7,0.4-1.2,0.8-1.2h7.2c0.4,0,0.8,0.5,0.8,1.2
+									C25.4,27.7,25.1,28.2,24.6,28.2z M28.5,22.3H17.8c-0.7,0-1.2-0.5-1.2-1.2s0.5-1.2,1.2-1.2h10.6c0.7,0,1.2,0.5,1.2,1.2
+									C29.7,21.8,29.1,22.3,28.5,22.3z M28.5,17.6H17.8c-0.7,0-1.2-0.5-1.2-1.2s0.5-1.2,1.2-1.2h10.6c0.7,0,1.2,0.5,1.2,1.2
+									C29.6,17,29.1,17.6,28.5,17.6z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Tenant</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link " aria-current="page" title="">
+						<div class="block-level ">
+							<svg class="bi " width="24" height="24" role="img" aria-label="Portfolio"
+								viewBox="0 0 24 24">
+								<path class="menu_icons"
+									d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z" />
+							</svg>
+
+						</div>
+						<span class="menuLabel">Portfolio</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="projects.php" class="nav-link " aria-current="page" title="">
+						<div class="block-level ">
+							<svg class="bi" width="24" height="24" role="img" aria-label="Documents"
+								viewBox="0 0 37.4 35.2">
+								<path class="menu_icons" d="M2.4,4h16V7h-16V4z" />
+								<path class="menu_icons" d="M2.4,16.9h19.1v3.1H2.4V16.9z" />
+								<path class="menu_icons" d="M2.4,23h19.1v3H2.4V23z" />
+								<path class="menu_icons" d="M2.4,10.4h31.7v3H2.4V10.4L2.4,10.4z" />
+								<path class="menu_icons" d="M2.4,29.5h31.7v3.1H2.4V29.5L2.4,29.5z" />
+								<path class="menu_icons" d="M2.4,5.9h3.1v25.5H2.4V5.9z" />
+								<path class="menu_icons" d="M8.9,5.9h3v25.5h-3V5.9L8.9,5.9z" />
+								<path class="menu_icons" d="M15.4,5.9h3.1v25.5h-3.1V5.9z" />
+								<path class="menu_icons" d="M30.2,12.3h3.8v19.1h-3.8V12.3L30.2,12.3z" />
+								<path class="menu_icons" d="M24.2,16.9h3v3.1h-3V16.9z" />
+								<path class="menu_icons" d="M24.2,23h3v3h-3V23z" />
+							</svg>
+						</div>
+						<span class="menuLabel">Project</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="container-fluid">
+			<div id="page_header" class="row">
+				<div class="col-3">
+					<div class="form-group row">
+						<label for="changeStyle" class="col-sm-4 col-form-label">Portfolio</label>
+						<div class="col-sm-8">
+							<select id="changeStyle" class="form-select" aria-label="Sidebar Style">
+								<option value="1">Style 1</option>
+								<option value="2">Style 2</option>
+								<option value="3">Style 3</option>
+								<option value="4" selected>Style 4</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group row">
+						<label for="changeGradient" class="col-sm-4 col-form-label">Project</label>
+						<div class="col-sm-8">
+							<select id="changeGradient" class="form-select" aria-label="Gradient">
+								<option value="0" selected>No Gradient</option>
+								<option value="1">Gradient 1</option>
+								<option value="2">Gradient 2</option>
+								<option value="3">Gradient 3</option>
+								<option value="6">Gradient 6</option>
+								<option value="7">Gradient 7</option>
+								<option value="8">Gradient 8</option>
+								<option value="9">Gradient 9</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 text-right align-content-center d-none d-lg-block"
+					style="padding-top: calc(0.375rem + 1px);">
+					Welcome John Doe
+				</div>
+				<div class="col-3 align-content-center">
+					<!--
+					<ul class=" nav col-12 col-lg-auto my-2 justify-content-end my-md-0 text-small">
+						<li class="me-4">
+							<a href="#" id="topAIBTN" class="nav-link">
+								<svg class="bi" viewBox="0 0 62.55 45" width="40">
+									<path class="cls-1-logo"
+										d="M44.2,43.29a1.33,1.33,0,0,1-1.31,1.34H6.26A1.33,1.33,0,0,1,5,43.29V5.65a1.3,1.3,0,0,1,1.3-1.33H42.89A1.33,1.33,0,0,1,44.2,5.65v6.07h2.23v-6A3.63,3.63,0,0,0,42.85,2H6.22A3.6,3.6,0,0,0,2.68,5.7V43.34A3.64,3.64,0,0,0,6.26,47H42.89a3.64,3.64,0,0,0,3.58-3.68V38.57H44.2Z"
+										transform="translate(-2.68 -2.02)" />
+									<path class="cls-1-logo"
+										d="M46.94,30.73V22.07h3.59V19.94H46.94V15.88H44.71v4.06H42.18v2.13h2.53v8.66a3.64,3.64,0,0,0,3.58,3.68H51v-2.3H48.29A1.38,1.38,0,0,1,46.94,30.73Z"
+										transform="translate(-2.68 -2.02)" />
+									<path class="cls-1-logo"
+										d="M65.19,27.51c0-.46,0-.8,0-1a8,8,0,0,0-.89-3.64A5.91,5.91,0,0,0,62,20.48a7,7,0,0,0-3.42-.84,6.49,6.49,0,0,0-3.46.92,6.27,6.27,0,0,0-2.36,2.6,8.39,8.39,0,0,0-.86,3.89,8.32,8.32,0,0,0,.86,3.84,6,6,0,0,0,2.44,2.6,7.52,7.52,0,0,0,3.66.92,6,6,0,0,0,6.11-5H62.71a3.76,3.76,0,0,1-1.43,2.17,4,4,0,0,1-2.56.8,4.21,4.21,0,0,1-3.17-1.26,4.8,4.8,0,0,1-1.27-3.38v-.21H65.19Zm-9.36-4.73a4.17,4.17,0,0,1,2.81-1.09,4.42,4.42,0,0,1,3,1A4.16,4.16,0,0,1,63,25.54H54.49A3.89,3.89,0,0,1,55.83,22.78Z"
+										transform="translate(-2.68 -2.02)" />
+									<path class="cls-1-logo"
+										d="M41.6,34.2V24.83A5,5,0,0,0,40.14,21,6,6,0,0,0,36,19.64a6.74,6.74,0,0,0-4.11,1.17A4.65,4.65,0,0,0,30,24.12h2.24a2.64,2.64,0,0,1,1.18-1.76,4,4,0,0,1,2.4-.67,3.7,3.7,0,0,1,2.57.8,2.77,2.77,0,0,1,.93,2.21v1H35.21A6.44,6.44,0,0,0,31,26.84a4,4,0,0,0-1.47,3.34A3.8,3.8,0,0,0,31,33.28a5.83,5.83,0,0,0,3.74,1.13A5.39,5.39,0,0,0,39.44,32v2.22H41.6Zm-2.28-5.86a4,4,0,0,1-1.18,3,4.49,4.49,0,0,1-3.25,1.13,3.42,3.42,0,0,1-2.24-.67,2,2,0,0,1-.82-1.71c0-1.59,1.06-2.39,3.14-2.39h4.35Z"
+										transform="translate(-2.68 -2.02)" />
+									<path class="cls-1-logo" d="M28.7,14.62H26.46V34.41H28.7Z"
+										transform="translate(-2.68 -2.02)" />
+									<path class="cls-1-logo"
+										d="M21.2,31.81a4.17,4.17,0,0,1-2.4.63,4.26,4.26,0,0,1-2.73-.84A2.74,2.74,0,0,1,15,29.47H12.74a4.34,4.34,0,0,0,1.71,3.64,6.93,6.93,0,0,0,4.43,1.3,6.81,6.81,0,0,0,2.81-.55,4.74,4.74,0,0,0,2-1.54,3.84,3.84,0,0,0,.73-2.3,3.67,3.67,0,0,0-.73-2.39,4.1,4.1,0,0,0-1.92-1.25,19.9,19.9,0,0,0-3.05-.63c-.9-.13-1.55-.21-1.95-.29a2.39,2.39,0,0,1-1.06-.55,1.39,1.39,0,0,1-.41-1.13,1.78,1.78,0,0,1,.9-1.59,4.3,4.3,0,0,1,2.32-.62,3.55,3.55,0,0,1,2.32.75,2.75,2.75,0,0,1,1.05,1.88h2.24a4.57,4.57,0,0,0-1.71-3.39,6.37,6.37,0,0,0-4-1.17,6.3,6.3,0,0,0-2.72.55,4.49,4.49,0,0,0-1.92,1.54A4.07,4.07,0,0,0,13.06,24a3.15,3.15,0,0,0,.74,2.22,4.08,4.08,0,0,0,1.87,1.17,14.76,14.76,0,0,0,3,.59,17.25,17.25,0,0,1,2,.33,2.49,2.49,0,0,1,1.14.63,1.8,1.8,0,0,1,.45,1.29A2.07,2.07,0,0,1,21.2,31.81Z"
+										transform="translate(-2.68 -2.02)" />
+								</svg>
+							</a>
+						</li>
+						<li class="me-4">
+							<a href="#" class="nav-link">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+									<path
+										d="M2.396 12h-2.396v-2h2.396v2zm7.604-6.458v-3.542h-2v3.542h2zm-4.793.876l-2.156-2.156-1.414 1.414 2.156 2.156 1.414-1.414zm9.461-2.396l-2.115 2.114 1.414 1.414 2.115-2.114-1.414-1.414zm-11.7 10.907l-2.198 1.919 1.303 1.517 2.198-1.919-1.303-1.517zm21.032 2.793c0 2.362-1.95 4.278-4.354 4.278h-10.292c-2.404 0-4.354-1.916-4.354-4.278 0-.77.211-1.49.574-2.113-.964-.907-1.574-2.18-1.574-3.609 0-2.762 2.238-5 5-5 1.329 0 2.523.528 3.414 1.376.649-.24 1.35-.376 2.086-.376 3.171 0 5.753 2.443 5.921 5.516 2.034.359 3.579 2.105 3.579 4.206zm-18-5.722c0 .86.37 1.628.955 2.172.485-.316 1.029-.551 1.624-.656.088-1.61.843-3.042 1.994-4.046-.46-.288-.991-.47-1.573-.47-1.654 0-3 1.346-3 3zm16 5.722c0-2.076-1.979-2.618-3.489-2.512.218-1.439-.24-5.21-4.011-5.21-3.875 0-4.062 3.854-4.011 5.209-1.385-.084-3.489.395-3.489 2.513 0 1.256 1.056 2.278 2.354 2.278h10.291c1.299 0 2.355-1.022 2.355-2.278z" />
+								</svg>
+							</a>
+						</li>
+						<li class="me-4">
+							<a href="#" class="nav-link">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+									<path
+										d="M15.137 3.945c-.644-.374-1.042-1.07-1.041-1.82v-.003c.001-1.172-.938-2.122-2.096-2.122s-2.097.95-2.097 2.122v.003c.001.751-.396 1.446-1.041 1.82-4.667 2.712-1.985 11.715-6.862 13.306v1.749h20v-1.749c-4.877-1.591-2.195-10.594-6.863-13.306zm-3.137-2.945c.552 0 1 .449 1 1 0 .552-.448 1-1 1s-1-.448-1-1c0-.551.448-1 1-1zm3 20c0 1.598-1.392 3-2.971 3s-3.029-1.402-3.029-3h6z" />
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-link">
+								<img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+									class="rounded-circle">
+							</a>
+						</li>
+					</ul>
+					-->
+					<button type="button" id="topAIBTN" class="btn btn-alt-secondary" id="page-header-ai"
+						data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<svg class="bi" viewBox="0 0 62.55 45" width="40">
+							<path class="cls-1-logo"
+								d="M44.2,43.29a1.33,1.33,0,0,1-1.31,1.34H6.26A1.33,1.33,0,0,1,5,43.29V5.65a1.3,1.3,0,0,1,1.3-1.33H42.89A1.33,1.33,0,0,1,44.2,5.65v6.07h2.23v-6A3.63,3.63,0,0,0,42.85,2H6.22A3.6,3.6,0,0,0,2.68,5.7V43.34A3.64,3.64,0,0,0,6.26,47H42.89a3.64,3.64,0,0,0,3.58-3.68V38.57H44.2Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M46.94,30.73V22.07h3.59V19.94H46.94V15.88H44.71v4.06H42.18v2.13h2.53v8.66a3.64,3.64,0,0,0,3.58,3.68H51v-2.3H48.29A1.38,1.38,0,0,1,46.94,30.73Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M65.19,27.51c0-.46,0-.8,0-1a8,8,0,0,0-.89-3.64A5.91,5.91,0,0,0,62,20.48a7,7,0,0,0-3.42-.84,6.49,6.49,0,0,0-3.46.92,6.27,6.27,0,0,0-2.36,2.6,8.39,8.39,0,0,0-.86,3.89,8.32,8.32,0,0,0,.86,3.84,6,6,0,0,0,2.44,2.6,7.52,7.52,0,0,0,3.66.92,6,6,0,0,0,6.11-5H62.71a3.76,3.76,0,0,1-1.43,2.17,4,4,0,0,1-2.56.8,4.21,4.21,0,0,1-3.17-1.26,4.8,4.8,0,0,1-1.27-3.38v-.21H65.19Zm-9.36-4.73a4.17,4.17,0,0,1,2.81-1.09,4.42,4.42,0,0,1,3,1A4.16,4.16,0,0,1,63,25.54H54.49A3.89,3.89,0,0,1,55.83,22.78Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M41.6,34.2V24.83A5,5,0,0,0,40.14,21,6,6,0,0,0,36,19.64a6.74,6.74,0,0,0-4.11,1.17A4.65,4.65,0,0,0,30,24.12h2.24a2.64,2.64,0,0,1,1.18-1.76,4,4,0,0,1,2.4-.67,3.7,3.7,0,0,1,2.57.8,2.77,2.77,0,0,1,.93,2.21v1H35.21A6.44,6.44,0,0,0,31,26.84a4,4,0,0,0-1.47,3.34A3.8,3.8,0,0,0,31,33.28a5.83,5.83,0,0,0,3.74,1.13A5.39,5.39,0,0,0,39.44,32v2.22H41.6Zm-2.28-5.86a4,4,0,0,1-1.18,3,4.49,4.49,0,0,1-3.25,1.13,3.42,3.42,0,0,1-2.24-.67,2,2,0,0,1-.82-1.71c0-1.59,1.06-2.39,3.14-2.39h4.35Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo" d="M28.7,14.62H26.46V34.41H28.7Z"
+								transform="translate(-2.68 -2.02)" />
+							<path class="cls-1-logo"
+								d="M21.2,31.81a4.17,4.17,0,0,1-2.4.63,4.26,4.26,0,0,1-2.73-.84A2.74,2.74,0,0,1,15,29.47H12.74a4.34,4.34,0,0,0,1.71,3.64,6.93,6.93,0,0,0,4.43,1.3,6.81,6.81,0,0,0,2.81-.55,4.74,4.74,0,0,0,2-1.54,3.84,3.84,0,0,0,.73-2.3,3.67,3.67,0,0,0-.73-2.39,4.1,4.1,0,0,0-1.92-1.25,19.9,19.9,0,0,0-3.05-.63c-.9-.13-1.55-.21-1.95-.29a2.39,2.39,0,0,1-1.06-.55,1.39,1.39,0,0,1-.41-1.13,1.78,1.78,0,0,1,.9-1.59,4.3,4.3,0,0,1,2.32-.62,3.55,3.55,0,0,1,2.32.75,2.75,2.75,0,0,1,1.05,1.88h2.24a4.57,4.57,0,0,0-1.71-3.39,6.37,6.37,0,0,0-4-1.17,6.3,6.3,0,0,0-2.72.55,4.49,4.49,0,0,0-1.92,1.54A4.07,4.07,0,0,0,13.06,24a3.15,3.15,0,0,0,.74,2.22,4.08,4.08,0,0,0,1.87,1.17,14.76,14.76,0,0,0,3,.59,17.25,17.25,0,0,1,2,.33,2.49,2.49,0,0,1,1.14.63,1.8,1.8,0,0,1,.45,1.29A2.07,2.07,0,0,1,21.2,31.81Z"
+								transform="translate(-2.68 -2.02)" />
+						</svg>
+					</button>
+					<span>
+						<button type="button" class="btn btn-alt-secondary" id="page-header-weather"
+							data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position:relative">
+							<svg width="40" height="40" viewbox="0 0 64 64">
+								<defs>
+									<filter id="blur" width="200%" height="200%">
+										<feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+										<feOffset dx="0" dy="4" result="offsetblur" />
+										<feComponentTransfer>
+											<feFuncA type="linear" slope="0.05" />
+										</feComponentTransfer>
+										<feMerge>
+											<feMergeNode />
+											<feMergeNode in="SourceGraphic" />
+										</feMerge>
+									</filter>
+								</defs>
+								<g filter="url(#blur)" id="cloudy-day-3">
+									<g transform="translate(20,10)">
+										<g transform="translate(0,16)">
+											<g class="am-weather-sun">
+												<g>
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(45)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(90)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(135)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(180)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(225)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(270)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+												<g transform="rotate(315)">
+													<line fill="none" stroke="orange" stroke-linecap="round"
+														stroke-width="2" transform="translate(0,9)" x1="0" x2="0" y1="0"
+														y2="3" />
+												</g>
+											</g>
+											<circle cx="0" cy="0" fill="orange" r="5" stroke="orange" stroke-width="2" />
+										</g>
+										<g class="am-weather-cloud-2">
+											<path
+												d="M47.7,35.4c0-4.6-3.7-8.2-8.2-8.2c-1,0-1.9,0.2-2.8,0.5c-0.3-3.4-3.1-6.2-6.6-6.2c-3.7,0-6.7,3-6.7,6.7c0,0.8,0.2,1.6,0.4,2.3    c-0.3-0.1-0.7-0.1-1-0.1c-3.7,0-6.7,3-6.7,6.7c0,3.6,2.9,6.6,6.5,6.7l17.2,0C44.2,43.3,47.7,39.8,47.7,35.4z"
+												fill="#FFFFFF" stroke="white" stroke-linejoin="round" stroke-width="1.2"
+												transform="translate(-20,-11)" />
+										</g>
+									</g>
+								</g>
+							</svg>
+							<span style="position: absolute;top: 60%;left: 50%;height: 18px;color:white;font-size:13px;">55&deg;F</span>
+							
+
+						</button>
+						<div id="divWeather" class="dropdown-menu shadow" aria-labelledby="page-header-weather">
+							<div id="divWeatherHeader" class="ps-4 pe-4">
+								<div class="row">
+									<div class="col-md-6 p-1">
+										<h2 class="mt-2">WeWork Pavillion</h2>
+									</div>
+									<div class="col-md-6 p-1 text-right">
+										<h2 class="mb-1" style="font-weight: 100;"><i class="fas fa-map-marker-alt"></i> New York City</h2>
+										<p class="my-1">Wednesday, March 2 2022</p>
+										<p class="my-1">11:30AM</p>
+										<div class="mt-2" style="display: flex;justify-content: flex-end;">
+											<span style="margin-top: -10px;">
+												<img id="imgWeatherHeaderIcon" style="width:60px;" src="/assets/images/rainy.svg" alt="">
+											</span>
+											<span style="font-size:36px;font-weight: bold;">45</span>
+											<span>&#176;F | &#176;C</span>
+										</div>
+										<div class="row">
+											<div class="col-md-6 text-left p-0">
+												<p class="my-2">
+													<span><img src="/assets/images/arrow_up.svg" alt=""></span>
+													<span>High</span>
+													<span class="fw-semibold">62</span> 
+													<span class="weather_indicator">&#176;F | &#176;C</span>
+												</p>
+												<p class="my-2">
+													<span><img src="/assets/images/humidity.svg" alt=""></span>
+													<span>Humidity</span>
+													<span class="fw-semibold">78</span> 
+													<span class="weather_indicator">%</span></p>
+											</div>
+											<div class="col-md-6 p-0">
+												<p class="my-2">
+													<img src="/assets/images/arrow_dn.svg" alt=""> 
+													Low 
+													<span class="fw-semibold">48</span> 
+													<span class="weather_indicator">&#176;F | &#176;C</span>
+												</p>
+												<p class="my-2">
+													<span><img src="/assets/images/wind.svg" alt=""></span>
+													<span>Wind</span>
+													<span class="fw-semibold">4</span>
+													<span class="weather_indicator">MPH</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="divWeatherBody">
+								<div id="divWeatherBodyTabs" class="mx-2">
+									<ul class="nav nav-tabs nav-tabs-block">
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold" id="recommendations-weather-tab" data-bs-toggle="tab" data-bs-target="#recommendations-weather">
+												<img src="/assets/images/bulb.svg" alt=""> Recommendations
+											</button>
+										</li>
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold active" id="details-weather-tab" data-bs-toggle="tab" data-bs-target="#details-weather">
+												Details
+											</button>
+										</li>
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold" id="hourly-weather-tab" data-bs-toggle="tab" data-bs-target="#hourly-weather">
+												Hourly
+											</button>
+										</li>
+										<li class="nav-item mx-3">
+											<button class="nav-link pt-2 pb-1 fw-semibold" id="daily-weather-tab" data-bs-toggle="tab" data-bs-target="#daily-weather">Daily</button>
+										</li>
+									</ul>
+								</div>
+								<div class="block-content tab-content overflow-hidden p-0">
+									<div id="recommendations-weather" class="tab-pane pull-x fade fade-up m-3 px-3">
+										<div id="recommendations_slider" class="splide">
+											<div class="splide__track">
+												<ul class="splide__list">
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_sun.svg" style="width:24px;" alt="">
+																<h5 class="text-primary mt-1 mb-1">Heat Stress Risk</h5>
+																<p class="mb-1" style="font-size:10px;">The heat index forecast is high for tomorrow March 3, 2022, would you like to check your tasks scheduled tomorrow to prepare?</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-1 text-white fs-xs">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_wind.svg" style="width:24px;" alt="">
+																<h5 class="text-primary mt-1 mb-1">High Winds</h5>
+																<p class="mb-1" style="font-size:10px;">High winds are forcasted for tomorrow March 3, 2022 check your tasks that might be impacted. Consider stopping lifts and review requirements from crane manufacture</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-1 text-white fs-xs">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_sun.svg" style="width:24px;" alt="">
+																<h4 class="text-primary mt-1 mb-1">Heat Stress Risk</h4>
+																<p class="mb-1" style="font-size:10px;">The heat index forecast is high for tomorrow March 3, 2022, would you like to check your tasks scheduled tomorrow to prepare?</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-1 text-white fs-xs">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+													<li class="splide__slide">
+														<div class="card">
+															<div class="card-body text-center">
+																<img src="/assets/images/u_wind.svg" style="width:24px;" alt="">
+																<h4 class="text-primary mt-1 mb-1">High Winds</h4>
+																<p  class="mb-1"style="font-size:10px;">High winds are forcasted for tomorrow March 3, 2022 check your tasks that might be impacted. Consider stopping lifts and review requirements from crane manufacture</p>
+																<button type="button" class="btn btn-primary bg-dark-75 p-1 text-white fs-xs">Review Tasks</button>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="details-weather" class="tab-pane pull-x fade fade-up m-2 px-2 show active">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-3 fw-semibold"><img src="/assets/images/sun.svg" style="width:14px;filter: invert(.6);" alt=""> UV INDEX</p>
+													<p class="weather_details_main my-2 fw-semibold text-primary">10</p>
+													<p class="weather_details_note mb-1">LOW</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1" style="background:linear-gradient(135deg, transparent 50%, #105C6B 0);">
+													<p class="weather_details_title fw-semibold mb-0 mt-1"><img src="/assets/images/sunrise.svg" style="width:12px;filter: invert(.6);" alt=""> SUNRISE</p>
+													<p class="text-left fw-semibold mt-0 mb-1 text-primary" style="font-size:18px;">6:08<span style="font-size:10px;font-weight:100;">AM</span></p>
+													<p class="text-right fw-semibold mt-1 mb-0" style="font-size:18px;color:white;">5:50<span style="font-size:10px;font-weight:100;">PM</span></p>
+													<p class="weather_details_title fw-semibold mt-0 mb-1" style="color:white;"><img src="/assets/images/sunset.svg" style="width:12px;filter: invert(0);" alt=""> SUNSET</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-2 fw-semibold"><img src="/assets/images/wind.svg" style="width:14px;filter: invert(.6);" alt=""> WIND</p>
+													<div id="wind_indicator" class="d-flex flex-column justify-content-center" style="background:url('/assets/images/wind_indicator.svg') no-repeat center;height: 70px;">
+														<p class="text-center m-0 fw-semibold text-primary">10</p>
+														<p class="text-center m-0 text-primary" style="font-size:12px;margin-top: -5px!important;">MPH</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-3 fw-semibold"><img src="/assets/images/last_24hrs.svg" style="width:10px;filter: invert(.6);" alt=""> LAST 24HRS</p>
+													<p class="weather_details_main my-2 fw-semibold text-primary">2"</p>
+													<p class="weather_details_note mb-1">Rain</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-3 fw-semibold"><img src="/assets/images/humidity.svg" style="width:14px;filter: invert(.6);" alt=""> HUMIDITY</p>
+													<p class="weather_details_main my-2 fw-semibold text-primary">78<span style="font-size:14px;font-weight:100;">%</span></p>
+													<p class="weather_details_note mb-1" style="font-size:8px;line-height: .5rem;">Dew point is 0&#176; right now.</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-3 fw-semibold"><img src="/assets/images/visibility.svg" style="width:13px;filter: invert(.6);" alt=""> VISIBILITY</p>
+													<p class="weather_details_main my-2 fw-semibold text-primary">10<span style="font-size:14px;font-weight:100;">MI</span></p>
+													<p class="weather_details_note mb-1">Clear Skies</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 fw-semibold"><img src="/assets/images/pressure.svg" style="width:9px;filter: invert(.6);" alt=""> PRESSURE</p>
+													<p class="weather_details_main mt-2 mb-0 fw-semibold text-primary">30.12</p>
+													<p class="text-center mb-1 text-primary" style="margin-top:-8px;font-size:1px;"><img src="/assets/images/arrow_dn.svg" style="width:8px;filter: invert(.6);" alt=""></p>
+													<p class="weather_details_note mb-1" style="margin-top:6px;">INHG</p>
+												</div>
+											</div>
+											<div class="col-md-3">
+												<div class="details_weather_wrapper p-1">
+													<p class="weather_details_title mt-1 mb-3 fw-semibold"><img src="/assets/images/feels_like.svg" style="width:9px;filter: invert(.6);" alt=""> FEELS LIKE</p>
+													<p class="weather_details_main my-2 fw-semibold text-primary">36&#176;<span style="font-size:14px;font-weight:100;">F</span></p>
+													<p class="weather_details_note mb-1" style="font-size:8px;line-height:1.1rem;">Wind is making it colder.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="hourly-weather" class="tab-pane pull-x fade fade-up m-2 px-0 ">
+										<div class="table-responsive" style="max-height:12rem;">
+											<table id="tblHourlyWeather" class="table text-center">
+												<thead>
+													<tr>
+														<th>Time</th>
+														<th>Temperature</th>
+														<th>Conditions</th>
+														<th>Precipitation</th>
+														<th>Wind</th>
+														<th>AQI</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1 pm</td>
+														<td>61&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;height:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 6 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>2 pm</td>
+														<td class="text-primary">99&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;height:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 8 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>3 pm</td>
+														<td class="text-primary">98&#176;F</td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:16px;height:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 9 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>4 pm</td>
+														<td class="text-primary">98&#176;F</td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:16px;height:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" alt=""> 10 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>5 pm</td>
+														<td>86&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;height:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" alt=""> 45 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td>6 pm</td>
+														<td>75&#176;F</td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;height:16px;" alt=""></td>
+														<td>9%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" alt=""> 51 mph</td>
+														<td>36</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="text-center">
+											<button id="btnLoadMore" class="btn btn-alt-primary">Load More</button>
+										</div>
+									</div>
+									<div id="daily-weather" class="tab-pane pull-x fade fade-up m-2 px-0 ">
+										<div class="table-responsive">
+											<table class="table text-center">
+												<thead>
+													<tr>
+														<th>Day</th>
+														<th>Date</th>
+														<th>Temp</th>
+														<th>Con</th>
+														<th>Precip</th>
+														<th>Wind</th>
+														<th>AQI</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="text-left">Sunday</td>
+														<td>Mar. 13</td>
+														<td><div class="temp_sliders_wrapper">33&#176;F <div class="temp_sliders" data-min="33" data-max="43"></div> 43&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;" alt=""></td>
+														<td>13%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 6 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Monday</td>
+														<td>Mar. 14</td>
+														<td><div class="temp_sliders_wrapper">42&#176;F <div class="temp_sliders" data-min="42" data-max="51"></div> 51&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;" alt=""></td>
+														<td>33%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 8 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Tuesday</td>
+														<td>Mar. 15</td>
+														<td><div class="temp_sliders_wrapper">82&#176;F <div class="temp_sliders" data-min="82" data-max="98"></div> 98&#176;F</div></td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 9 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Wednesday</td>
+														<td>Mar. 16</td>
+														<td><div class="temp_sliders_wrapper">66&#176;F <div class="temp_sliders" data-min="66" data-max="88"></div> 88&#176;F</div></td>
+														<td><img src="/assets/images/icon_sun.svg" style="width:16px;" alt=""></td>
+														<td>3%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" alt=""> 10 mph</td>
+														<td>36</td>
+													</tr>
+													<tr>
+														<td class="text-left">Thursday</td>
+														<td>Mar. 17</td>
+														<td><div class="temp_sliders_wrapper">38&#176;F <div class="temp_sliders" data-min="38" data-max="64"></div> 64&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;" alt=""></td>
+														<td>23%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 10 mph</td>
+														<td>45</td>
+													</tr>
+													<tr>
+														<td class="text-left">Friday</td>
+														<td>Mar. 18</td>
+														<td><div class="temp_sliders_wrapper">24&#176;F <div class="temp_sliders" data-min="24" data-max="39"></div> 39&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;" alt=""></td>
+														<td>19%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 10 mph</td>
+														<td>51</td>
+													</tr>
+													<tr>
+														<td class="text-left">Saturday</td>
+														<td>Mar. 19</td>
+														<td><div class="temp_sliders_wrapper">41&#176;F <div class="temp_sliders" data-min="41" data-max="53"></div> 53&#176;F</div></td>
+														<td><img src="/assets/images/icon_cloudy.svg" style="width:16px;" alt=""> </td>
+														<td>9%</td>
+														<td class="text-left"><img src="/assets/images/arrow_upward.svg" style="width:12px;" class="wind_north_west" alt=""> 10 mph</td>
+														<td>51</td>
+													</tr>
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</span>
+					<button type="button" class="btn btn-alt-secondary" id="page-header-notifications">
+						<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+							<path
+								d="M15.137 3.945c-.644-.374-1.042-1.07-1.041-1.82v-.003c.001-1.172-.938-2.122-2.096-2.122s-2.097.95-2.097 2.122v.003c.001.751-.396 1.446-1.041 1.82-4.667 2.712-1.985 11.715-6.862 13.306v1.749h20v-1.749c-4.877-1.591-2.195-10.594-6.863-13.306zm-3.137-2.945c.552 0 1 .449 1 1 0 .552-.448 1-1 1s-1-.448-1-1c0-.551.448-1 1-1zm3 20c0 1.598-1.392 3-2.971 3s-3.029-1.402-3.029-3h6z" />
+						</svg>
+					</button>
+					<div class="dropdown d-inline-block">
+						<button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown"
+							data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img class="img-avatar img-avatar32 img-avatar-thumb" src="https://github.com/mdo.png"
+								alt="" width="32" height="32">
+							<i class="fa fa-fw fa-angle-down ms-1 text-white"></i>
+						</button>
+						<div class="dropdown-menu dropdown-menu-end dropdown-menu-lg p-0"
+							aria-labelledby="page-header-user-dropdown">
+							<div class="rounded-top fw-semibold text-center p-3 border-bottom bg-body-light">
+								<div class="mb-2">
+									<img class="img-avatar img-avatar48 img-avatar-thumb"
+										src="https://github.com/mdo.png" alt="">
+								</div>
+								<a class="fw-semibold text-dark" href="javascript:void(0)">John Doe</a>
+								<div class="fs-sm text-dark">john.doe@example.com</div>
+							</div>
+							<div class="p-2">
+								<a class="dropdown-item" href="javascript:void(0)" id="page-header-profile">
+									<i class="fa fa-fw fa-cog text-gray me-1"></i> Profile
+								</a>
+								<a class="dropdown-item mb-0" href="javascript:void(0)" id="page-header-support">
+									<i class="fa fa-fw fa-envelope-open text-gray me-1"></i> Support
+								</a>
+							</div>
+							<div class="p-2">
+								<a class="dropdown-item mb-0" href="#">
+									<i class="fa fa-fw fa-arrow-alt-circle-left text-gray me-1"></i> Logout
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-4">
+					<div class="block block-rounded portfolio-card shadow">
+						<div class="block-content text-center" style="box-sizing: border-box;">
+							<h4 class="h6 mb-1 mt-1">Operating Unit-2</h4>
+							<div class="row">
+								<div class="col-6">
+									<h5 class="h2 fw-light push">
+										Inception: 20th Sep 2021
+									</h5>
+								</div>
+								<div class="col-6">
+									<h5 class="h2 fw-light push">
+										Active Projects: 2
+									</h5>
+								</div>
+							</div>
+
+						</div>
+						<div class="block-content p-0 overflow-hidden">
+							<div class="row">
+								<div class="col-4 p-0">
+									<img src="assets/images/slide1.jpg">
+								</div>
+								<div class="col-4 p-0">
+									<img src="assets/images/slide2.jpg">
+								</div>
+								<div class="col-4 p-0">
+									<img src="assets/images/slide3.jpg">
+								</div>
+							</div>
+						</div>
+						<div class="block-content p-0">
+							<div class="row text-center m-0 bg-body-light">
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<i class="far fa-thumbs-up text-muted me-1"></i><br> On Time:
+										<strong>20</strong>
+									</p>
+								</div>
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<img src="assets/images/clock.svg"
+											class="img-avatar img-avatar16 text-muted me-1 border-radius-none"><br>
+										Ahead: <strong>2</strong>
+									</p>
+								</div>
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<img src="assets/images/late.svg"
+											class="img-avatar img-avatar16 text-muted me-1 border-radius-none"><br>
+										Behind: <strong>2</strong>
+									</p>
+								</div>
+								<div class="col-3">
+									<p class="py-1 mt-1 mb-0">
+										<i class="fas fa-address-card text-muted me-1"></i><br> RFI: <strong>2</strong>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="lightGradient">
+						<label class="form-check-label" for="lightGradient">
+							Light Gradient
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="lightHeader">
+						<label class="form-check-label" for="lightHeader">
+							Light Header
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="whiteHeader">
+						<label class="form-check-label" for="whiteHeader">
+							White Header
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Password Panel-->
+		<div id="passwordPanel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title mt-1">Change Password</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+							onclick="closePassword()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-3 text-center">
+								<p class="my-1 fs-sm">Password</p>
+							</div>
+							<div class="col-9">
+								<form>
+									<div class="form-group">
+										<label for="current_password" class="fs-xs text-muted">Current Password</label>
+										<div class="input-group">
+											<input type="password" class="form-control" id="current_password">
+											<span class="input-group-text"><i class="fas fa-eye"></i></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="new_password" class="fs-xs text-muted">New Password</label>
+										<div class="input-group">
+											<input type="password" class="form-control" id="new_password">
+											<span class="input-group-text"><i class="fas fa-eye"></i></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="confirm_password" class="fs-xs text-muted">New Password</label>
+										<div class="input-group">
+											<input type="password" class="form-control" id="confirm_password">
+											<span class="input-group-text"><i class="fas fa-eye"></i></span>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary fs-sm" data-dismiss="modal"
+							onclick="closePassword()">Close</button>
+						<button type="button" class="btn btn-primary bg-dark-75 text-white fs-sm"
+							onclick="closePassword()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Password Panel-->
+		<!-- Profile Panel-->
+		<div id="profilePanel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title mt-1">Profile Information</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"
+							onclick="closeProfile()">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-3 text-center">
+								<div class="mb-0">
+									<img class="img-avatar img-avatar48 img-avatar-thumb"
+										src="https://github.com/mdo.png" alt="">
+								</div>
+								<p class="my-0"><a class="fw-semibold text-dark fs-xs" href="javascript:void(0)">Upload
+										Picture</a>
+								</p>
+								<p class="my-0"><a class="fw-semibold text-dark fs-xs" href="javascript:void(0)"
+										id="btnChangepassword">Change
+										Password</a>
+								</p>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<div class="col-4">
+										<p class="fs-xs mb-1 text-muted">First Name</p>
+										<p class="fs-sm mt-0">Senthill</p>
+									</div>
+									<div class="col-4">
+										<p class="fs-xs mb-1 text-muted">Last Name</p>
+										<p class="fs-sm mt-0">Kumar</p>
+									</div>
+									<div class="col-4">
+										<p class="fs-xs mb-1 text-muted">Job Title</p>
+										<p class="fs-sm mt-0">CTO</p>
+									</div>
+								</div>
+								<form>
+									<div class="form-group">
+										<label for="phone_number" class="fs-xs text-muted">Phone Number</label>
+										<input type="text" class="form-control" id="phone_number">
+									</div>
+									<div>
+										<p class="fs-xs text-muted mb-1">Primary Email</p>
+										<p class="text-muted my-1 fs-sm">senthil.kumar@slate.ai</p>
+										<p class="fs-xs fw-semibold mt-1"><a class="text-dark">Add secondary email</a>
+										</p>
+									</div>
+									<div class="form-group">
+										<label for="address" class="fs-xs text-muted">Address</label>
+										<input type="text" class="form-control" id="address">
+									</div>
+									<div class="form-group">
+										<label for="postcode" class="fs-xs text-muted">Postcode</label>
+										<input type="text" class="form-control" id="postcode">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary fs-sm" data-dismiss="modal"
+							onclick="closeProfile()">Close</button>
+						<button type="button" class="btn btn-primary bg-dark-75 text-white fs-sm"
+							onclick="closeProfile()">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Profile Panel-->
+		<!-- Notifications Panel-->
+		<div id="notificationsPanel" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title mt-1">Notifications</h4>
+						<span class="fs-sm text-muted">Mark all as read</span>
+					</div>
+					<div class="modal-body">
+						<p class="mt-1 mb-1 text-muted">New</p>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONS Homes Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Submittals</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										M42 Highways
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">RFI</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONX Homes - Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Added to Project</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										M42 Highways
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Removed from project</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded block-grey">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONX Homes - Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">New task</button>
+								</div>
+							</div>
+						</div>
+						<p class="mt-1 mb-1 text-muted">Read</p>
+						<div class="block block-bordered mb-lg-2 block-rounded">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										ONS Homes Aurora
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Submittals</button>
+								</div>
+							</div>
+						</div>
+						<div class="block block-bordered mb-lg-2 block-rounded">
+							<div
+								class="block-content block-content-full d-flex align-items-center justify-content-between p-2">
+								<div class="ms-3">
+									<p class="fs-sm fw-light text-dark mt-1 mb-0 fw-semibold">
+										M42 Highways
+									</p>
+									<a class="fs-xs text-muted mb-0" href="javascript:void(0)">
+										15 Nov 2021 10:51pm
+									</a>
+								</div>
+								<div>
+									<button class="btn btn-muted btn-rounded fs-xs">Submittals</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Notifications Panel-->
+		<!-- Side Overlay-->
+		<aside id="side-overlay">
+			<!-- Side Header -->
+			<div class="bg-image" style="background-color: #518B97;">
+				<div class="bg-primary-op">
+					<div class="content-header">
+						<!-- User Avatar -->
+						<a class="img-link me-1" href="#">
+							<img class="img-avatar img-avatar48" src="https://github.com/mdo.png" alt="">
+						</a>
+						<!-- END User Avatar -->
+
+						<!-- User Info -->
+						<div class="ms-2">
+							<a class="text-white fw-semibold" href="#">John Doe</a>
+							<div class="text-white-75 fs-sm">Marketing</div>
+						</div>
+						<!-- END User Info -->
+
+						<!-- Close Side Overlay -->
+						<!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+						<a class="ms-auto text-white" href="javascript:void(0)" data-toggle="layout"
+							data-action="side_overlay_close">
+							<i class="fa fa-times-circle"></i>
+						</a>
+						<!-- END Close Side Overlay -->
+					</div>
+				</div>
+			</div>
+			<!-- END Side Header -->
+
+			<!-- Side Content -->
+			<div class="content-side">
+				<!-- Side Overlay Tabs -->
+				<div class="block block-transparent pull-x pull-t mb-0">
+					<ul class="nav nav-tabs nav-tabs-block nav-justified" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="so-settings-tab" data-bs-toggle="tab"
+								data-bs-target="#so-settings" role="tab" aria-controls="so-settings"
+								aria-selected="true">
+								<i class="fa fa-fw fa-cog"></i>
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="so-people-tab" data-bs-toggle="tab" data-bs-target="#so-people"
+								role="tab" aria-controls="so-people" aria-selected="false">
+								<i class="far fa-fw fa-user-circle"></i>
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="so-profile-tab" data-bs-toggle="tab"
+								data-bs-target="#so-profile" role="tab" aria-controls="so-profile"
+								aria-selected="false">
+								<i class="far fa-fw fa-edit"></i>
+							</button>
+						</li>
+					</ul>
+					<div class="block-content tab-content overflow-hidden" style="box-sizing: border-box;">
+						<!-- Settings Tab -->
+						<div class="tab-pane pull-x fade fade-up show active" id="so-settings" role="tabpanel"
+							aria-labelledby="so-settings-tab">
+							<div class="block mb-0">
+								<!-- Sidebar -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Sidebar</span>
+								</div>
+								<div class="block-content block-content-full">
+									<div class="row g-sm text-center">
+										<div class="col-6 mb-1">
+											<a id="darkGradientBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Dark</a>
+										</div>
+										<div class="col-6 mb-1">
+											<a id="lightGradientBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Light</a>
+										</div>
+									</div>
+								</div>
+								<!-- END Sidebar -->
+
+								<!-- Header -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Header</span>
+								</div>
+								<div class="block-content block-content-full">
+									<div class="row g-sm text-center mb-2">
+										<div class="col-6 mb-1">
+											<a id="darkHeaderBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Dark</a>
+										</div>
+										<div class="col-6 mb-1">
+											<a id="lightHeaderBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">Light</a>
+										</div>
+										<div class="col-6 mb-1">
+											<a id="whiteHeaderBTN"
+												class="d-block py-3 bg-body-dark fw-semibold text-dark"
+												href="javascript:void(0)">White</a>
+										</div>
+									</div>
+								</div>
+								<!-- END Header -->
+
+								<!-- Weather -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Weather</span>
+								</div>
+								<div class="block-content block-content-full">
+									<div class="row g-sm text-center mb-2">
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="sunny"
+												href="javascript:void(0)"><img src="/assets/images/day.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="thunder"
+												href="javascript:void(0)"><img src="/assets/images/thunder.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="cloudy"
+												href="javascript:void(0)"><img src="/assets/images/cloudy.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="rainy"
+												href="javascript:void(0)"><img src="/assets/images/rainy.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="snowy"
+												href="javascript:void(0)"><img src="/assets/images/snowy.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="partly_rainy"
+												href="javascript:void(0)"><img src="/assets/images/rainy-partly.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="night"
+												href="javascript:void(0)"><img src="/assets/images/night.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="cloudy_night"
+												href="javascript:void(0)"><img src="/assets/images/cloudy-night.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="hot_sun"
+												href="javascript:void(0)"><img src="/assets/images/hot-day.svg"></a>
+										</div>
+										<div class="col-3 mb-1">
+											<a class="d-block weather_set" data-weather="windy"
+												href="javascript:void(0)"><img src="/assets/images/windy.svg"></a>
+										</div>
+									</div>
+								</div>
+								<!-- END Header -->
+							</div>
+						</div>
+						<!-- END Settings Tab -->
+
+						<!-- People -->
+						<div class="tab-pane pull-x fade fade-up" id="so-people" role="tabpanel"
+							aria-labelledby="so-people-tab">
+							<div class="block mb-0">
+								<!-- Online -->
+								<div class="block-content block-content-sm block-content-full bg-body">
+									<span class="text-uppercase fs-sm fw-bold">Online</span>
+								</div>
+								<div class="block-content">
+									<ul class="nav-items">
+										<li>
+											<a class="d-flex py-2" href="#">
+												<div class="flex-shrink-0 mx-3 overlay-container">
+													<img class="img-avatar img-avatar48" src="assets/images/avatar.jpg"
+														alt="">
+													<span
+														class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
+												</div>
+												<div class="flex-grow-1">
+													<div class="fw-semibold">Marie Duncan</div>
+													<div class="fs-sm text-muted">Photographer</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a class="d-flex py-2" href="#">
+												<div class="flex-shrink-0 mx-3 overlay-container">
+													<img class="img-avatar img-avatar48" src="assets/images/avatar.jpg"
+														alt="">
+													<span
+														class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
+												</div>
+												<div class="flex-grow-1">
+													<div class="fw-semibold">Jose Mills</div>
+													<div class="fw-normal fs-sm text-muted">Web Designer</div>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a class="d-flex py-2" href="#">
+												<div class="flex-shrink-0 mx-3 overlay-container">
+													<img class="img-avatar img-avatar48" src="assets/images/avatar.jpg"
+														alt="">
+													<span
+														class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
+												</div>
+												<div class="flex-grow-1">
+													<div class="fw-semibold">Amanda Powell</div>
+													<div class="fw-normal fs-sm text-muted">Web Developer</div>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- Online -->
+							</div>
+						</div>
+						<!-- END People -->
+
+						<!-- Profile -->
+						<div class="tab-pane pull-x fade fade-up" id="so-profile" role="tabpanel"
+							aria-labelledby="so-profile-tab">
+							<form action="#" method="POST" onsubmit="return false;">
+								<div class="block mb-0">
+									<!-- Personal -->
+									<div class="block-content block-content-sm block-content-full bg-body">
+										<span class="text-uppercase fs-sm fw-bold">Personal</span>
+									</div>
+									<div class="block-content block-content-full">
+										<div class="mb-4">
+											<label class="form-label">Username</label>
+											<input type="text" readonly class="form-control"
+												id="so-profile-username-static" value="Admin">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-name">Name</label>
+											<input type="text" class="form-control" id="so-profile-name"
+												name="so-profile-name" value="John Doe">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-email">Email</label>
+											<input type="email" class="form-control" id="so-profile-email"
+												name="so-profile-email" value="john.doe@example.com">
+										</div>
+									</div>
+									<!-- END Personal -->
+
+									<!-- Password Update -->
+									<div class="block-content block-content-sm block-content-full bg-body">
+										<span class="text-uppercase fs-sm fw-bold">Password Update</span>
+									</div>
+									<div class="block-content block-content-full">
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-password">Current Password</label>
+											<input type="password" class="form-control" id="so-profile-password"
+												name="so-profile-password">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-new-password">New Password</label>
+											<input type="password" class="form-control" id="so-profile-new-password"
+												name="so-profile-new-password">
+										</div>
+										<div class="mb-4">
+											<label class="form-label" for="so-profile-new-password-confirm">Confirm New
+												Password</label>
+											<input type="password" class="form-control"
+												id="so-profile-new-password-confirm"
+												name="so-profile-new-password-confirm">
+										</div>
+									</div>
+									<!-- END Password Update -->
+
+									<!-- Submit -->
+									<div class="block-content block-content-full border-top">
+										<button type="submit" class="btn w-100 btn-alt-primary">
+											<i class="fa fa-fw fa-save me-1 opacity-50"></i> Save
+										</button>
+									</div>
+									<!-- END Submit -->
+								</div>
+							</form>
+						</div>
+						<!-- END Profile -->
+					</div>
+				</div>
+				<!-- END Side Overlay Tabs -->
+			</div>
+			<!-- END Side Content -->
+		</aside>
+		<!-- END Side Overlay -->
+	</div>
+	<div id="bottomRightAI" class="fixed-action-btn direction-top">
+		<a id="bottomRightAIBTN" class="btn-floating btn-large">
+			<svg class="bi" viewBox="-10 0 42.55 25" width="40">
+				<path
+					d="M10.865 17.097c-2.289.805-5.172-.535-5.755-2.756-2.878-.005-5.086-1.408-5.11-3.886-.038-4.031 4.516-9.448 12-9.455 7.485-.007 11.996 5.312 12 10.329.004 5.017-4.182 6.897-7.607 6.263-.364 1.507-.171 3.578.232 4.747l-2.109.661c-.813-2.788-2.2-4.967-3.651-5.903zm-.692-9.276c-.691-.314-1.173-1.012-1.173-1.821 0-1.104.896-2 2-2s2 .896 2 2c0 .26-.05.509-.14.738 1.214.911 2.405 1.855 3.599 2.794.425-.333.96-.532 1.541-.532 1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5c-1.171 0-2.155-.807-2.426-1.895-1.201.098-2.404.173-3.606.254-.169.933-.987 1.641-1.968 1.641-1.104 0-2-.896-2-2 0-1.033.785-1.884 1.79-1.989.121-.731.252-1.46.383-2.19zm2.06-.246c-.297.232-.661.383-1.058.417l-.363 2.18c.504.224.898.651 1.08 1.177l3.647-.289c.047-.267.137-.519.262-.749l-3.568-2.736z" />
+			</svg>
+		</a>
+		<a id="bottomRightAIBTN" class="btn-floating btn-large">
+			<svg class="bi" viewBox="0 0 62.55 45" width="40">
+				<defs>
+					<style>
+						.cls-1-logo {
+							fill: #ffffff;
+						}
+					</style>
+				</defs>
+				<path class="cls-1-logo"
+					d="M44.2,43.29a1.33,1.33,0,0,1-1.31,1.34H6.26A1.33,1.33,0,0,1,5,43.29V5.65a1.3,1.3,0,0,1,1.3-1.33H42.89A1.33,1.33,0,0,1,44.2,5.65v6.07h2.23v-6A3.63,3.63,0,0,0,42.85,2H6.22A3.6,3.6,0,0,0,2.68,5.7V43.34A3.64,3.64,0,0,0,6.26,47H42.89a3.64,3.64,0,0,0,3.58-3.68V38.57H44.2Z"
+					transform="translate(-2.68 -2.02)" />
+				<path class="cls-1-logo"
+					d="M46.94,30.73V22.07h3.59V19.94H46.94V15.88H44.71v4.06H42.18v2.13h2.53v8.66a3.64,3.64,0,0,0,3.58,3.68H51v-2.3H48.29A1.38,1.38,0,0,1,46.94,30.73Z"
+					transform="translate(-2.68 -2.02)" />
+				<path class="cls-1-logo"
+					d="M65.19,27.51c0-.46,0-.8,0-1a8,8,0,0,0-.89-3.64A5.91,5.91,0,0,0,62,20.48a7,7,0,0,0-3.42-.84,6.49,6.49,0,0,0-3.46.92,6.27,6.27,0,0,0-2.36,2.6,8.39,8.39,0,0,0-.86,3.89,8.32,8.32,0,0,0,.86,3.84,6,6,0,0,0,2.44,2.6,7.52,7.52,0,0,0,3.66.92,6,6,0,0,0,6.11-5H62.71a3.76,3.76,0,0,1-1.43,2.17,4,4,0,0,1-2.56.8,4.21,4.21,0,0,1-3.17-1.26,4.8,4.8,0,0,1-1.27-3.38v-.21H65.19Zm-9.36-4.73a4.17,4.17,0,0,1,2.81-1.09,4.42,4.42,0,0,1,3,1A4.16,4.16,0,0,1,63,25.54H54.49A3.89,3.89,0,0,1,55.83,22.78Z"
+					transform="translate(-2.68 -2.02)" />
+				<path class="cls-1-logo"
+					d="M41.6,34.2V24.83A5,5,0,0,0,40.14,21,6,6,0,0,0,36,19.64a6.74,6.74,0,0,0-4.11,1.17A4.65,4.65,0,0,0,30,24.12h2.24a2.64,2.64,0,0,1,1.18-1.76,4,4,0,0,1,2.4-.67,3.7,3.7,0,0,1,2.57.8,2.77,2.77,0,0,1,.93,2.21v1H35.21A6.44,6.44,0,0,0,31,26.84a4,4,0,0,0-1.47,3.34A3.8,3.8,0,0,0,31,33.28a5.83,5.83,0,0,0,3.74,1.13A5.39,5.39,0,0,0,39.44,32v2.22H41.6Zm-2.28-5.86a4,4,0,0,1-1.18,3,4.49,4.49,0,0,1-3.25,1.13,3.42,3.42,0,0,1-2.24-.67,2,2,0,0,1-.82-1.71c0-1.59,1.06-2.39,3.14-2.39h4.35Z"
+					transform="translate(-2.68 -2.02)" />
+				<path class="cls-1-logo" d="M28.7,14.62H26.46V34.41H28.7Z" transform="translate(-2.68 -2.02)" />
+				<path class="cls-1-logo"
+					d="M21.2,31.81a4.17,4.17,0,0,1-2.4.63,4.26,4.26,0,0,1-2.73-.84A2.74,2.74,0,0,1,15,29.47H12.74a4.34,4.34,0,0,0,1.71,3.64,6.93,6.93,0,0,0,4.43,1.3,6.81,6.81,0,0,0,2.81-.55,4.74,4.74,0,0,0,2-1.54,3.84,3.84,0,0,0,.73-2.3,3.67,3.67,0,0,0-.73-2.39,4.1,4.1,0,0,0-1.92-1.25,19.9,19.9,0,0,0-3.05-.63c-.9-.13-1.55-.21-1.95-.29a2.39,2.39,0,0,1-1.06-.55,1.39,1.39,0,0,1-.41-1.13,1.78,1.78,0,0,1,.9-1.59,4.3,4.3,0,0,1,2.32-.62,3.55,3.55,0,0,1,2.32.75,2.75,2.75,0,0,1,1.05,1.88h2.24a4.57,4.57,0,0,0-1.71-3.39,6.37,6.37,0,0,0-4-1.17,6.3,6.3,0,0,0-2.72.55,4.49,4.49,0,0,0-1.92,1.54A4.07,4.07,0,0,0,13.06,24a3.15,3.15,0,0,0,.74,2.22,4.08,4.08,0,0,0,1.87,1.17,14.76,14.76,0,0,0,3,.59,17.25,17.25,0,0,1,2,.33,2.49,2.49,0,0,1,1.14.63,1.8,1.8,0,0,1,.45,1.29A2.07,2.07,0,0,1,21.2,31.81Z"
+					transform="translate(-2.68 -2.02)" />
+			</svg>
+		</a>
+		<a id="btn_ai_show" class="btn_ai_show">
+			<!--<img src="assets/css/light-bulb-white.png">-->
+			<span style="vertical-align: super;">Decision Center</span>
+		</a>
+		<div class="divAI">
+			<div class="divAiHeader">
+				<h5 class="divAiHeaderTitle">AI</h5>
+				<button type="button" class="closeAI" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div id="slide1" class="splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide">
+							<div class="aiSlide">
+								<h4>Intro</h4>
+								<img src="assets/images/slide1.jpg">
+							</div>
+						</li>
+						<li class="splide__slide">
+							<div class="aiSlide">
+								<h4>Alerts Panel</h4>
+								<div class="row">
+									<div class="col-6 header">Alert:</div>
+									<div class="col-6 data">1</div>
+								</div>
+								<div class="row">
+									<div class="col-6 header">Alert:</div>
+									<div class="col-6 data">2</div>
+								</div>
+								<div class="row">
+									<div class="col-6 header">Alert:</div>
+									<div class="col-6 data">3</div>
+								</div>
+							</div>
+						</li>
+						<li class="splide__slide">
+							<div class="aiSlide">
+								<h4>Personal Assistant</h4>
+								<div class="row">
+									<div class="col-6 header">Memo:</div>
+									<div class="col-6 data">Text</div>
+								</div>
+								<div class="row">
+									<div class="col-6 header">Relevant Emails:</div>
+									<div class="col-6 data">13</div>
+								</div>
+								<div class="row">
+									<div class="col-6 header">Frequent Actions:</div>
+									<div class="col-6 data">Email John Smith<br>Zoom "wood panel team"</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="topAI">
+		<div id="slide2" class="splide">
+			<div class="splide__track">
+				<ul class="splide__list">
+					<li class="splide__slide">
+						<div class="aiSlide">
+							<h4>Intro</h4>
+							<img src="assets/images/slide1.jpg">
+						</div>
+					</li>
+					<li class="splide__slide">
+						<div class="aiSlide">
+							<h4>Alerts Panel</h4>
+							<div class="row">
+								<div class="col-6 header">Alert:</div>
+								<div class="col-6 data">1</div>
+							</div>
+							<div class="row">
+								<div class="col-6 header">Alert:</div>
+								<div class="col-6 data">2</div>
+							</div>
+							<div class="row">
+								<div class="col-6 header">Alert:</div>
+								<div class="col-6 data">3</div>
+							</div>
+						</div>
+					</li>
+					<li class="splide__slide">
+						<div class="aiSlide">
+							<h4>Personal Assistant</h4>
+							<div class="row">
+								<div class="col-6 header">Memo:</div>
+								<div class="col-6 data">Text</div>
+							</div>
+							<div class="row">
+								<div class="col-6 header">Relevant Emails:</div>
+								<div class="col-6 data">13</div>
+							</div>
+							<div class="row">
+								<div class="col-6 header">Frequent Actions:</div>
+								<div class="col-6 data">Email John Smith<br>Zoom "wood panel team"</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<button id="decision_center_button" class="btn" aria-label="open menu">☰</button>
+		<div id="decision_center">
+			<ul>
+				<li>
+					<i class="fas fa-tachometer-alt fa-2x"></i>
+				</li>
+				<li>
+					<i class="fas fa-atom fa-2x"></i>
+				</li>
+				<li>
+					<i class="fas fa-calendar-alt fa-2x"></i>
+				</li>
+				<li>
+					<i class="fas fa-chart-bar fa-2x"></i>
+				</li>
+				<li>
+					<i class="fas fa-cogs fa-2x"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="assets/scripts/splide.min.js"></script>
+	<script>
+		var toggleSidebarBTN = document.getElementById("toggleSidebar");
+		var sidebar = document.getElementById("sidebar");
+		var toggleBottomMenuBTN = document.getElementById("toggleBottomMenu");
+		var bottomNav = document.getElementById("bottomNav");
+		var bottomRightAI = document.getElementById("bottomRightAI");
+		var bottomRightAIBTN = document.getElementById("bottomRightAIBTN");
+		var splideDiv = null;
+		var splide2Div = null;
+		var btn_ai_show = document.getElementById("btn_ai_show");
+
+		var topAI = document.getElementById("topAI");
+		var topAIBTN = document.getElementById("topAIBTN");
+
+		var decisionCenterBTN = document.getElementById("decision_center_button");
+		var decisionCenter = document.getElementById("decision_center");
+
+		var sideOverlay = document.getElementById("page-header-support");
+		var page_container = document.getElementById("page_container");
+
+		var lightGradientBTN = document.getElementById("lightGradientBTN");
+		var darkGradientBTN = document.getElementById("darkGradientBTN");
+
+		var darkHeaderBTN = document.getElementById("darkHeaderBTN");
+		var lightHeaderBTN = document.getElementById("lightHeaderBTN");
+		var whiteHeaderBTN = document.getElementById("whiteHeaderBTN");
+
+		var btnNotifications = document.getElementById("page-header-notifications");
+		var btnProfile = document.getElementById("page-header-profile");
+		var btnChangepassword = document.getElementById("btnChangepassword");
+
+		const layoutButtons = document.querySelectorAll('[data-toggle="layout"]');
+
+		var btnLoadMore = document.getElementById("btnLoadMore");
+
+		btnLoadMore.addEventListener('click', function (event) {
+			var tblHourlyWeatherBody = document.getElementById("tblHourlyWeather").getElementsByTagName('tbody')[0];;
+			var hourly_weather_data = {
+				"hours": [
+					{
+						"time": "7pm",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_east',
+						"aqi": '34'
+					},
+					{
+						"time": "8pm",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'west',
+						"aqi": '34'
+					},
+					{
+						"time": "9pm",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south',
+						"aqi": '34'
+					},
+					{
+						"time": "10pm",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_east',
+						"aqi": '34'
+					},
+					{
+						"time": "11pm",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north',
+						"aqi": '34'
+					},
+					{
+						"time": "12am",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south_east',
+						"aqi": '34'
+					},
+					{
+						"time": "1am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_west',
+						"aqi": '34'
+					},
+					{
+						"time": "2am",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south_west',
+						"aqi": '34'
+					},
+					{
+						"time": "3am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'south',
+						"aqi": '34'
+					},
+					{
+						"time": "4am",
+						"temperature": 72,
+						"conditions": "sun",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'east',
+						"aqi": '34'
+					},
+					{
+						"time": "5am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north',
+						"aqi": '34'
+					},
+					{
+						"time": "6am",
+						"temperature": 72,
+						"conditions": "cloudy",
+						"precipitation": '5',
+						"wind": '3',
+						"wind_direction": 'north_east',
+						"aqi": '34'
+					}
+				]
+			};
+
+			hourly_weather_data.hours.forEach(function (item) {
+				var newRowHTML = '<tr>'+
+					'<td>'+item.time+'</td>'+
+					'<td>'+item.temperature+'&#176;F</td>'+
+					'<td><img src="/assets/images/icon_'+item.conditions+'.svg" style="width:16px;height:16px;"></td>'+
+					'<td>'+item.precipitation+'%</td>'+
+					'<td class="text-left"><img src="/assets/images/arrow_upward.svg" class="wind_'+item.wind_direction+'" style="width:12px;">'+item.wind+'mph</td>'+
+					'<td>'+item.aqi+'</td>'+
+				'</tr>';
+			var newRow = tblHourlyWeatherBody.insertRow(tblHourlyWeatherBody.rows.length);
+			newRow.innerHTML = newRowHTML;
+			});
+			
+			
+		});
+
+		var weather_elements = document.getElementsByClassName("weather_set");
+		var weatherFunction = function() {
+			var divWeatherHeader = document.getElementById("divWeatherHeader");
+			var imgWeatherHeaderIcon = document.getElementById("imgWeatherHeaderIcon");
+			var attribute = this.getAttribute("data-weather");
+			divWeatherHeader.style.backgroundImage = "url('/assets/images/back_"+attribute+".jpg')";
+			var imageHeaderIcon = this.firstChild.getAttribute('src');
+			imgWeatherHeaderIcon.src = imageHeaderIcon;
+		};
+		for (var i = 0; i < weather_elements.length; i++) {
+			weather_elements[i].addEventListener('click', weatherFunction, false);
+		}
+
+		function closeSideOverlay() {
+			page_container.classList.remove('side-overlay-o');
+		}
+
+		function closeNotifications() {
+			page_container.classList.remove('notifications_panel_open');
+		}
+
+		function closeProfile() {
+			page_container.classList.remove('profile_panel_open');
+		}
+
+		function closePassword() {
+			page_container.classList.add('profile_panel_open');
+			page_container.classList.remove('password_panel_open');
+		}
+
+		layoutButtons.forEach(layoutButton => {
+			layoutButton.addEventListener("click", function (event) {
+				var action = this.getAttribute("data-action");
+				if (action == "side_overlay_close") {
+					closeSideOverlay();
+				}
+			}, false);
+		});
+
+		darkHeaderBTN.addEventListener('click', function (event) {
+			header.classList.remove("lightHeader");
+			header.classList.remove("whiteHeader");
+		});
+		lightHeaderBTN.addEventListener('click', function (event) {
+			header.classList.add("lightHeader");
+			header.classList.remove("whiteHeader");
+		});
+		whiteHeaderBTN.addEventListener('click', function (event) {
+			header.classList.add("whiteHeader");
+			header.classList.remove("lightHeader");
+		});
+
+		lightGradientBTN.addEventListener('click', function (event) {
+			sidebar.classList.add("lightGradient");
+		});
+		darkGradientBTN.addEventListener('click', function (event) {
+			sidebar.classList.remove("lightGradient");
+		});
+
+		btnChangepassword.addEventListener('click', function (event) {
+			if (page_container.classList.contains('password_panel_open')) {
+				closePassword();
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closePassword();
+					}
+				});
+				closeProfile();
+				page_container.classList.add('password_panel_open');
+			}
+		});
+
+		btnProfile.addEventListener('click', function (event) {
+			if (page_container.classList.contains('profile_panel_open')) {
+				closeProfile()
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closeProfile();
+					}
+				});
+
+				page_container.classList.add('profile_panel_open');
+			}
+		});
+
+		btnNotifications.addEventListener('click', function (event) {
+			if (page_container.classList.contains('notifications_panel_open')) {
+				closeNotifications()
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closeNotifications();
+					}
+				});
+
+				page_container.classList.add('notifications_panel_open');
+			}
+		});
+
+		sideOverlay.addEventListener('click', function (event) {
+			if (page_container.classList.contains('side-overlay-o')) {
+				closeSideOverlay()
+			} else {
+				document.addEventListener('keydown', e => {
+					if (e.key === 'Esc' || e.key === 'Escape') {
+						closeSideOverlay();
+					}
+				});
+
+				page_container.classList.add('side-overlay-o');
+			}
+		});
+
+		function toggleSidebar() {
+			toggleSidebarBTN.classList.toggle("click");
+			sidebar.classList.toggle("show");
+			/*
+						const menuLabels = [...document.getElementsByClassName('menuLabel')];
+						menuLabels.forEach(menuLabel => {
+							menuLabel.classList.add('fade_out');
+						});
+						setInterval(function () {
+							menuLabels.forEach(menuLabel => {
+								menuLabel.classList.remove('fade_out');
+							});
+						}, 200);
+						*/
+			/*menuLabels.forEach(menuLabel => {
+				menuLabel.classList.remove('fade_in');
+			});*/
+		}
+		toggleSidebarBTN.addEventListener("click", toggleSidebar, false);
+
+		function toggleBottomMenu() {
+			toggleBottomMenuBTN.classList.toggle("click");
+			bottomNav.classList.toggle("show").offsetWidth;
+			/*const menuLabels = [...document.getElementsByClassName('menuLabel')];
+			menuLabels.forEach(menuLabel => {
+				menuLabel.classList.toggle('show');
+			});*/
+		}
+
+		function toggleAI() {
+			bottomRightAI.classList.toggle("clicked");
+			splideDiv.classList.toggle('is-initialized');
+		}
+		toggleBottomMenuBTN.addEventListener("click", toggleBottomMenu, false);
+
+		const tabButtons = document.querySelectorAll('[data-bs-toggle="tab"]');
+		const tabs = [...document.getElementsByClassName('tab-pane')];
+
+		tabButtons.forEach(tabButton => {
+			tabButton.addEventListener("click", function (event) {
+				var tabID = this.getAttribute("data-bs-target");
+				tabID = tabID.replace("#", "");
+				tabButtons.forEach(tabButtonn => {
+					tabButtonn.classList.remove('active');
+				});
+				tabs.forEach(tab => {
+					tab.classList.remove('active');
+					tab.classList.remove('show');
+				});
+				document.getElementById(tabID).classList.add('active', 'show');
+				this.classList.add('active');
+			}, false);
+		});
+
+		const menuDropDowns = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+		const dropdownMenus = [...document.getElementsByClassName('dropdown-menu')];
+
+		menuDropDowns.forEach(menuDropDown => {
+			menuDropDown.addEventListener("click", function (event) {
+				var dropdownID = this.id;
+				if (!dropdownID) {
+					if (menuDropDown !== event.target) {
+						var dropdownID = event.target.parentElement.id;
+					} else {
+						var dropdownID = event.target.id;
+					}
+				}
+				var dropdown = document.querySelector('[aria-labelledby="' + dropdownID + '"]');
+				if (dropdown.style.display === "block") {
+					dropdown.style.display = "none";
+				} else {
+					dropdown.style.display = "block";
+				}
+				/*dropdown.classList.toggle("d-block");*/
+			}, false);
+		});
+
+		document.body.addEventListener('click', function (event) {
+			if (!event.target.matches('.block-level') && !event.target.matches('.dropdown-toggle') && !event.target.matches('.menuLabel')) {
+				dropdownMenus.forEach(dropdownMenu => {
+					if (dropdownMenu.classList.contains('d-block')) {
+						dropdownMenu.classList.remove('d-block');
+					}
+				});
+			}
+		}, false);
+
+		bottomRightAIBTN.addEventListener('click', toggleAI, false);
+		btn_ai_show.addEventListener('click', toggleAI, false);
+
+		topAIBTN.addEventListener('click', function (event) {
+			topAI.classList.toggle("clicked");
+			splide2Div.classList.toggle('is-initialized');
+		});
+
+		decisionCenterBTN.addEventListener('click', function (event) {
+			decisionCenter.classList.toggle("show");
+		});
+
+		const closeAIBTNS = [...document.getElementsByClassName('closeAI')];
+		closeAIBTNS.forEach(closeAIBTN => {
+			var divAI = closeAIBTN.closest(".divAI");
+			closeAIBTN.addEventListener("click", function (event) {
+				divAI.parentElement.classList.toggle("clicked");
+				splideDiv.classList.toggle('is-initialized');
+			}, false);
+		});
+
+		document.addEventListener('DOMContentLoaded', function () {
+			slide1 = new Splide('#slide1', {
+				arrows: false,
+				lazyLoad: 'nearby'
+			});
+			slide1.mount();
+			slide1.on('mounted', function () {
+				console.log(this);
+			});
+			splideDiv = document.getElementById('slide1');
+			splideDiv.classList.remove('is-initialized');
+
+			slide2 = new Splide('#slide2', {
+				arrows: false,
+				lazyLoad: 'nearby'
+			});
+			slide2.mount();
+			slide2.on('mounted', function () {
+				console.log(this);
+			});
+			splide2Div = document.getElementById('slide2');
+			splide2Div.classList.remove('is-initialized');
+
+
+			recommendationsSlide = new Splide('#recommendations_slider', {
+				arrows: true,
+				type: 'loop',
+				perPage: 2,
+				lazyLoad: 'nearby',
+				pagination: false
+			});
+			recommendationsSlide.mount();
+			recommendationsSlide.on('mounted', function () {
+				console.log(this);
+			});
+		});
+
+
+		function rotateWindArrow() {
+			var rotation = 0;
+			setInterval(function() {
+				const element = document.querySelector('#wind_indicator')
+				if (rotation < 360) {
+					rotation = rotation + 30;
+				} else {
+					rotation = 0;
+				}
+				element.style.setProperty('--windRotation', `${rotation}deg`);
+			}, 5000);
+		}
+		rotateWindArrow();
+	</script>
+	<script src="assets/scripts/scripts.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var temp_sliders = document.getElementsByClassName("temp_sliders");
+			const temp_max = 100;
+			const temp_min = 0;
+
+			for (var i = 0; i < temp_sliders.length; i++) {
+				var min = Number(temp_sliders[i].getAttribute("data-min"));
+				var max = Number(temp_sliders[i].getAttribute("data-max"));
+				var start_width = temp_min + min;
+				var end_width = temp_max - max;
+				var html = 
+				'<div slider id="slider-distance">' +
+					'<div>' +
+						'<div inverse-left style="width:'+start_width+'%;"></div>' +
+    					'<div inverse-right style="width:'+end_width+'%;"></div>' +
+    					'<div range style="left:'+start_width+'%;right:'+end_width+'%;"></div>' +
+  					'</div>' +
+				'</div>';
+				temp_sliders[i].innerHTML = html;
+			}
+		});
+	</script>
+</body>
+</html>       
